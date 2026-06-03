@@ -1,0 +1,26 @@
+.stats {
+  padding: 120px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.stat-card {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5
+  );
+
+  color: white;
+  border-radius: 30px;
+  padding: 50px;
+  text-align: center;
+}
+
+.stat-card h2 {
+  font-size: 52px;
+}

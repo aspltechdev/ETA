@@ -1,0 +1,44 @@
+.gallery-hero{
+  min-height:80vh;
+
+  background:url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=2000&q=80")
+  center/cover;
+
+  position:relative;
+
+  display:flex;
+  align-items:center;
+
+  color:white;
+}
+
+.gallery-hero-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    rgba(10,10,143,.75),
+    rgba(0,0,0,.6)
+  );
+}
+
+.gallery-hero .container{
+  position:relative;
+  z-index:2;
+}
+
+.gallery-hero h1{
+  font-size:
+  clamp(3rem,6vw,6rem);
+
+  max-width:900px;
+  line-height:1;
+  margin:20px 0;
+}
+
+.gallery-hero p{
+  max-width:700px;
+  font-size:18px;
+  line-height:1.8;
+}

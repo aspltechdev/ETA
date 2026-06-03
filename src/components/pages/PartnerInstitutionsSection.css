@@ -1,0 +1,194 @@
+.partners-section{
+  position:relative;
+  padding:140px 0;
+  background:#f7f9ff;
+  overflow:hidden;
+}
+
+.partners-glow{
+  position:absolute;
+  width:700px;
+  height:700px;
+
+  border-radius:50%;
+
+  background:
+  rgba(30,64,255,.08);
+
+  filter:blur(180px);
+
+  right:-250px;
+  top:-250px;
+}
+
+.partners-header{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  margin-bottom:80px;
+}
+
+.partners-header h2{
+  font-size:
+  clamp(2.8rem,5vw,5rem);
+
+  color:#111827;
+
+  margin:25px 0;
+
+  line-height:1;
+}
+
+.partners-header p{
+  color:#6B7280;
+  line-height:1.9;
+}
+
+/* Logo Grid */
+
+.partners-grid{
+  display:grid;
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:25px;
+
+  margin-bottom:80px;
+}
+
+.partner-card{
+  height:140px;
+
+  background:white;
+
+  border-radius:24px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  gap:15px;
+
+  transition:.4s;
+
+  box-shadow:
+  0 10px 30px rgba(15,23,42,.05);
+}
+
+.partner-card:hover{
+  transform:
+  translateY(-8px);
+}
+
+.partner-card svg{
+  color:#0A0A8F;
+}
+
+.partner-card span{
+  color:#374151;
+  font-weight:600;
+}
+
+/* Stats */
+
+.partner-stats{
+  display:grid;
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:25px;
+
+  margin-bottom:80px;
+}
+
+.partner-stat{
+  background:white;
+
+  border-radius:28px;
+
+  padding:35px;
+
+  text-align:center;
+
+  box-shadow:
+  0 10px 30px rgba(15,23,42,.05);
+}
+
+.partner-stat svg{
+  color:#0A0A8F;
+  margin-bottom:15px;
+}
+
+.partner-stat h3{
+  font-size:42px;
+  color:#0A0A8F;
+  margin-bottom:10px;
+}
+
+.partner-stat span{
+  color:#6B7280;
+}
+
+/* Banner */
+
+.trust-banner{
+  background:
+  linear-gradient(
+  135deg,
+  #0A0A8F,
+  #1E40FF
+  );
+
+  border-radius:32px;
+
+  padding:70px;
+
+  text-align:center;
+
+  color:white;
+}
+
+.trust-banner h3{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.trust-banner p{
+  max-width:700px;
+  margin:auto;
+  opacity:.9;
+}
+
+@media(max-width:992px){
+
+  .partners-grid{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+
+  .partner-stats{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:576px){
+
+  .partners-section{
+    padding:100px 0;
+  }
+
+  .partners-grid{
+    grid-template-columns:1fr;
+  }
+
+  .trust-banner{
+    padding:40px 25px;
+  }
+
+  .trust-banner h3{
+    font-size:30px;
+  }
+
+}

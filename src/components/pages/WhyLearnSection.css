@@ -1,0 +1,23 @@
+.why-learn {
+  padding: 120px 0;
+  background: #f8fafc;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.why-card {
+  background: white;
+  border-radius: 30px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,.05);
+}
+
+.icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}

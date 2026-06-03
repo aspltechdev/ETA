@@ -1,0 +1,50 @@
+.pricing{
+  padding:120px 0;
+}
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.price-card{
+  background:white;
+  border-radius:30px;
+  padding:50px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.05);
+}
+
+.price-card h1{
+  font-size:60px;
+  margin:20px 0;
+}
+
+.price-card ul{
+  list-style:none;
+  padding:0;
+}
+
+.price-card li{
+  margin:15px 0;
+}
+
+.price-card button{
+  margin-top:30px;
+  width:100%;
+  height:60px;
+  border:none;
+  border-radius:12px;
+  background:#2563eb;
+  color:white;
+}
+
+.featured{
+  background:linear-gradient(
+  135deg,
+  #2563eb,
+  #4f46e5
+  );
+  color:white;
+}

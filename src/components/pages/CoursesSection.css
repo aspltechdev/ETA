@@ -1,0 +1,36 @@
+.courses{
+  padding:120px 0;
+}
+
+.course-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.course-card{
+  overflow:hidden;
+  border-radius:28px;
+  background:white;
+  box-shadow:0 20px 40px rgba(0,0,0,.05);
+}
+
+.course-card img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+
+.course-content{
+  padding:25px;
+}
+
+.course-content button{
+  margin-top:20px;
+  width:100%;
+  height:50px;
+  border:none;
+  border-radius:10px;
+  background:#2563eb;
+  color:white;
+}
