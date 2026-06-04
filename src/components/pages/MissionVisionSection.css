@@ -1,190 +1,192 @@
-.mission-section{
-  position:relative;
-  padding:140px 0;
-  background:#f7f9ff;
-  overflow:hidden;
-}
-
-.mission-glow{
-  position:absolute;
-  width:500px;
-  height:500px;
-  border-radius:50%;
-
+.missionVision {
+  padding: 120px 0;
   background:
-  rgba(30,64,255,.08);
-
-  filter:blur(140px);
-
-  top:-150px;
-  right:-150px;
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f8fbff
+    );
+  overflow: hidden;
 }
 
-.mission-header{
-  text-align:center;
-  max-width:900px;
-  margin:auto;
-  margin-bottom:80px;
+.container {
+  width: min(1300px, 92%);
+  margin: auto;
 }
 
-.section-badge{
-  display:inline-block;
-
-  padding:12px 20px;
-
-  border-radius:999px;
-
-  background:#eef4ff;
-
-  color:#0A0A8F;
-
-  font-weight:600;
-
-  margin-bottom:20px;
+.purposeRow {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 100px;
+  margin-bottom: 180px;
 }
 
-.mission-header h2{
-  font-size:
-  clamp(2.8rem,5vw,5rem);
-
-  line-height:1;
-
-  color:#111827;
-
-  margin-bottom:25px;
+.purposeRow:last-child {
+  margin-bottom: 0;
 }
 
-.mission-header p{
-  color:#6B7280;
-  line-height:1.9;
+.reverse {
+  grid-template-columns: 1fr 1.1fr;
 }
 
-.purpose-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:30px;
+.imageCollage {
+  position: relative;
 }
 
-.purpose-card{
-  background:white;
-  border-radius:30px;
-  padding:45px;
+.mainImage {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+
+  border-radius: 36px;
 
   box-shadow:
-  0 20px 60px rgba(15,23,42,.06);
+    0 30px 80px
+    rgba(37, 99, 235, 0.12);
 }
 
-.purpose-icon{
-  width:70px;
-  height:70px;
+.floatingImage {
+  position: absolute;
 
-  border-radius:20px;
+  width: 240px;
+  height: 320px;
 
-  background:#eef4ff;
+  object-fit: cover;
 
-  color:#0A0A8F;
+  border-radius: 28px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  right: -40px;
+  top: 120px;
 
-  margin-bottom:20px;
+  border: 8px solid #fff;
+
+  box-shadow:
+    0 25px 60px
+    rgba(0,0,0,.15);
+
+  animation: floatCard 5s ease-in-out infinite;
 }
 
-.purpose-card span{
-  color:#0A0A8F;
-  font-weight:600;
+.visionFloat {
+  left: -40px;
+  right: auto;
 }
 
-.purpose-card h3{
-  margin:15px 0;
-  font-size:32px;
-  color:#111827;
+.purposeContent {
+  max-width: 540px;
 }
 
-.purpose-card p{
-  color:#6B7280;
-  line-height:1.9;
+.purposeTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 18px;
+
+  border-radius: 100px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-weight: 600;
 }
 
-.journey-section{
-  margin-top:100px;
+.purposeContent h2 {
+  margin-top: 22px;
+
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  color: #0f172a;
 }
 
-.journey-section h3{
-  text-align:center;
-  font-size:42px;
-  margin-bottom:50px;
+.purposeContent p {
+  margin-top: 22px;
+
+  color: #64748b;
+
+  line-height: 1.9;
+
+  font-size: 1.05rem;
 }
 
-.journey-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:20px;
+.purposeContent ul {
+  margin-top: 32px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  list-style: none;
 }
 
-.journey-card{
-  background:white;
-  padding:30px;
-  border-radius:24px;
-  text-align:center;
+.purposeContent li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #334155;
+
+  font-weight: 500;
 }
 
-.journey-card span{
-  color:#0A0A8F;
-  font-size:28px;
-  font-weight:700;
+.purposeContent li svg {
+  color: #2563eb;
+  flex-shrink: 0;
 }
 
-.journey-card h4{
-  margin:15px 0;
-}
+@keyframes floatCard {
 
-.values-grid{
-  margin-top:80px;
-
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.value-box{
-  background:white;
-  padding:30px;
-  text-align:center;
-  border-radius:24px;
-}
-
-.value-box svg{
-  color:#0A0A8F;
-  margin-bottom:15px;
-}
-
-@media(max-width:992px){
-
-  .purpose-grid{
-    grid-template-columns:1fr;
+  0%,
+  100% {
+    transform: translateY(0px);
   }
 
-  .journey-grid{
-    grid-template-columns:repeat(2,1fr);
+  50% {
+    transform: translateY(-14px);
   }
-
-  .values-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
 }
 
-@media(max-width:576px){
+@media (max-width: 991px) {
 
-  .journey-grid,
-  .values-grid{
-    grid-template-columns:1fr;
+  .purposeRow,
+  .reverse {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    margin-bottom: 120px;
   }
 
-  .mission-section{
-    padding:100px 0;
+  .reverse .purposeContent {
+    order: 2;
   }
 
+  .reverse .imageCollage {
+    order: 1;
+  }
+
+  .mainImage {
+    height: 400px;
+  }
+
+  .floatingImage {
+    width: 180px;
+    height: 240px;
+
+    right: 0;
+    top: auto;
+    bottom: -40px;
+  }
+
+  .visionFloat {
+    left: 0;
+  }
+
+  .purposeContent h2 {
+    font-size: 2.6rem;
+  }
 }

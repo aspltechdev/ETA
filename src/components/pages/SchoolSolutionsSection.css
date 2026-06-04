@@ -1,322 +1,468 @@
+/* ===============================
+   SCHOOL SOLUTIONS SECTION
+================================== */
+
 .school-solutions {
   position: relative;
-  padding: 140px 0;
-  background: #ffffff;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f7faff 100%
+  );
   overflow: hidden;
 }
 
+/* ===============================
+   BACKGROUND GLOW
+================================== */
+
 .school-glow {
   position: absolute;
-
   width: 700px;
   height: 700px;
+  top: -200px;
+  right: -250px;
 
-  background:
-    rgba(30, 64, 255, 0.08);
+  background: radial-gradient(
+    circle,
+    rgba(0, 194, 255, 0.15),
+    transparent 70%
+  );
 
-  border-radius: 50%;
-
-  filter: blur(180px);
-
-  top: -250px;
-  left: -250px;
+  filter: blur(120px);
+  z-index: 1;
 }
 
+.school-solutions .container {
+  position: relative;
+  z-index: 5;
+}
+
+/* ===============================
+   HEADER
+================================== */
+
 .school-header {
-  max-width: 950px;
-  margin: auto;
   text-align: center;
-  margin-bottom: 80px;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+.school-header .section-tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 10px 18px;
+
+  border-radius: 50px;
+
+  background: rgba(255,255,255,.8);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(0,0,0,.06);
+
+  color: #00a9ff;
+
+  font-size: .9rem;
+  font-weight: 600;
 }
 
 .school-header h2 {
-  font-size:
-    clamp(2.8rem, 5vw, 5rem);
+  margin-top: 24px;
+
+  font-size: clamp(3rem, 5vw, 5rem);
 
   line-height: 1;
 
   color: #111827;
+}
 
-  margin: 25px 0;
+.school-header h2 span {
+  display: block;
+
+  background: linear-gradient(
+    135deg,
+    #00c2ff,
+    #7c4dff
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .school-header p {
+  margin-top: 20px;
+
   color: #6b7280;
-  line-height: 1.9;
-}
 
-/* Grades */
-
-.grades-grid {
-  display: grid;
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap: 25px;
-
-  margin-bottom: 100px;
-}
-
-.grade-card {
-  background: white;
-
-  padding: 35px;
-
-  border-radius: 28px;
-
-  border: 1px solid #edf2f7;
-
-  transition: 0.4s;
-
-  box-shadow:
-    0 10px 30px rgba(15,23,42,.05);
-}
-
-.grade-card:hover {
-  transform: translateY(-8px);
-
-  box-shadow:
-    0 20px 50px rgba(15,23,42,.08);
-}
-
-.grade-icon {
-  width: 70px;
-  height: 70px;
-
-  border-radius: 20px;
-
-  background: #eef4ff;
-
-  color: #0A0A8F;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 20px;
-}
-
-.grade-card h3 {
-  margin-bottom: 20px;
-}
-
-.grade-card ul {
-  list-style: none;
-  padding: 0;
-}
-
-.grade-card li {
-  padding: 10px 0;
-  color: #6b7280;
-}
-
-/* Institutional */
-
-.institution-programs {
-  margin-bottom: 100px;
-}
-
-.institution-programs h3 {
-  text-align: center;
-  font-size: 42px;
-  margin-bottom: 50px;
-}
-
-.institution-grid {
-  display: grid;
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap: 25px;
-}
-
-.institution-card {
-  background: #f7f9ff;
-
-  padding: 30px;
-
-  border-radius: 24px;
-
-  text-align: center;
-}
-
-.institution-icon {
-  color: #0A0A8F;
-  margin-bottom: 15px;
-}
-
-.institution-card h4 {
-  margin-bottom: 10px;
-}
-
-.institution-card p {
-  color: #6b7280;
   line-height: 1.8;
+
+  max-width: 700px;
+
+  margin-inline: auto;
 }
 
-/* Stats */
+/* ===============================
+   MAIN DASHBOARD
+================================== */
 
-.school-stats {
+.school-dashboard {
   display: grid;
+
   grid-template-columns:
-    repeat(4,1fr);
+    1.1fr 1fr;
 
-  gap: 20px;
+  gap: 60px;
 
-  margin-bottom: 100px;
+  align-items: center;
 }
 
-.school-stat {
-  background: white;
+/* ===============================
+   IMAGE SIDE
+================================== */
 
-  padding: 35px;
+.school-image-box {
+  position: relative;
 
-  text-align: center;
+  height: 520px;
 
-  border-radius: 24px;
+  border-radius: 30px;
+
+  overflow: hidden;
 
   box-shadow:
-    0 10px 30px rgba(15,23,42,.05);
+    0 30px 80px
+    rgba(15, 23, 42, 0.12);
 }
 
-.school-stat h3 {
-  color: #0A0A8F;
-  font-size: 40px;
+.school-image-box img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: 1s ease;
 }
 
-.school-stat span {
-  color: #6b7280;
+.school-image-box:hover img {
+  transform: scale(1.08);
 }
 
-/* Benefits */
+.image-overlay {
+  position: absolute;
+  inset: 0;
 
-.benefits-section {
-  margin-bottom: 100px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.05)
+  );
 }
 
-.benefits-section h3 {
-  text-align: center;
-  font-size: 42px;
-  margin-bottom: 40px;
+/* ===============================
+   FLOATING BADGE
+================================== */
+
+.floating-badge {
+  position: absolute;
+
+  left: 24px;
+  bottom: 24px;
+
+  padding: 14px 20px;
+
+  border-radius: 50px;
+
+  background: rgba(255,255,255,.9);
+
+  backdrop-filter: blur(20px);
+
+  color: #111827;
+
+  font-size: .95rem;
+  font-weight: 600;
+
+  box-shadow:
+    0 15px 35px
+    rgba(0,0,0,.08);
 }
 
-.benefits-grid {
+/* ===============================
+   CONTENT SIDE
+================================== */
+
+.school-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===============================
+   TABS
+================================== */
+
+.grade-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+
+  gap: 12px;
+
+  margin-bottom: 30px;
 }
 
-.benefit-pill {
-  padding: 14px 24px;
+.grade-tabs button {
+  height: 48px;
 
-  border-radius: 999px;
+  padding: 0 22px;
 
-  background: #eef4ff;
+  border: none;
 
-  color: #0A0A8F;
+  border-radius: 50px;
 
+  background: white;
+
+  color: #374151;
+
+  font-size: .95rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: .3s ease;
+
+  box-shadow:
+    0 10px 25px
+    rgba(15,23,42,.05);
+}
+
+.grade-tabs button:hover {
+  transform: translateY(-3px);
+}
+
+.grade-tabs button.active {
+  background: linear-gradient(
+    135deg,
+    #00c2ff,
+    #7c4dff
+  );
+
+  color: white;
+
+  box-shadow:
+    0 15px 30px
+    rgba(124,77,255,.25);
+}
+
+/* ===============================
+   GRADE CONTENT
+================================== */
+
+.grade-subtitle {
+  color: #00a9ff;
+
+  font-size: .95rem;
   font-weight: 600;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
 }
 
-/* CTA */
+.grade-content h3 {
+  margin: 12px 0 24px;
 
-.school-cta {
-  background:
-    linear-gradient(
-      135deg,
-      #0A0A8F,
-      #1E40FF
-    );
+  font-size: 2.6rem;
 
-  border-radius: 36px;
+  color: #111827;
+}
 
-  padding: 80px;
+/* ===============================
+   POINTS
+================================== */
+
+.points-list {
+  display: grid;
+  gap: 16px;
+}
+
+.point {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #4b5563;
+
+  font-size: 1rem;
+}
+
+.point svg {
+  color: #00c2ff;
+}
+
+/* ===============================
+   STATS
+================================== */
+
+.stats-row {
+  display: flex;
+
+  gap: 16px;
+
+  margin-top: 35px;
+}
+
+.stat-card {
+  flex: 1;
+
+  padding: 22px;
+
+  border-radius: 22px;
+
+  background: white;
 
   text-align: center;
 
-  color: white;
+  box-shadow:
+    0 15px 35px
+    rgba(15,23,42,.06);
+
+  transition: .3s ease;
 }
 
-.school-cta svg {
-  margin-bottom: 20px;
+.stat-card:hover {
+  transform: translateY(-5px);
 }
 
-.school-cta h3 {
-  font-size: 42px;
-  margin-bottom: 15px;
+.stat-card h4 {
+  font-size: 1.8rem;
+  color: #111827;
 }
 
-.school-cta p {
-  max-width: 700px;
-  margin: auto;
-  margin-bottom: 30px;
-  opacity: 0.9;
+.stat-card span {
+  color: #6b7280;
 }
 
-.school-cta button {
+/* ===============================
+   CTA BUTTON
+================================== */
+
+.school-btn {
+  margin-top: 35px;
+
+  width: fit-content;
+
   height: 58px;
 
   padding: 0 30px;
 
   border: none;
 
-  border-radius: 14px;
+  border-radius: 50px;
 
-  background: white;
+  background: linear-gradient(
+    135deg,
+    #00c2ff,
+    #7c4dff
+  );
 
-  color: #0A0A8F;
+  color: white;
 
+  font-size: .95rem;
   font-weight: 600;
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 10px;
 
   cursor: pointer;
+
+  transition: .35s ease;
+
+  box-shadow:
+    0 15px 35px
+    rgba(124,77,255,.25);
 }
 
-/* Responsive */
+.school-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* ===============================
+   RESPONSIVE
+================================== */
 
 @media (max-width: 1200px) {
 
-  .grades-grid,
-  .institution-grid {
-    grid-template-columns:
-      repeat(2,1fr);
+  .school-dashboard {
+    gap: 40px;
   }
+
+}
+
+@media (max-width: 992px) {
+
+  .school-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .school-image-box {
+    height: 380px;
+  }
+
+  .school-content {
+    text-align: center;
+  }
+
+  .grade-tabs {
+    justify-content: center;
+  }
+
+  .stats-row {
+    flex-direction: column;
+  }
+
+  .school-btn {
+    margin-inline: auto;
+  }
+
 }
 
 @media (max-width: 768px) {
 
-  .school-stats {
-    grid-template-columns:
-      repeat(2,1fr);
+  .school-solutions {
+    padding: 60px 0;
   }
 
-  .school-cta {
-    padding: 50px 25px;
+  .school-header h2 {
+    font-size: 2.5rem;
   }
 
-  .school-cta h3 {
-    font-size: 32px;
+  .school-image-box {
+    height: 300px;
   }
+
+  .grade-content h3 {
+    font-size: 2rem;
+  }
+
+  .floating-badge {
+    font-size: .85rem;
+  }
+
 }
 
 @media (max-width: 576px) {
 
-  .school-solutions {
-    padding: 100px 0;
+  .grade-tabs button {
+    width: 100%;
   }
 
-  .grades-grid,
-  .institution-grid,
-  .school-stats {
-    grid-template-columns: 1fr;
+  .school-header h2 {
+    font-size: 2rem;
   }
 
-  .institution-programs h3,
-  .benefits-section h3 {
-    font-size: 32px;
-  }
 }

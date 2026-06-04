@@ -1,58 +1,58 @@
 import "./ForeignLanguageAcademy.css";
-
-import {
-  Globe,
-  Award,
-  Briefcase,
-  GraduationCap,
-  ArrowRight,
-} from "lucide-react";
+import french from '../../assets/french.png';
+import german from '../../assets/ger.png';
+import japan from '../../assets/Japan.png';
+import spain from '../../assets/spain.png';
+import kor from '../../assets/kor.png';
+import chin from '../../assets/chin.png';
 
 const languages = [
   {
-    flag: "🇫🇷",
     title: "French",
     level: "A1 - C2",
+    image:
+      french,
   },
 
   {
-    flag: "🇩🇪",
     title: "German",
     level: "A1 - C2",
+    image:
+    german,
   },
 
   {
-    flag: "🇪🇸",
     title: "Spanish",
     level: "A1 - C2",
+    image:
+      spain,
   },
 
   {
-    flag: "🇯🇵",
     title: "Japanese",
     level: "JLPT N5 - N1",
+    image:
+     japan,
   },
 
   {
-    flag: "🇰🇷",
     title: "Korean",
     level: "TOPIK I - II",
+    image:
+     kor,
   },
 
   {
-    flag: "🇨🇳",
     title: "Chinese",
     level: "HSK 1 - 6",
+    image:
+      chin,
   },
 ];
 
 const ForeignLanguageAcademy = () => {
   return (
-    <section
-      className="language-section"
-      id="languages"
-    >
-      <div className="language-glow"></div>
+    <section className="language-section">
 
       <div className="container">
 
@@ -63,149 +63,85 @@ const ForeignLanguageAcademy = () => {
           </span>
 
           <h2>
-            Learn Global Languages.
-            <br />
-            Unlock Global Opportunities.
+            Learn Global Languages
           </h2>
 
           <p>
-            Master internationally recognized
-            languages with structured learning,
-            expert trainers and certification
-            pathways designed for academic,
-            professional and global success.
+            International certifications,
+            study abroad opportunities and
+            global career pathways.
           </p>
 
         </div>
 
-        {/* Stats */}
+        <div className="language-layout">
 
-        <div className="language-stats">
+          <div className="languages-top">
 
-          <div className="stat">
-            <h3>7+</h3>
-            <span>Languages</span>
-          </div>
+            {languages.slice(0, 4).map((item, index) => (
+              <div
+                className="language-card"
+                key={index}
+              >
+                <img
+                  src={item.image}
+                  alt=""
+                />
 
-          <div className="stat">
-            <h3>5000+</h3>
-            <span>Learners</span>
-          </div>
+                <div className="language-overlay">
 
-          <div className="stat">
-            <h3>A1-C2</h3>
-            <span>Certification Pathway</span>
-          </div>
+                  <h4>
+                    {item.title}
+                  </h4>
 
-          <div className="stat">
-            <h3>100%</h3>
-            <span>Practical Learning</span>
-          </div>
+                  <span>
+                    {item.level}
+                  </span>
 
-        </div>
+                </div>
 
-        {/* Languages */}
-
-        <div className="languages-grid">
-
-          {languages.map((item, index) => (
-            <div
-              className="language-card"
-              key={index}
-            >
-
-              <div className="language-flag">
-                {item.flag}
               </div>
-
-              <h3>{item.title}</h3>
-
-              <span>{item.level}</span>
-
-              <button>
-                Explore Course
-              </button>
-
-            </div>
-          ))}
-
-        </div>
-
-        {/* Benefits */}
-
-        <div className="benefits-grid">
-
-          <div className="benefit-card">
-
-            <GraduationCap size={30} />
-
-            <h4>Study Abroad</h4>
-
-            <p>
-              Prepare for international
-              education and academic success.
-            </p>
+            ))}
 
           </div>
 
-          <div className="benefit-card">
+          {/* <div className="world-center">
 
-            <Briefcase size={30} />
+            <img
+              src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1600"
+              alt=""
+            />
 
-            <h4>Career Growth</h4>
+          </div> */}
 
-            <p>
-              Unlock global employment and
-              professional opportunities.
-            </p>
+          <div className="languages-bottom">
+
+            {languages.slice(4, 6).map((item, index) => (
+              <div
+                className="language-card"
+                key={index}
+              >
+                <img
+                  src={item.image}
+                  alt=""
+                />
+
+                <div className="language-overlay">
+
+                  <h4>
+                    {item.title}
+                  </h4>
+
+                  <span>
+                    {item.level}
+                  </span>
+
+                </div>
+
+              </div>
+            ))}
 
           </div>
-
-          <div className="benefit-card">
-
-            <Award size={30} />
-
-            <h4>Certification</h4>
-
-            <p>
-              Internationally recognized
-              language certifications.
-            </p>
-
-          </div>
-
-          <div className="benefit-card">
-
-            <Globe size={30} />
-
-            <h4>Global Communication</h4>
-
-            <p>
-              Connect confidently across
-              cultures and countries.
-            </p>
-
-          </div>
-
-        </div>
-
-        {/* CTA */}
-
-        <div className="language-cta">
-
-          <h3>
-            Ready To Learn A New Language?
-          </h3>
-
-          <p>
-            Begin your global learning journey
-            with ETA today.
-          </p>
-
-          <button>
-            Explore Courses
-            <ArrowRight size={18} />
-          </button>
 
         </div>
 

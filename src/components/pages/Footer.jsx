@@ -134,30 +134,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter */}
-        <div className="newsletter">
-          <div>
-            <h3>Stay Connected With ETA</h3>
-
-            <p>
-              Get updates about programs,
-              workshops and language courses.
-            </p>
-          </div>
-
-          <form>
-            <input
-              type="email"
-              placeholder="Enter your email"
-            />
-
-            <button type="submit">
-              Subscribe
-              <ArrowRight size={18} />
-            </button>
-          </form>
-        </div>
-
         {/* Bottom */}
         <div className="footer-bottom">
           <p>

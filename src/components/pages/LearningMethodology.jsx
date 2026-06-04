@@ -2,179 +2,137 @@ import "./LearningMethodology.css";
 
 import {
   Brain,
-  Users,
   Mic,
+  Users,
+  Globe,
   Rocket,
-  ClipboardCheck,
   Trophy,
 } from "lucide-react";
 
-const methods = [
+const pillars = [
   {
-    icon: <Brain size={34} />,
-    title: "Experiential Learning",
-    description:
-      "Learning through activities, experiences and practical engagement.",
+    icon: <Mic size={30} />,
+    title: "Communication",
   },
-
   {
-    icon: <Mic size={34} />,
-    title: "Communication Framework",
-    description:
-      "Structured speaking, listening and expression development.",
+    icon: <Users size={30} />,
+    title: "Leadership",
   },
-
   {
-    icon: <Users size={34} />,
-    title: "Leadership Development",
-    description:
-      "Building confidence, decision-making and collaboration skills.",
+    icon: <Brain size={30} />,
+    title: "Emotional Intelligence",
   },
-
   {
-    icon: <Rocket size={34} />,
-    title: "Real World Application",
-    description:
-      "Applying concepts in practical and everyday situations.",
+    icon: <Globe size={30} />,
+    title: "Global Exposure",
   },
-
   {
-    icon: <ClipboardCheck size={34} />,
-    title: "Continuous Assessment",
-    description:
-      "Regular evaluation and measurable growth tracking.",
+    icon: <Rocket size={30} />,
+    title: "Practical Learning",
   },
-
   {
-    icon: <Trophy size={34} />,
-    title: "Transformation Outcomes",
-    description:
-      "Confidence, leadership and future-ready skill development.",
+    icon: <Trophy size={30} />,
+    title: "Transformation",
   },
 ];
 
 const LearningMethodology = () => {
   return (
-    <section className="methodology-section">
-
-      <div className="methodology-glow"></div>
+    <section className="eta-methodology">
 
       <div className="container">
 
-        <div className="methodology-header">
+        <div className="eta-methodology__header">
 
-          <span className="section-tag">
-            Learning Methodology
+          <span className="eta-methodology__tag">
+            ETA Transformation Framework
           </span>
 
           <h2>
-            How ETA Creates
-            Meaningful Transformation
+            Learning That Creates
+            Lasting Transformation
           </h2>
 
           <p>
-            Our learning framework combines
-            experiential learning, communication
-            mastery, leadership development and
-            real-world application to create
-            measurable personal growth.
+            Our methodology combines experiential
+            learning, leadership development,
+            communication mastery and practical
+            implementation to create measurable impact.
           </p>
 
         </div>
 
-        {/* Process Timeline */}
+        {/* Journey */}
 
-        <div className="process-wrapper">
+        <div className="eta-methodology__journey">
 
-          <div className="process-step">
-            <span>01</span>
-            <h4>Learn</h4>
-          </div>
+          <div>Discover</div>
+          <span></span>
 
-          <div className="process-line"></div>
+          <div>Experience</div>
+          <span></span>
 
-          <div className="process-step">
-            <span>02</span>
-            <h4>Practice</h4>
-          </div>
+          <div>Practice</div>
+          <span></span>
 
-          <div className="process-line"></div>
+          <div>Lead</div>
+          <span></span>
 
-          <div className="process-step">
-            <span>03</span>
-            <h4>Apply</h4>
-          </div>
-
-          <div className="process-line"></div>
-
-          <div className="process-step">
-            <span>04</span>
-            <h4>Transform</h4>
-          </div>
+          <div>Transform</div>
 
         </div>
 
-        {/* Method Cards */}
+        {/* Transformation Wheel */}
 
-        <div className="methodology-grid">
+        <div className="eta-methodology__ecosystem">
 
-          {methods.map((item, index) => (
+          <div className="eta-methodology__center">
+
+            <h3>
+              ETA
+            </h3>
+
+            <p>
+              Transformation
+              Journey
+            </p>
+
+          </div>
+
+          {pillars.map((item, index) => (
             <div
-              className="method-card"
               key={index}
+              className={`eta-methodology__pillar eta-methodology__pillar-${index + 1}`}
             >
-
-              <div className="method-icon">
-                {item.icon}
-              </div>
-
-              <h3>
-                {item.title}
-              </h3>
-
-              <p>
-                {item.description}
-              </p>
-
+              {item.icon}
+              <span>{item.title}</span>
             </div>
           ))}
 
         </div>
 
-        {/* Outcomes */}
+        {/* Impact Stats */}
 
-        <div className="outcomes-section">
+        <div className="eta-methodology__stats">
 
-          <h3>
-            Outcomes Students Experience
-          </h3>
+          <div className="eta-methodology__stat">
+            <h3>1000+</h3>
+            <p>Learners Impacted</p>
+          </div>
 
-          <div className="outcomes-grid">
+          <div className="eta-methodology__stat">
+            <h3>50+</h3>
+            <p>Workshops Conducted</p>
+          </div>
 
-            <div className="outcome-card">
-              Confidence
-            </div>
+          <div className="eta-methodology__stat">
+            <h3>7+</h3>
+            <p>Languages Offered</p>
+          </div>
 
-            <div className="outcome-card">
-              Communication
-            </div>
-
-            <div className="outcome-card">
-              Leadership
-            </div>
-
-            <div className="outcome-card">
-              Emotional Intelligence
-            </div>
-
-            <div className="outcome-card">
-              Collaboration
-            </div>
-
-            <div className="outcome-card">
-              Future Readiness
-            </div>
-
+          <div className="eta-methodology__stat">
+            <h3>100%</h3>
+            <p>Experiential Learning</p>
           </div>
 
         </div>

@@ -1,285 +1,315 @@
 .certification-section {
   position: relative;
-  padding: 140px 0;
-  background: #f7f9ff;
+
+  padding: 100px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f8fbff
+    );
+
   overflow: hidden;
 }
+
+/* Glow */
 
 .certification-glow {
   position: absolute;
 
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
 
-  border-radius: 50%;
+  top: -200px;
+  left: -200px;
 
   background:
-    rgba(30, 64, 255, .08);
+    radial-gradient(
+      circle,
+      rgba(0,194,255,.12),
+      transparent 70%
+    );
 
-  filter: blur(160px);
-
-  right: -150px;
-  top: -150px;
+  filter: blur(120px);
 }
 
-.certification-header {
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-  margin-bottom: 90px;
+.certification-section .container {
+  position: relative;
+  z-index: 2;
 }
 
-.certification-header h2 {
+/* Layout */
+
+.certification-wrapper {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 60px;
+
+  align-items: center;
+}
+
+/* Left */
+
+.cert-left {
+  position: relative;
+
+  height: 500px;
+
+  border-radius: 32px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 25px 60px
+    rgba(15,23,42,.08);
+}
+
+.cert-left img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: 1s ease;
+}
+
+.cert-left:hover img {
+  transform: scale(1.08);
+}
+
+.cert-left::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.75),
+      rgba(0,0,0,.1)
+    );
+}
+
+.map-content {
+  position: absolute;
+
+  left: 35px;
+  bottom: 35px;
+
+  z-index: 2;
+
+  color: white;
+}
+
+.map-content span {
+  display: inline-flex;
+
+  padding: 10px 18px;
+
+  border-radius: 50px;
+
+  background:
+    rgba(255,255,255,.12);
+
+  backdrop-filter: blur(20px);
+}
+
+.map-content h3 {
+  margin-top: 16px;
+
+  font-size: 2.5rem;
+
+  line-height: 1.1;
+}
+
+/* Right */
+
+.cert-right h2 {
+  margin-top: 20px;
+
   font-size:
-    clamp(2.8rem, 5vw, 5rem);
+    clamp(3rem,5vw,4.5rem);
 
   line-height: 1;
 
   color: #111827;
-
-  margin: 25px 0;
 }
 
-.certification-header p {
-  color: #6B7280;
-  line-height: 1.9;
+.cert-right p {
+  margin-top: 20px;
+
+  color: #6b7280;
+
+  line-height: 1.8;
 }
 
-.roadmap-wrapper {
-  position: relative;
+/* Pathway */
 
-  display: grid;
-  grid-template-columns:
-    repeat(6, 1fr);
+.pathway {
+  display: flex;
 
-  gap: 20px;
+  align-items: center;
 
-  margin-bottom: 90px;
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  margin-top: 40px;
 }
 
-.roadmap-line {
-  position: absolute;
-
-  top: 55px;
-  left: 10%;
-
-  width: 80%;
-  height: 4px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #0A0A8F,
-      #1E40FF
-    );
-
-  z-index: 1;
-}
-
-.roadmap-card {
-  position: relative;
-  z-index: 2;
-
-  text-align: center;
-}
-
-.level-circle {
-  width: 90px;
-  height: 90px;
-
-  margin: auto;
-  margin-bottom: 25px;
+.level {
+  width: 70px;
+  height: 70px;
 
   border-radius: 50%;
-
-  background:
-    linear-gradient(
-      135deg,
-      #0A0A8F,
-      #1E40FF
-    );
-
-  color: white;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 24px;
   font-weight: 700;
 
-  box-shadow:
-    0 20px 40px rgba(30,64,255,.25);
-}
+  background: white;
 
-.roadmap-card h3 {
-  margin-bottom: 12px;
   color: #111827;
-}
-
-.roadmap-card p {
-  color: #6B7280;
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-.benefits-strip {
-  display: grid;
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap: 20px;
-
-  margin-bottom: 70px;
-}
-
-.benefit-item {
-  background: white;
-
-  border-radius: 20px;
-
-  padding: 25px;
-
-  display: flex;
-  align-items: center;
-  gap: 12px;
 
   box-shadow:
-    0 10px 30px rgba(15,23,42,.05);
+    0 15px 30px
+    rgba(15,23,42,.08);
+
+  transition: .3s;
 }
 
-.benefit-item svg {
-  color: #0A0A8F;
-}
+.level:hover {
+  transform:
+    translateY(-5px);
 
-.certification-stats {
-  display: grid;
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap: 20px;
-
-  margin-bottom: 70px;
-}
-
-.stat-box {
-  background: white;
-
-  border-radius: 24px;
-
-  padding: 35px;
-
-  text-align: center;
-
-  box-shadow:
-    0 10px 30px rgba(15,23,42,.05);
-}
-
-.stat-box h3 {
-  color: #0A0A8F;
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.stat-box span {
-  color: #6B7280;
-}
-
-.assessment-card {
   background:
     linear-gradient(
       135deg,
-      #0A0A8F,
-      #1E40FF
+      #00c2ff,
+      #7c4dff
     );
 
   color: white;
-
-  border-radius: 32px;
-
-  padding: 70px;
-
-  text-align: center;
 }
 
-.assessment-card h3 {
-  font-size: 42px;
-  margin-bottom: 15px;
+.pathway span {
+  font-size: 1.5rem;
+
+  color: #7c4dff;
 }
 
-.assessment-card p {
-  max-width: 700px;
-  margin: auto;
-  margin-bottom: 30px;
+/* Cambridge */
 
-  opacity: .9;
+.cambridge-box {
+  margin-top: 40px;
 
-  line-height: 1.8;
+  padding: 28px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00c2ff10,
+      #7c4dff10
+    );
+
+  border:
+    1px solid
+    rgba(124,77,255,.15);
 }
 
-.assessment-card button {
-  height: 58px;
+.cambridge-box h4 {
+  color: #111827;
+}
 
-  padding: 0 30px;
+.cambridge-box p {
+  margin-top: 8px;
+}
 
-  border: none;
+/* Language Strip */
 
-  border-radius: 14px;
+.language-strip {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 16px;
+
+  margin-top: 60px;
+}
+
+.language-pill {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 22px;
+
+  border-radius: 50px;
 
   background: white;
 
-  color: #0A0A8F;
+  box-shadow:
+    0 10px 30px
+    rgba(15,23,42,.06);
 
   font-weight: 600;
 
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  cursor: pointer;
+  transition: .3s;
 }
 
-@media(max-width:1200px){
+.language-pill:hover {
+  transform:
+    translateY(-4px);
+}
 
-  .roadmap-wrapper{
-    grid-template-columns:
-    repeat(3,1fr);
+.language-pill span {
+  font-size: 1.4rem;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+
+  .certification-wrapper {
+    grid-template-columns: 1fr;
   }
 
-  .roadmap-line{
-    display:none;
+  .cert-left {
+    height: 350px;
+  }
+
+  .pathway {
+    justify-content: center;
   }
 
 }
 
-@media(max-width:992px){
+@media (max-width: 768px) {
 
-  .benefits-strip,
-  .certification-stats{
-    grid-template-columns:
-    repeat(2,1fr);
+  .cert-right h2 {
+    font-size: 2.5rem;
   }
 
-}
-
-@media(max-width:576px){
-
-  .certification-section{
-    padding:100px 0;
+  .level {
+    width: 60px;
+    height: 60px;
   }
 
-  .roadmap-wrapper,
-  .benefits-strip,
-  .certification-stats{
-    grid-template-columns:1fr;
-  }
-
-  .assessment-card{
-    padding:40px 25px;
-  }
-
-  .assessment-card h3{
-    font-size:30px;
+  .map-content h3 {
+    font-size: 2rem;
   }
 
 }

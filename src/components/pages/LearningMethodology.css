@@ -1,220 +1,268 @@
-.methodology-section {
-  position: relative;
-  padding: 140px 0;
-  background: #f7f9ff;
-  overflow: hidden;
+.eta-methodology {
+  padding: 120px 0;
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #f8faff
+  );
 }
 
-.methodology-glow {
-  position: absolute;
+/* Header */
 
-  width: 600px;
-  height: 600px;
-
-  border-radius: 50%;
-
-  background:
-    rgba(30,64,255,.08);
-
-  filter: blur(160px);
-
-  right: -150px;
-  top: -150px;
-}
-
-.methodology-header {
-  max-width: 900px;
-  margin: auto;
+.eta-methodology__header {
+  max-width: 850px;
   text-align: center;
-  margin-bottom: 80px;
-}
-
-.methodology-header h2 {
-  font-size:
-    clamp(2.8rem,5vw,5rem);
-
-  line-height: 1;
-  color: #111827;
-
-  margin: 25px 0;
-}
-
-.methodology-header p {
-  color: #6B7280;
-  line-height: 1.9;
-}
-
-/* Timeline */
-
-.process-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 100px;
-}
-
-.process-step {
-  text-align: center;
-}
-
-.process-step span {
-  width: 80px;
-  height: 80px;
-
-  border-radius: 50%;
-
-  background:
-    linear-gradient(
-      135deg,
-      #0A0A8F,
-      #1E40FF
-    );
-
-  color: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   margin: auto;
-  margin-bottom: 15px;
+}
+
+.eta-methodology__tag {
+  display: inline-block;
+
+  padding: 8px 18px;
+
+  border-radius: 999px;
+
+  background: rgba(11,15,158,.08);
+
+  color: #0B0F9E;
 
   font-weight: 700;
 }
 
-.process-line {
-  width: 120px;
-  height: 4px;
+.eta-methodology__header h2 {
+  margin-top: 20px;
 
-  background:
-    linear-gradient(
-      90deg,
-      #0A0A8F,
-      #1E40FF
-    );
+  font-size: clamp(2.5rem,5vw,4rem);
 
-  margin: 0 20px;
+  line-height: 1.1;
 }
 
-/* Cards */
+.eta-methodology__header p {
+  margin-top: 18px;
 
-.methodology-grid {
+  color: #6b7280;
+
+  line-height: 1.8;
+}
+
+/* Journey */
+
+.eta-methodology__journey {
+  margin-top: 70px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.eta-methodology__journey div {
+  background: white;
+
+  padding: 16px 28px;
+
+  border-radius: 999px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.05);
+}
+
+.eta-methodology__journey span {
+  width: 40px;
+  height: 2px;
+
+  background: #0B0F9E;
+}
+
+/* Ecosystem */
+
+.eta-methodology__ecosystem {
+  position: relative;
+
+  width: 700px;
+  height: 700px;
+
+  margin: 100px auto;
+}
+
+.eta-methodology__center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #0B0F9E,
+    #2437ff
+  );
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  box-shadow:
+    0 25px 50px rgba(11,15,158,.25);
+}
+
+.eta-methodology__center h3 {
+  font-size: 2rem;
+}
+
+.eta-methodology__center p {
+  margin-top: 8px;
+}
+
+.eta-methodology__pillar {
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  background: white;
+
+  border-radius: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.06);
+}
+
+.eta-methodology__pillar svg {
+  color: #0B0F9E;
+}
+
+/* Positions */
+
+.eta-methodology__pillar-1 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.eta-methodology__pillar-2 {
+  right: 0;
+  top: 160px;
+}
+
+.eta-methodology__pillar-3 {
+  right: 0;
+  bottom: 160px;
+}
+
+.eta-methodology__pillar-4 {
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.eta-methodology__pillar-5 {
+  left: 0;
+  bottom: 160px;
+}
+
+.eta-methodology__pillar-6 {
+  left: 0;
+  top: 160px;
+}
+
+/* Stats */
+
+.eta-methodology__stats {
   display: grid;
-  grid-template-columns:
-    repeat(3,1fr);
 
-  gap: 25px;
+  grid-template-columns: repeat(4,1fr);
 
-  margin-bottom: 100px;
+  gap: 24px;
 }
 
-.method-card {
+.eta-methodology__stat {
   background: white;
 
   padding: 35px;
 
-  border-radius: 28px;
+  border-radius: 24px;
 
   text-align: center;
 
   box-shadow:
-    0 10px 30px rgba(15,23,42,.05);
-
-  transition: .4s;
+    0 15px 35px rgba(0,0,0,.05);
 }
 
-.method-card:hover {
-  transform: translateY(-8px);
+.eta-methodology__stat h3 {
+  color: #0B0F9E;
+  font-size: 2.2rem;
 }
 
-.method-icon {
-  width: 75px;
-  height: 75px;
-
-  border-radius: 20px;
-
-  background: #eef4ff;
-
-  color: #0A0A8F;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: auto;
-  margin-bottom: 20px;
+.eta-methodology__stat p {
+  color: #6b7280;
 }
 
-.method-card h3 {
-  margin-bottom: 15px;
-}
+/* Mobile */
 
-.method-card p {
-  color: #6B7280;
-  line-height: 1.8;
-}
+@media (max-width: 992px) {
 
-/* Outcomes */
+  .eta-methodology__ecosystem {
+    width: 100%;
+    height: auto;
 
-.outcomes-section h3 {
-  text-align: center;
-  font-size: 42px;
-  margin-bottom: 40px;
-}
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
 
-.outcomes-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-}
-
-.outcome-card {
-  padding: 16px 26px;
-
-  background: white;
-
-  border-radius: 999px;
-
-  color: #0A0A8F;
-
-  font-weight: 600;
-
-  box-shadow:
-    0 10px 20px rgba(15,23,42,.05);
-}
-
-@media(max-width:992px){
-
-  .methodology-grid{
-    grid-template-columns:
-    repeat(2,1fr);
+    gap: 20px;
   }
 
-  .process-wrapper{
-    flex-wrap:wrap;
-    gap:20px;
+  .eta-methodology__center,
+  .eta-methodology__pillar {
+    position: static;
+    transform: none;
+
+    width: auto;
+    height: auto;
+
+    padding: 30px;
   }
 
-  .process-line{
-    display:none;
+  .eta-methodology__stats {
+    grid-template-columns: repeat(2,1fr);
   }
-
 }
 
-@media(max-width:576px){
+@media (max-width: 768px) {
 
-  .methodology-section{
-    padding:100px 0;
+  .eta-methodology {
+    padding: 80px 0;
   }
 
-  .methodology-grid{
-    grid-template-columns:1fr;
+  .eta-methodology__stats {
+    grid-template-columns: 1fr;
   }
 
-  .outcomes-section h3{
-    font-size:30px;
+  .eta-methodology__ecosystem {
+    grid-template-columns: 1fr;
   }
-
 }

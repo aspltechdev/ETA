@@ -1,186 +1,55 @@
-// import React, { useEffect, useState } from "react";
+
+
+// import { useEffect, useState } from "react";
+// import {
+//   ArrowRight,
+//   PlayCircle,
+//   GraduationCap,
+//   Globe,
+//   Users,
+//   Trophy,
+// } from "lucide-react";
+
 // import "./HeroSection.css";
 
 // const slides = [
 //   {
-//     badge: "New",
-//     title: "Learn, Live and Speak a New Language.",
+//     tag: "Endless Transformation Academy",
+//     title: "Transforming People.\nTransforming Lives.",
 //     description:
-//       "Built with individual learners in mind, you'll learn with live classes and tests that are built to make sure every student excels in language learning.",
+//       "Empowering students, professionals and institutions through communication, leadership, emotional intelligence and global language learning.",
 //     image:
-//       "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=800&q=80",
+//       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&q=80",
 //   },
 
 //   {
-//     badge: "Trending",
-//     title: "Master Global Languages Faster.",
+//     tag: "School Transformation",
+//     title:
+//       "Creating Confident Communicators & Future Leaders.",
 //     description:
-//       "Interactive sessions, expert mentors and practical speaking exercises designed for real-world communication.",
+//       "Structured communication, public speaking and leadership programs for schools and educational institutions.",
 //     image:
-//       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+//       "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80",
 //   },
 
 //   {
-//     badge: "Popular",
-//     title: "Unlock New Career Opportunities.",
+//     tag: "Foreign Language Academy",
+//     title:
+//       "Learn Languages.\nUnlock Global Opportunities.",
 //     description:
-//       "Learn international languages and connect with opportunities around the world.",
+//       "French, German, Spanish, Japanese, Korean and Chinese certification programs for global careers.",
 //     image:
-//       "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=80",
+//       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80",
 //   },
 
 //   {
-//     badge: "Featured",
-//     title: "Become Fluent With Confidence.",
+//     tag: "Leadership Development",
+//     title:
+//       "Confidence Is The Skill Of The Future.",
 //     description:
-//       "Personalized learning journeys that help you speak naturally and confidently.",
+//       "Leadership, emotional intelligence and personality development programs designed for lifelong success.",
 //     image:
-//       "https://images.unsplash.com/photo-1500648767791-00dcc994a43?w=800&q=80",
-//   },
-// ];
-
-// const HeroSection = () => {
-//   const [current, setCurrent] = useState(0);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCurrent((prev) => (prev + 1) % slides.length);
-//     }, 5000);
-
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   return (
-//     <section className="hero-wrapper">
-//       <div className="hero-card">
-//         <div className="hero-content">
-//           <span className="hero-badge">
-//             {slides[current].badge}
-//             <small> Get started today</small>
-//           </span>
-
-//           <h1>{slides[current].title}</h1>
-
-//           <p>{slides[current].description}</p>
-
-//           <button className="hero-btn">
-//             Get Started
-//           </button>
-//         </div>
-
-//         <div className="hero-image-section">
-//           <img
-//             src={slides[current].image}
-//             alt=""
-//             className="hero-image"
-//           />
-
-//           <div className="floating-card students">
-//             <h4>400k+ Students</h4>
-//             <p>Learn Daily</p>
-//           </div>
-
-//           <div className="floating-card platform">
-//             <h4>Biggest Language</h4>
-//             <p>Learning Platform</p>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="language-card">
-//         <h3>Which Language Do You Want To Learn Next?</h3>
-
-//         <div className="languages">
-//           <div className="language">
-//             🇫🇷
-//             <span>French</span>
-//           </div>
-
-//           <div className="language">
-//             🇨🇳
-//             <span>Chinese</span>
-//           </div>
-
-//           <div className="language">
-//             🇮🇹
-//             <span>Italian</span>
-//           </div>
-
-//           <div className="language">
-//             🇩🇪
-//             <span>German</span>
-//           </div>
-
-//           <div className="language">
-//             🇳🇱
-//             <span>Dutch</span>
-//           </div>
-
-//           <div className="language">
-//             🇪🇸
-//             <span>Spanish</span>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default HeroSection;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useEffect, useState } from "react";
-// import "./HeroSection.css";
-
-// const slides = [
-//   {
-//     badge: "Transforming Lives",
-//     title: "Transforming People. Inspiring Confidence.",
-//     description:
-//       "Communication, Leadership, Emotional Intelligence and Future Readiness programs designed to create confident communicators and future-ready leaders.",
-//     image:
-//       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80",
-//   },
-
-//   {
-//     badge: "School Programs",
-//     title: "Building Confident Students & Future Leaders.",
-//     description:
-//       "Experiential learning, public speaking, leadership development and emotional intelligence programs for schools and institutions.",
-//     image:
-//       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
-//   },
-
-//   {
-//     badge: "Global Languages",
-//     title: "Master Global Languages. Unlock Global Opportunities.",
-//     description:
-//       "French, German, Spanish, Japanese, Korean and Chinese certification programs for students and professionals.",
-//     image:
-//       "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
-//   },
-
-//   {
-//     badge: "ETA Academy",
-//     title: "Where Skills Meet Purpose.",
-//     description:
-//       "Communication mastery, leadership excellence, behavioral transformation and internationally recognized language certifications.",
-//     image:
-//       "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1200&q=80",
+//       "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1600&q=80",
 //   },
 // ];
 
@@ -188,27 +57,43 @@
 //   const [current, setCurrent] = useState(0);
 
 //   useEffect(() => {
-//     const timer = setInterval(() => {
-//       setCurrent((prev) => (prev + 1) % slides.length);
+//     const interval = setInterval(() => {
+//       setCurrent(
+//         (prev) => (prev + 1) % slides.length
+//       );
 //     }, 6000);
 
-//     return () => clearInterval(timer);
+//     return () => clearInterval(interval);
 //   }, []);
 
 //   return (
-//     <section className="hero">
+//     <section className="hero-section">
 
-//       <div className="hero-grid"></div>
+//       {/* Background Image */}
+//       <div
+//         className="hero-bg"
+//         style={{
+//           backgroundImage: `url(${slides[current].image})`,
+//         }}
+//       />
 
+//       {/* Overlay */}
+//       <div className="hero-overlay" />
+
+//       {/* Gradient Effects */}
 //       <div className="hero-glow hero-glow-1"></div>
 //       <div className="hero-glow hero-glow-2"></div>
 
-//       <div className="hero-container">
+//       {/* Grid */}
+//       <div className="hero-grid"></div>
 
+//       <div className="container hero-content">
+
+//         {/* Left */}
 //         <div className="hero-left">
 
-//           <span className="hero-badge">
-//             {slides[current].badge}
+//           <span className="hero-tag">
+//             ✨ {slides[current].tag}
 //           </span>
 
 //           <h1 key={current}>
@@ -219,74 +104,89 @@
 //             {slides[current].description}
 //           </p>
 
-//           <div className="hero-actions">
+//           <div className="hero-buttons">
 
-//             <button className="primary-btn">
-//               Explore Programs
+//             <button className="btn-primary">
+//               Book Consultation
+//               <ArrowRight size={18} />
 //             </button>
 
-//             <button className="secondary-btn">
-//               Book Consultation
+//             <button className="btn-secondary">
+//               <PlayCircle size={18} />
+//               Watch Programs
 //             </button>
 
 //           </div>
 
-//           <div className="hero-tags">
+//           <div className="hero-services">
 
 //             <span>Communication</span>
 
 //             <span>Leadership</span>
 
-//             <span>Languages</span>
+//             <span>Foreign Languages</span>
 
-//             <span>Future Readiness</span>
+//             <span>Public Speaking</span>
+
+//             <span>Emotional Intelligence</span>
 
 //           </div>
 
 //         </div>
 
+//         {/* Right */}
 //         <div className="hero-right">
 
-//           <img
-//             src={slides[current].image}
-//             alt=""
-//             className="hero-image"
-//           />
-
-//           <div className="floating-card floating-1">
-//             <h4>10K+</h4>
-//             <p>Students Impacted</p>
+//           <div className="hero-card card-one">
+//             <GraduationCap />
+//             <div>
+//               <h4>10K+</h4>
+//               <p>Students Impacted</p>
+//             </div>
 //           </div>
 
-//           <div className="floating-card floating-2">
-//             <h4>50+</h4>
-//             <p>Institution Partners</p>
+//           <div className="hero-card card-two">
+//             <Users />
+//             <div>
+//               <h4>50+</h4>
+//               <p>Institution Partners</p>
+//             </div>
+//           </div>
+
+//           <div className="hero-card card-three">
+//             <Globe />
+//             <div>
+//               <h4>7+</h4>
+//               <p>Global Languages</p>
+//             </div>
 //           </div>
 
 //         </div>
 
 //       </div>
 
-//       <div className="achievement-bar">
+//       {/* Bottom Trust Bar */}
 
-//         <div className="achievement">
-//           <h3>100+</h3>
-//           <span>Programs Delivered</span>
+//       <div className="trust-bar">
+
+//         <div className="trust-item">
+//           <Trophy size={20} />
+//           <span>100+ Programs Delivered</span>
 //         </div>
 
-//         <div className="achievement">
-//           <h3>50+</h3>
-//           <span>School Partners</span>
+//         <div className="trust-item">
+//           <Users size={20} />
+//           <span>50+ School Partners</span>
 //         </div>
 
-//         <div className="achievement">
-//           <h3>7+</h3>
-//           <span>Global Languages</span>
+//         <div className="trust-item">
+//           <Globe size={20} />
+//           <span>International Certifications</span>
 //         </div>
 
-//         <div className="achievement">
-//           <h3>95%</h3>
-//           <span>Success Rate</span>
+//         <div className="trust-item">
+//           <GraduationCap size={20} />
+//           <span>Experiential Learning</span>
 //         </div>
 
 //       </div>
@@ -296,56 +196,478 @@
 // }
 
 
+
+
+
+// import { useEffect, useState } from "react";
+// import {
+//   ArrowRight,
+//   PlayCircle,
+//   GraduationCap,
+//   Globe,
+//   Users,
+//   Trophy,
+// } from "lucide-react";
+
+// import "./HeroSection.css";
+
+// // const slides = [
+// //   {
+// //     tag: "Endless Transformation Academy",
+// //     title: "Transforming People.",
+// //     highlight: "Transforming Lives.",
+// //     description:
+// //       "Empowering students, professionals and institutions through communication, leadership, emotional intelligence and global language learning.",
+// //     image:
+// //       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80",
+// //   },
+
+// //   {
+// //     tag: "School Transformation",
+// //     title: "Creating Confident",
+// //     highlight: "Future Leaders.",
+// //     description:
+// //       "Structured communication, public speaking and leadership programs for schools and institutions.",
+// //     image:
+// //       "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1400&q=80",
+// //   },
+
+// //   {
+// //     tag: "Foreign Language Academy",
+// //     title: "Learn Languages.",
+// //     highlight: "Unlock Opportunities.",
+// //     description:
+// //       "French, German, Spanish, Japanese, Korean and Chinese certification programs.",
+// //     image:
+// //       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1400&q=80",
+// //   },
+
+// //   {
+// //     tag: "Leadership Development",
+// //     title: "Confidence Is",
+// //     highlight: "The Future Skill.",
+// //     description:
+// //       "Leadership, emotional intelligence and personality development programs.",
+// //     image:
+// //       "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1400&q=80",
+// //   },
+// // ];
+// const slides = [
+//   {
+//     tag: "Endless Transformation Academy",
+//     title: "Transforming People.",
+//     highlight: "Transforming Lives.",
+//     description:
+//       "Empowering students, professionals, educators, and institutions through communication excellence, leadership mastery, and life-changing transformation programs.",
+//     image:
+//       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&q=80",
+//   },
+
+//   {
+//     tag: "School Transformation Programs",
+//     title: "Building Confident",
+//     highlight: "Future Leaders.",
+//     description:
+//       "Helping students develop communication, public speaking, leadership, emotional intelligence, and real-world confidence from an early age.",
+//     image:
+//       "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80",
+//   },
+
+//   {
+//     tag: "Global Language Academy",
+//     title: "Speak Beyond",
+//     highlight: "Borders.",
+//     description:
+//       "Master French, German, Spanish, Japanese, Korean, and Chinese with globally recognized certification programs that unlock international opportunities.",
+//     image:
+//       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80",
+//   },
+
+//   {
+//     tag: "Leadership & Life Skills",
+//     title: "Confidence Creates",
+//     highlight: "Extraordinary Futures.",
+//     description:
+//       "Develop leadership, personality, emotional intelligence, teamwork, and professional excellence to thrive in an ever-changing world.",
+//     image:
+//       "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1600&q=80",
+//   },
+
+//   {
+//     tag: "Corporate Training Solutions",
+//     title: "Transform Teams.",
+//     highlight: "Elevate Performance.",
+//     description:
+//       "Customized corporate learning programs focused on communication, leadership, collaboration, productivity, and workplace excellence.",
+//     image:
+//       "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80",
+//   },
+// ];
+// export default function HeroSection() {
+//   const [current, setCurrent] = useState(0);
+
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCurrent(
+//         (prev) => (prev + 1) % slides.length
+//       );
+//     }, 6000);
+
+//     return () => clearInterval(timer);
+//   }, []);
+
+//   return (
+//     // <section className="hero">
+
+//     //   <div className="hero-aurora hero-aurora-1"></div>
+//     //   <div className="hero-aurora hero-aurora-2"></div>
+//     //   <div className="hero-grid"></div>
+
+//     //   <div className="container hero-wrapper">
+
+//     //     <div className="hero-content">
+
+//     //       <span className="hero-badge">
+//     //         ✨ {slides[current].tag}
+//     //       </span>
+
+//     //       <h1 key={current}>
+//     //         {slides[current].title}
+//     //         <span>{slides[current].highlight}</span>
+//     //       </h1>
+
+//     //       <p>{slides[current].description}</p>
+
+//     //       <div className="hero-buttons">
+
+//     //         <button className="hero-btn primary">
+//     //           Book Consultation
+//     //           <ArrowRight size={18} />
+//     //         </button>
+
+//     //         <button className="hero-btn secondary">
+//     //           <PlayCircle size={18} />
+//     //           Watch Programs
+//     //         </button>
+
+//     //       </div>
+
+//     //       <div className="hero-metrics">
+
+//     //         <div>
+//     //           <h3>10K+</h3>
+//     //           <span>Students</span>
+//     //         </div>
+
+//     //         <div>
+//     //           <h3>50+</h3>
+//     //           <span>Schools</span>
+//     //         </div>
+
+//     //         <div>
+//     //           <h3>7+</h3>
+//     //           <span>Languages</span>
+//     //         </div>
+
+//     //       </div>
+
+//     //     </div>
+
+//     //     <div className="hero-visual">
+
+//     //       <div className="hero-image-card">
+
+//     //         <img
+//     //           src={slides[current].image}
+//     //           alt=""
+//     //         />
+
+//     //       </div>
+
+//     //       <div className="floating-card card-one">
+//     //         <GraduationCap size={20} />
+//     //         <div>
+//     //           <strong>10K+</strong>
+//     //           <span>Learners</span>
+//     //         </div>
+//     //       </div>
+
+//     //       <div className="floating-card card-two">
+//     //         <Users size={20} />
+//     //         <div>
+//     //           <strong>50+</strong>
+//     //           <span>Schools</span>
+//     //         </div>
+//     //       </div>
+
+//     //       <div className="floating-card card-three">
+//     //         <Globe size={20} />
+//     //         <div>
+//     //           <strong>7+</strong>
+//     //           <span>Languages</span>
+//     //         </div>
+//     //       </div>
+
+//     //     </div>
+
+//     //   </div>
+
+//     //   <div className="hero-slider-indicator">
+
+//     //     {slides.map((_, index) => (
+//     //       <span
+//     //         key={index}
+//     //         className={
+//     //           current === index
+//     //             ? "active"
+//     //             : ""
+//     //         }
+//     //       />
+//     //     ))}
+
+//     //   </div>
+
+//     //   <div className="hero-marquee">
+
+//     //     <div className="hero-track">
+//     //       Communication • Leadership • Public Speaking •
+//     //       Emotional Intelligence • Foreign Languages •
+//     //       Personality Development • Communication •
+//     //       Leadership • Public Speaking • Emotional Intelligence •
+//     //     </div>
+
+//     //   </div>
+
+//     //   <div className="hero-bottom-bar">
+
+//     //     <div>
+//     //       <Trophy />
+//     //       <span>100+ Programs Delivered</span>
+//     //     </div>
+
+//     //     <div>
+//     //       <Users />
+//     //       <span>50+ Institution Partners</span>
+//     //     </div>
+
+//     //     <div>
+//     //       <Globe />
+//     //       <span>Global Certifications</span>
+//     //     </div>
+
+//     //   </div>
+
+//     // </section>
+
+//     <section className="hero">
+
+//   <div className="hero-bg-slider">
+//     {slides.map((slide, index) => (
+//       <div
+//         key={index}
+//         className={`hero-bg ${
+//           current === index ? "active" : ""
+//         }`}
+//         style={{
+//           backgroundImage: `url(${slide.image})`,
+//         }}
+//       />
+//     ))}
+//   </div>
+
+//   <div className="hero-overlay"></div>
+
+//   <div className="container hero-wrapper">
+
+//     <div className="hero-content">
+
+//       <span className="hero-badge">
+//         ✨ {slides[current].tag}
+//       </span>
+
+//       <h1>
+//         {slides[current].title}
+//         <span>{slides[current].highlight}</span>
+//       </h1>
+
+//       <p>
+//         {slides[current].description}
+//       </p>
+
+//       <div className="hero-buttons">
+
+//         <button className="hero-btn primary">
+//           Book Consultation
+//           <ArrowRight size={18} />
+//         </button>
+
+//         <button className="hero-btn secondary">
+//           <PlayCircle size={18} />
+//           Watch Programs
+//         </button>
+
+//       </div>
+
+//       <div className="hero-metrics">
+
+//         <div>
+//           <h3>10K+</h3>
+//           <span>Students</span>
+//         </div>
+
+//         <div>
+//           <h3>50+</h3>
+//           <span>Schools</span>
+//         </div>
+
+//         <div>
+//           <h3>7+</h3>
+//           <span>Languages</span>
+//         </div>
+
+//       </div>
+
+//     </div>
+
+//     <div className="hero-visual">
+
+//       <div className="main-image-card">
+//         <img
+//           src={slides[current].image}
+//           alt=""
+//         />
+
+//         <div className="image-caption">
+//           Leadership & Transformation
+//         </div>
+//       </div>
+
+//       <div className="mini-image mini-1">
+//         <img
+//           src={slides[1].image}
+//           alt=""
+//         />
+//       </div>
+
+//       <div className="mini-image mini-2">
+//         <img
+//           src={slides[2].image}
+//           alt=""
+//         />
+//       </div>
+
+//       <div className="glass-card">
+//         <GraduationCap size={20} />
+
+//         <div>
+//           <strong>10,000+</strong>
+//           <span>Learners Empowered</span>
+//         </div>
+//       </div>
+
+//     </div>
+
+//   </div>
+
+// </section>
+//   );
+// }
+
+
 import { useEffect, useState } from "react";
+
 import {
   ArrowRight,
   PlayCircle,
   GraduationCap,
-  Globe,
-  Users,
-  Trophy,
 } from "lucide-react";
 
-import "./HeroSection.css";
+import "./HeroSection.css"; 
+
+import hero1 from "../../assets/hero/hero1.jpg";
+import hero2 from "../../assets/hero/hero2.jpg";
+import hero3 from "../../assets/hero/hero3.jpg";
+import hero4 from "../../assets/hero/hero4.jpg";
+
+import h1 from "../../assets/hero/h1.jpg";
+import h2 from "../../assets/hero/h2.jpg";
+import h3 from "../../assets/hero/h3.jpg";
+import h4 from "../../assets/hero/h4.jpg";
+import h5 from "../../assets/hero/h5.jpg";
+import h6 from "../../assets/hero/h6.jpg";
+import h7 from "../../assets/hero/h7.jpg";
+import h8 from "../../assets/hero/h8.jpg";
+import h9 from "../../assets/hero/h9.jpg";
+
 
 const slides = [
   {
     tag: "Endless Transformation Academy",
-    title: "Transforming People.\nTransforming Lives.",
+    title: "Transforming People.",
+    highlight: "Transforming Lives.",
     description:
-      "Empowering students, professionals and institutions through communication, leadership, emotional intelligence and global language learning.",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&q=80",
+      "Empowering students, professionals and institutions through communication, leadership and transformation programs.",
+
+    bgImage:
+   hero1,
+
+    mainImage:
+      hero1,
+
+    card1:
+      h1,
+
+    card2:
+      h2,
+
+    card3:
+      h3,
   },
 
   {
-    tag: "School Transformation",
-    title:
-      "Creating Confident Communicators & Future Leaders.",
+    tag: "School Transformation Programs",
+title: "Empowering Individuals To",
+highlight: "Unlock Their True Potential.",
     description:
-      "Structured communication, public speaking and leadership programs for schools and educational institutions.",
-    image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80",
+      "Helping students develop leadership, communication and confidence.",
+
+    bgImage:
+      hero2,
+
+    mainImage:
+      hero2,
+
+    card1:
+     h4,
+
+    card2:
+     h5,
+
+    card3:
+      h6,
   },
 
   {
-    tag: "Foreign Language Academy",
-    title:
-      "Learn Languages.\nUnlock Global Opportunities.",
+    tag: "Global Language Academy",
+    title: "Building Confident Leaders For",
+highlight: "A Better Tomorrow.",
     description:
-      "French, German, Spanish, Japanese, Korean and Chinese certification programs for global careers.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80",
-  },
+      "Master global languages and unlock international opportunities.",
 
-  {
-    tag: "Leadership Development",
-    title:
-      "Confidence Is The Skill Of The Future.",
-    description:
-      "Leadership, emotional intelligence and personality development programs designed for lifelong success.",
-    image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1600&q=80",
+    bgImage:
+      hero3,
+
+    mainImage:
+      hero3,
+
+    card1:
+      h7,
+
+    card2:
+     h8,
+
+    card3:
+      h9,
   },
 ];
 
@@ -353,140 +675,129 @@ export default function HeroSection() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent(
-        (prev) => (prev + 1) % slides.length
-      );
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
     }, 6000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="hero-section">
+    <section className="hero">
+      <div className="hero-bg-slider">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`hero-bg ${
+              current === index ? "active" : ""
+            }`}
+            style={{
+              backgroundImage: `url(${slide.bgImage})`,
+            }}
+          />
+        ))}
+      </div>
 
-      {/* Background Image */}
-      <div
-        className="hero-bg"
-        style={{
-          backgroundImage: `url(${slides[current].image})`,
-        }}
-      />
+      <div className="hero-overlay"></div>
 
-      {/* Overlay */}
-      <div className="hero-overlay" />
-
-      {/* Gradient Effects */}
-      <div className="hero-glow hero-glow-1"></div>
-      <div className="hero-glow hero-glow-2"></div>
-
-      {/* Grid */}
-      <div className="hero-grid"></div>
-
-      <div className="container hero-content">
-
-        {/* Left */}
-        <div className="hero-left">
-
-          <span className="hero-tag">
+      <div className="container hero-wrapper">
+        <div className="hero-content">
+          <span className="hero-badge">
             ✨ {slides[current].tag}
           </span>
 
-          <h1 key={current}>
+          <h1>
             {slides[current].title}
+            <span>{slides[current].highlight}</span>
           </h1>
 
-          <p>
-            {slides[current].description}
-          </p>
+          <p>{slides[current].description}</p>
 
           <div className="hero-buttons">
-
-            <button className="btn-primary">
+            <button className="hero-btn primary">
               Book Consultation
               <ArrowRight size={18} />
             </button>
 
-            <button className="btn-secondary">
+            <button className="hero-btn secondary">
               <PlayCircle size={18} />
               Watch Programs
             </button>
-
           </div>
 
-          <div className="hero-services">
+          <div className="hero-metrics">
+            <div>
+              <h3>10K+</h3>
+              <span>Students</span>
+            </div>
 
-            <span>Communication</span>
+            <div>
+              <h3>50+</h3>
+              <span>Schools</span>
+            </div>
 
-            <span>Leadership</span>
-
-            <span>Foreign Languages</span>
-
-            <span>Public Speaking</span>
-
-            <span>Emotional Intelligence</span>
-
+            <div>
+              <h3>7+</h3>
+              <span>Languages</span>
+            </div>
           </div>
-
         </div>
 
-        {/* Right */}
-        <div className="hero-right">
+        <div className="hero-visual">
+          <div
+            key={`main-${current}`}
+            className="main-image-card"
+          >
+            <img
+              src={slides[current].mainImage}
+              alt=""
+            />
 
-          <div className="hero-card card-one">
-            <GraduationCap />
-            <div>
-              <h4>10K+</h4>
-              <p>Students Impacted</p>
+            <div className="image-caption">
+              Endless Transformation Academy
             </div>
           </div>
 
-          <div className="hero-card card-two">
-            <Users />
-            <div>
-              <h4>50+</h4>
-              <p>Institution Partners</p>
-            </div>
-          </div>
+          {/* <div
+            key={`c1-${current}`}
+            className="mini-image mini-1"
+          >
+            <img
+              src={slides[current].card1}
+              alt=""
+            />
+          </div> */}
 
-          <div className="hero-card card-three">
-            <Globe />
-            <div>
-              <h4>7+</h4>
-              <p>Global Languages</p>
-            </div>
-          </div>
+          {/* <div
+            key={`c2-${current}`}
+            className="mini-image mini-2"
+          >
+            <img
+              src={slides[current].card2}
+              alt=""
+            />
+          </div> */}
 
+          {/* <div
+            key={`c3-${current}`}
+            className="mini-image mini-3"
+          >
+            <img
+              src={slides[current].card3}
+              alt=""
+            />
+          </div> */}
+
+          {/* <div className="glass-card">
+            <GraduationCap size={20} />
+
+            <div>
+              <strong>10K+</strong>
+              <span>Learners Empowered</span>
+            </div>
+          </div> */}
         </div>
-
       </div>
-
-      {/* Bottom Trust Bar */}
-
-      <div className="trust-bar">
-
-        <div className="trust-item">
-          <Trophy size={20} />
-          <span>100+ Programs Delivered</span>
-        </div>
-
-        <div className="trust-item">
-          <Users size={20} />
-          <span>50+ School Partners</span>
-        </div>
-
-        <div className="trust-item">
-          <Globe size={20} />
-          <span>International Certifications</span>
-        </div>
-
-        <div className="trust-item">
-          <GraduationCap size={20} />
-          <span>Experiential Learning</span>
-        </div>
-
-      </div>
-
     </section>
   );
 }

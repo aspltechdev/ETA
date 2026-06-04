@@ -33,7 +33,7 @@
 .language-card {
   background: white;
   border-radius: 28px;
-  padding: 40px;
+  /* padding: 40px; */
   text-align: center;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
   transition: 0.4s;

@@ -1,234 +1,214 @@
-.about-section {
-  position: relative;
-  padding: 140px 0;
+.eta-about {
+  padding: 120px 0;
   background: #ffffff;
-  overflow: hidden;
-}
-
-.about-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(140px);
-}
-
-.about-glow-1 {
-  width: 500px;
-  height: 500px;
-  background: rgba(30, 64, 255, 0.08);
-  top: -150px;
-  left: -150px;
-}
-
-.about-glow-2 {
-  width: 450px;
-  height: 450px;
-  background: rgba(79, 123, 255, 0.08);
-  right: -100px;
-  bottom: -100px;
-}
-
-.about-header {
-  text-align: center;
-  max-width: 900px;
-  margin: auto;
-  margin-bottom: 90px;
-}
-
-.section-tag {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 999px;
-  background: #eef4ff;
-  color: #0A0A8F;
-  font-weight: 600;
-  margin-bottom: 25px;
-}
-
-.about-header h2 {
-  font-size: clamp(2.8rem, 5vw, 4.8rem);
-  line-height: 1;
-  color: #111827;
-  margin-bottom: 25px;
-  letter-spacing: -2px;
-}
-
-.about-header p {
-  color: #6b7280;
-  line-height: 1.9;
-  font-size: 18px;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 500px 1fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.founder-panel {
-  background: white;
-  border-radius: 32px;
-  overflow: hidden;
-
-  box-shadow:
-    0 20px 60px rgba(15,23,42,.08);
-}
-
-.founder-image-wrapper {
   position: relative;
+  overflow: hidden;
 }
 
-.founder-image-wrapper img {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
+.eta-about__header {
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
 }
 
-.founder-badge {
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-
-  background: white;
-
-  padding: 12px 20px;
-
-  border-radius: 100px;
-
-  color: #0A0A8F;
-  font-weight: 600;
+.eta-about__tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(11, 15, 158, 0.08);
+  color: #0B0F9E;
+  font-weight: 700;
 }
 
-.founder-content {
-  padding: 30px;
-}
-
-.founder-content h3 {
-  font-size: 28px;
+.eta-about__header h2 {
+  margin-top: 20px;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
   color: #111827;
-  margin-bottom: 15px;
 }
 
-.founder-content p {
+.eta-about__header p {
+  margin-top: 20px;
   color: #6b7280;
+  font-size: 1.1rem;
   line-height: 1.8;
 }
 
-.about-story h3 {
-  font-size: clamp(2.5rem, 4vw, 4rem);
-  color: #111827;
-  line-height: 1;
-  margin-bottom: 25px;
+/* Content */
+
+.eta-about__content {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
 
-.about-story p {
+.eta-about__mini-title {
+  color: #0B0F9E;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.eta-about__left h3 {
+  margin-top: 15px;
+  font-size: 3rem;
+  line-height: 1.15;
+  color: #111827;
+}
+
+.eta-about__left p {
+  margin-top: 22px;
   color: #6b7280;
   line-height: 1.9;
-  margin-bottom: 20px;
+  font-size: 1rem;
 }
 
-.about-highlights {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 20px;
+.eta-about__stats {
+  display: flex;
+  gap: 25px;
   margin-top: 40px;
 }
 
-.highlight-card {
-  background: white;
-  border: 1px solid #edf2f7;
-  border-radius: 24px;
+.eta-about__stat {
+  flex: 1;
   padding: 25px;
-
-  display: flex;
-  gap: 15px;
-
-  transition: .3s;
+  border-radius: 20px;
+  background: #f8faff;
+  border: 1px solid #edf2ff;
 }
 
-.highlight-card:hover {
-  transform: translateY(-6px);
-
-  box-shadow:
-    0 15px 40px rgba(15,23,42,.08);
+.eta-about__stat h4 {
+  color: #0B0F9E;
+  font-size: 2rem;
 }
 
-.highlight-card svg {
-  color: #0A0A8F;
-}
-
-.highlight-card h4 {
-  color: #111827;
-  margin-bottom: 5px;
-}
-
-.highlight-card span {
+.eta-about__stat span {
   color: #6b7280;
   font-size: 14px;
 }
 
-.stats-section {
+/* Images */
+
+.eta-about__right {
+  position: relative;
+}
+
+.eta-about__main-image {
+  width: 100%;
+  height: 620px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.eta-about__floating-image {
+  position: absolute;
+  width: 260px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 24px;
+
+  right: -40px;
+  bottom: 40px;
+
+  border: 8px solid white;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.15);
+}
+
+/* Pillars */
+
+.eta-about__pillars {
   margin-top: 100px;
 
   display: grid;
   grid-template-columns: repeat(4,1fr);
-  gap: 25px;
+  gap: 24px;
 }
 
-.stat-card {
-  background: white;
+.eta-about__pillar {
   padding: 35px;
-  text-align: center;
   border-radius: 24px;
 
+  background: white;
+
+  border: 1px solid #eef2ff;
+
+  transition: .4s ease;
+}
+
+.eta-about__pillar:hover {
+  transform: translateY(-8px);
+
   box-shadow:
-    0 10px 40px rgba(15,23,42,.06);
+    0 20px 50px rgba(11,15,158,0.08);
 }
 
-.stat-card h3 {
-  font-size: 42px;
-  color: #0A0A8F;
-  margin-bottom: 10px;
+.eta-about__pillar svg {
+  color: #0B0F9E;
 }
 
-.stat-card p {
+.eta-about__pillar h4 {
+  margin-top: 18px;
+  color: #111827;
+  font-size: 1.2rem;
+}
+
+.eta-about__pillar p {
+  margin-top: 12px;
   color: #6b7280;
+  line-height: 1.7;
 }
 
-@media (max-width: 992px) {
+/* Responsive */
 
-  .about-grid {
+@media (max-width: 1200px) {
+
+  .eta-about__content {
     grid-template-columns: 1fr;
   }
 
-  .about-highlights {
-    grid-template-columns: 1fr;
+  .eta-about__floating-image {
+    right: 20px;
   }
 
-  .stats-section {
+  .eta-about__pillars {
     grid-template-columns: repeat(2,1fr);
   }
-
-  .founder-image-wrapper img {
-    height: 500px;
-  }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 
-  .about-section {
-    padding: 100px 0;
+  .eta-about {
+    padding: 80px 0;
   }
 
-  .stats-section {
-    grid-template-columns: 1fr;
-  }
-
-  .about-header h2 {
+  .eta-about__header h2 {
     font-size: 2.5rem;
   }
 
-  .founder-image-wrapper img {
-    height: 400px;
+  .eta-about__left h3 {
+    font-size: 2rem;
+  }
+
+  .eta-about__stats {
+    flex-direction: column;
+  }
+
+  .eta-about__main-image {
+    height: 420px;
+  }
+
+  .eta-about__floating-image {
+    width: 180px;
+    height: 150px;
+    bottom: -20px;
+  }
+
+  .eta-about__pillars {
+    grid-template-columns: 1fr;
   }
 }

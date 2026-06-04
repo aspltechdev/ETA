@@ -1,116 +1,345 @@
+// import "./TransformationEcosystem.css";
+
+// import { motion } from "framer-motion";
+
+// import ecoMain from "../../assets/hero/hero1.jpg";
+
+// import eco1 from "../../assets/hero/hero1.jpg";
+// import eco2 from "../../assets/hero/h1.jpg";
+// import eco3 from "../../assets/hero/h1.jpg";
+// import eco4 from "../../assets/hero/h1.jpg";
+// import eco5 from "../../assets/hero/h1.jpg";
+
+// const ecosystem = [
+//   {
+//     title: "Communication",
+//     image: eco1,
+//   },
+
+//   {
+//     title: "Leadership",
+//     image: eco2,
+//   },
+
+//   {
+//     title: "Global Languages",
+//     image: eco3,
+//   },
+
+//   {
+//     title: "Emotional Intelligence",
+//     image: eco4,
+//   },
+
+//   {
+//     title: "Future Readiness",
+//     image: eco5,
+//   },
+// ];
+
+// const TransformationEcosystem = () => {
+//   return (
+//     <section className="ecosystem">
+
+//       <div className="ecosystem-glow"></div>
+
+//       <div className="container">
+
+//         <motion.div
+//           className="ecosystem-header"
+//           initial={{ opacity: 0, y: 60 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ duration: 0.8 }}
+//         >
+//           <span className="section-tag">
+//             ETA Transformation Ecosystem
+//           </span>
+
+//           <h2>
+//             Building Future-Ready
+//             <span> Individuals</span>
+//           </h2>
+
+//           <p>
+//             A holistic framework combining
+//             communication, leadership,
+//             emotional intelligence and global
+//             learning to create confident,
+//             capable and future-ready learners.
+//           </p>
+//         </motion.div>
+
+//         <motion.div
+//           className="ecosystem-featured"
+//           initial={{ opacity: 0, scale: 0.95 }}
+//           whileInView={{ opacity: 1, scale: 1 }}
+//           viewport={{ once: true }}
+//           transition={{ duration: 0.8 }}
+//         >
+//           <img
+//             src={ecoMain}
+//             alt=""
+//           />
+
+//           <div className="featured-overlay"></div>
+
+//           <div className="featured-content">
+
+//             <span>
+//               Transformation Foundation
+//             </span>
+
+//             <h3>
+//               Communication &
+//               Leadership Excellence
+//             </h3>
+
+//             <p>
+//               The foundation for academic,
+//               personal and professional
+//               success.
+//             </p>
+
+//           </div>
+//         </motion.div>
+
+//         <div className="ecosystem-cards">
+
+//           {ecosystem.map((item, index) => (
+//             <motion.div
+//               className="eco-card"
+//               key={index}
+//               initial={{
+//                 opacity: 0,
+//                 y: 60,
+//               }}
+//               whileInView={{
+//                 opacity: 1,
+//                 y: 0,
+//               }}
+//               viewport={{
+//                 once: true,
+//               }}
+//               transition={{
+//                 duration: 0.7,
+//                 delay: index * 0.1,
+//               }}
+//             >
+//               <img
+//                 src={item.image}
+//                 alt=""
+//               />
+
+//               <div className="eco-card-overlay"></div>
+
+//               <div className="eco-content">
+//                 <h4>
+//                   {item.title}
+//                 </h4>
+//               </div>
+//             </motion.div>
+//           ))}
+
+//         </div>
+
+//       </div>
+
+//     </section>
+//   );
+// };
+
+// export default TransformationEcosystem;
+
+
+
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
 import "./TransformationEcosystem.css";
 
-import {
-  MessageSquare,
-  Users,
-  Globe,
-  Brain,
-  Trophy,
-  Rocket,
-} from "lucide-react";
+import eco1 from "../../assets/hero/hero1.jpg";
+import eco2 from "../../assets/hero/hero2.jpg";
+import eco3 from "../../assets/hero/hero2.jpg";
+import eco4 from "../../assets/hero/hero4.jpg";
+import eco5 from "../../assets/hero/hero1.jpg";
+import eco6 from "../../assets/hero/hero1.jpg";
 
 const ecosystem = [
   {
-    icon: <MessageSquare size={34} />,
-    title: "Communication",
-    desc: "Public speaking, confidence and expression.",
+    number: "01",
+    title: "Communication Excellence",
+    description:
+      "Develop confidence, public speaking and impactful communication skills.",
+
+    image: eco1,
   },
 
   {
-    icon: <Users size={34} />,
-    title: "Leadership",
-    desc: "Developing future-ready leaders.",
+    number: "02",
+    title: "Leadership Development",
+    description:
+      "Build leadership qualities and decision-making abilities.",
+
+    image: eco2,
   },
 
   {
-    icon: <Globe size={34} />,
-    title: "Global Languages",
-    desc: "International language proficiency.",
+    number: "03",
+    title: "Global Language Learning",
+    description:
+      "Master international languages and unlock global opportunities.",
+
+    image: eco3,
   },
 
   {
-    icon: <Brain size={34} />,
+    number: "04",
     title: "Emotional Intelligence",
-    desc: "Self-awareness and interpersonal growth.",
+    description:
+      "Improve self-awareness and interpersonal effectiveness.",
+
+    image: eco4,
   },
 
   {
-    icon: <Trophy size={34} />,
+    number: "05",
     title: "Confidence Building",
-    desc: "Stage presence and personal development.",
+    description:
+      "Strengthen stage presence and personal growth.",
+
+    image: eco5,
   },
 
   {
-    icon: <Rocket size={34} />,
+    number: "06",
     title: "Future Readiness",
-    desc: "Skills for modern careers and life.",
+    description:
+      "Prepare learners for future careers and life success.",
+
+    image: eco6,
   },
 ];
 
 const TransformationEcosystem = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(
+        (prev) => (prev + 1) % ecosystem.length
+      );
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="ecosystem-section">
 
-      <div className="ecosystem-glow"></div>
-
       <div className="container">
 
-        <div className="ecosystem-header">
-
+        <motion.div
+          className="ecosystem-header"
+          initial={{
+            opacity: 0,
+            y: 50,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.8,
+          }}
+        >
           <span className="section-tag">
-            The ETA Transformation Ecosystem
+            ETA Transformation Ecosystem
           </span>
 
           <h2>
-            Creating Holistic Growth Through
-            Communication, Leadership &
-            Global Learning
+            Building Future Ready
+            <span> Leaders</span>
           </h2>
 
           <p>
-            Our transformation ecosystem integrates
-            communication, leadership, emotional
-            intelligence and global learning to help
-            learners become confident, capable and
-            future-ready.
+            A holistic transformation framework
+            designed to develop communication,
+            leadership, emotional intelligence
+            and global competencies.
           </p>
+        </motion.div>
 
-        </div>
+        <motion.div
+          className="ecosystem-slider"
+          key={current}
+          initial={{
+            opacity: 0,
+            scale: 0.95,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+        >
 
-        <div className="ecosystem-wrapper">
+          <img
+            src={ecosystem[current].image}
+            alt=""
+            className="slider-image"
+          />
 
-          <div className="center-circle">
+          <div className="slider-overlay"></div>
 
-            <div className="center-content">
+          <div className="slider-content">
 
-              <h3>ETA</h3>
+            {/* <span className="slide-number">
+              {ecosystem[current].number}
+            </span> */}
 
-              <span>
-                Endless Transformation Academy
-              </span>
+            <h3>
+              {ecosystem[current].title}
+            </h3>
 
-            </div>
+            <p>
+              {ecosystem[current].description}
+            </p>
 
           </div>
 
-          <div className="ecosystem-grid">
+          <div className="floating-stat">
 
-            {ecosystem.map((item, index) => (
-              <div
-                className="ecosystem-card"
-                key={index}
-              >
-                <div className="eco-icon">
-                  {item.icon}
-                </div>
+            <h4>10K+</h4>
 
-                <h4>{item.title}</h4>
-
-                <p>{item.desc}</p>
-              </div>
-            ))}
+            <span>
+              Learners Impacted
+            </span>
 
           </div>
+
+        </motion.div>
+
+        <div className="slider-dots">
+
+          {ecosystem.map((_, index) => (
+            <button
+              key={index}
+              className={
+                current === index
+                  ? "active"
+                  : ""
+              }
+              onClick={() =>
+                setCurrent(index)
+              }
+            />
+          ))}
 
         </div>
 

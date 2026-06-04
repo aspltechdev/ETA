@@ -1,166 +1,204 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import "./SuccessStoriesSection.css";
-import {
-  ArrowUpRight,
-  TrendingUp,
-  GraduationCap,
-  Globe,
-  Users,
-} from "lucide-react";
 
-const stories = [
+import impact1 from "../../assets/hero/h1.jpg";
+import impact2 from "../../assets/hero/h2.jpg";
+import impact3 from "../../assets/hero/h3.jpg";
+
+const testimonials = [
   {
-    category: "Communication",
-    before: "Stage Fear",
-    after: "Confident Speaker",
-    description:
-      "Students gain confidence to express ideas, present and communicate effectively.",
+    image: impact1,
+
+    quote:
+      "ETA transformed my confidence and communication skills, helping me become a better leader.",
+
+    name: "Aarav Kumar",
+
+    role: "Student",
   },
 
   {
-    category: "Leadership",
-    before: "Passive Participation",
-    after: "Future Leader",
-    description:
-      "Leadership programs encourage initiative, responsibility and teamwork.",
+    image: impact2,
+
+    quote:
+      "The leadership program helped me take initiative and confidently present my ideas.",
+
+    name: "Priya Sharma",
+
+    role: "Student Leader",
   },
 
   {
-    category: "Languages",
-    before: "Beginner",
-    after: "Certified Learner",
-    description:
-      "Structured pathways help learners achieve international certifications.",
-  },
+    image: impact3,
 
-  {
-    category: "Future Readiness",
-    before: "Uncertain Direction",
-    after: "Career Ready",
-    description:
-      "Students develop essential communication and professional skills.",
+    quote:
+      "ETA programs significantly improved student engagement and participation across our institution.",
+
+    name: "St. John's School",
+
+    role: "Institution Partner",
   },
 ];
 
 const SuccessStoriesSection = () => {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive(
+        (prev) =>
+          (prev + 1) %
+          testimonials.length
+      );
+    }, 5000);
+
+    return () =>
+      clearInterval(timer);
+  }, []);
+
   return (
-    <section className="success-section">
+    <section className="impact-section">
 
-      <div className="success-glow"></div>
+      <AnimatePresence mode="wait">
 
-      <div className="container">
+        <motion.img
+          key={active}
+          src={
+            testimonials[active]
+              .image
+          }
+          alt=""
+          className="impact-bg"
+          initial={{
+            opacity: 0,
+            scale: 1.08,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+          }}
+          exit={{
+            opacity: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        />
 
-        <div className="success-header">
+      </AnimatePresence>
 
-          <span className="section-tag">
+      <div className="impact-overlay"></div>
+
+      <div className="container impact-wrapper">
+
+        <motion.div
+          className="impact-content"
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+        >
+
+          <span className="impact-tag">
             Success Stories & Impact
           </span>
 
           <h2>
-            Transformations That
-            Create Lasting Impact
+            Real Growth.
+            <span>
+              Real Transformation.
+            </span>
           </h2>
 
-          <p>
-            Every program at ETA is designed to
-            create measurable growth in confidence,
-            communication, leadership and global
-            opportunities.
+          <div className="quote-mark">
+            "
+          </div>
+
+          <p className="impact-quote">
+
+            {
+              testimonials[active]
+                .quote
+            }
+
           </p>
 
-        </div>
+          <div className="impact-author">
 
-        <div className="stories-grid">
+            <h4>
+              {
+                testimonials[active]
+                  .name
+              }
+            </h4>
 
-          {stories.map((story, index) => (
-            <div
-              className="story-card"
-              key={index}
-            >
+            <span>
+              {
+                testimonials[active]
+                  .role
+              }
+            </span>
 
-              <span className="story-category">
-                {story.category}
-              </span>
+          </div>
 
-              <div className="story-flow">
+        </motion.div>
 
-                <div className="before-box">
-                  {story.before}
-                </div>
+        <motion.div
+          className="impact-stats"
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            delay: 0.2,
+          }}
+        >
 
-                <ArrowUpRight size={22} />
-
-                <div className="after-box">
-                  {story.after}
-                </div>
-
-              </div>
-
-              <p>
-                {story.description}
-              </p>
-
-            </div>
-          ))}
-
-        </div>
-
-        {/* Impact Numbers */}
-
-        <div className="impact-banner">
-
-          <div className="impact-item">
-            <Users size={28} />
+          <div className="stat">
             <h3>10K+</h3>
-            <span>Students Impacted</span>
+            <span>
+              Students
+            </span>
           </div>
 
-          <div className="impact-item">
-            <GraduationCap size={28} />
+          <div className="stat">
+            <h3>50+</h3>
+            <span>
+              Schools
+            </span>
+          </div>
+
+          <div className="stat">
             <h3>100+</h3>
-            <span>Programs Delivered</span>
+            <span>
+              Programs
+            </span>
           </div>
 
-          <div className="impact-item">
-            <Globe size={28} />
-            <h3>7+</h3>
-            <span>Global Languages</span>
-          </div>
-
-          <div className="impact-item">
-            <TrendingUp size={28} />
+          <div className="stat">
             <h3>95%</h3>
-            <span>Success Rate</span>
+            <span>
+              Success Rate
+            </span>
           </div>
 
-        </div>
-
-        {/* Transformation Journey */}
-
-        <div className="journey-card">
-
-          <h3>
-            The ETA Transformation Journey
-          </h3>
-
-          <div className="journey-steps">
-
-            <div>Learn</div>
-
-            <span>→</span>
-
-            <div>Practice</div>
-
-            <span>→</span>
-
-            <div>Apply</div>
-
-            <span>→</span>
-
-            <div>Transform</div>
-
-          </div>
-
-        </div>
+        </motion.div>
 
       </div>
 

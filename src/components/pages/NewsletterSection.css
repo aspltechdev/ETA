@@ -1,40 +1,206 @@
-.newsletter{
-  padding:120px 0;
+.eta-newsletter {
+  padding: 120px 0;
+  background: #f8faff;
+  position: relative;
 }
 
-.newsletter-card{
-  padding:80px;
-  border-radius:40px;
-  text-align:center;
-  background:linear-gradient(
-  135deg,
-  #2563eb,
-  #4f46e5
-  );
-  color:white;
+.eta-newsletter__header {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
 }
 
-.newsletter-card h2{
-  font-size:56px;
+.eta-newsletter__tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+
+  background: rgba(11, 15, 158, .08);
+  color: #0B0F9E;
+
+  font-weight: 700;
 }
 
-.newsletter-form{
-  margin-top:40px;
-  display:flex;
-  justify-content:center;
-  gap:15px;
+.eta-newsletter__header h2 {
+  margin-top: 20px;
+
+  font-size: clamp(2.5rem,5vw,4rem);
+  line-height: 1.1;
+
+  color: #111827;
 }
 
-.newsletter-form input{
-  width:400px;
-  height:60px;
-  border:none;
-  border-radius:12px;
-  padding:0 20px;
+.eta-newsletter__header p {
+  margin-top: 18px;
+
+  color: #6b7280;
+  line-height: 1.8;
 }
 
-.newsletter-form button{
-  padding:0 30px;
-  border:none;
-  border-radius:12px;
+/* Featured */
+
+.eta-newsletter__featured {
+  margin-top: 70px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 50px;
+
+  background: white;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.08);
+}
+
+.eta-newsletter__featured-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.eta-newsletter__featured-content {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eta-newsletter__featured-content span {
+  color: #0B0F9E;
+  font-weight: 700;
+}
+
+.eta-newsletter__featured-content h3 {
+  margin-top: 16px;
+
+  font-size: 2.2rem;
+  line-height: 1.2;
+
+  color: #111827;
+}
+
+.eta-newsletter__featured-content p {
+  margin-top: 18px;
+
+  color: #6b7280;
+  line-height: 1.8;
+}
+
+.eta-newsletter__featured-content a {
+  margin-top: 30px;
+
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+
+  color: #0B0F9E;
+  font-weight: 700;
+}
+
+/* Grid */
+
+.eta-newsletter__grid {
+  margin-top: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 24px;
+}
+
+.eta-newsletter__card {
+  background: white;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  transition: .4s ease;
+
+  cursor: pointer;
+}
+
+.eta-newsletter__card:hover {
+  transform: translateY(-8px);
+}
+
+.eta-newsletter__card-image img {
+  width: 100%;
+  height: 280px;
+
+  object-fit: cover;
+}
+
+.eta-newsletter__card-content {
+  padding: 24px;
+}
+
+.eta-newsletter__card-content span {
+  color: #0B0F9E;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.eta-newsletter__card-content h4 {
+  margin-top: 10px;
+
+  color: #111827;
+  line-height: 1.4;
+}
+
+.eta-newsletter__meta {
+  margin-top: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+
+  .eta-newsletter__featured {
+    grid-template-columns: 1fr;
+  }
+
+  .eta-newsletter__grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .eta-newsletter {
+    padding: 80px 0;
+  }
+
+  .eta-newsletter__header h2 {
+    font-size: 2.2rem;
+  }
+
+  .eta-newsletter__featured-content {
+    padding: 30px;
+  }
+
+  .eta-newsletter__featured-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .eta-newsletter__grid {
+    grid-template-columns: 1fr;
+  }
 }

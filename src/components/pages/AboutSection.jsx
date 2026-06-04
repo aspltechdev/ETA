@@ -1,218 +1,299 @@
+
+
 // import "./AboutSection.css";
+// import founder from "../../assets/founder.jpg";
+// import about1 from "../../assets/about/about1.jpg";
+// import about2 from "../../assets/about/about2.jpg";
+
+// import {
+//   GraduationCap,
+//   Globe,
+//   Users,
+//   Trophy,
+//   ArrowRight,
+// } from "lucide-react";
 
 // const AboutSection = () => {
 //   return (
-//     <section className="about">
-//       <div className="container about-container">
+//     <section className="about-premium">
 
-//         <div className="about-image">
-//           <img
-//             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
-//             alt=""
-//           />
-//         </div>
+//       <div className="container">
 
-//         <div className="about-content">
-//           <span>About Us</span>
+//         {/* Header */}
+
+//         <div className="about-header">
+
+//           <span className="section-tag">
+//             About Endless Transformation Academy
+//           </span>
 
 //           <h2>
-//             Helping Students Become Global Communicators
+//          Empowering Future
+// Leaders
 //           </h2>
 
-//           <p>
-//             We empower learners worldwide through
-//             immersive language education, live
-//             classes, certified tutors and AI-driven
-//             learning experiences.
-//           </p>
-
-//           <div className="about-points">
-//             <div>✓ 40+ Languages</div>
-//             <div>✓ 1000+ Tutors</div>
-//             <div>✓ 400K+ Students</div>
-//             <div>✓ Global Certification</div>
-//           </div>
 //         </div>
 
+//         {/* Founder */}
+
+//         <div className="about-intro">
+
+//           <div className="about-image">
+
+//             <img
+//               src={founder}
+//               alt="Founder"
+//             />
+
+//           </div>
+
+//           <div className="about-content">
+
+//             <span className="mini-title">
+//               Founder & Director
+//             </span>
+
+//             <h3>
+//               Mrs. Ranjeetha Sarath
+//             </h3>
+
+//             <p>
+//               Endless Transformation Academy
+//               was founded with a vision to
+//               empower students, professionals
+//               and institutions through
+//               communication, leadership,
+//               confidence and transformational
+//               learning experiences.
+//             </p>
+
+//             <p>
+//               We believe true education goes
+//               beyond academics. It nurtures
+//               confidence, emotional intelligence
+//               and future-ready skills that
+//               create meaningful impact.
+//             </p>
+
+//             <a href="/">
+//               Discover Our Journey
+//               <ArrowRight size={18} />
+//             </a>
+
+//           </div>
+
+//         </div>
+
+//         {/* Immersive Showcase */}
+
+//         <div className="academy-showcase">
+
+//           <img
+//             src={about1}
+//             alt=""
+//             className="academy-main"
+//           />
+
+//           <div className="showcase-card">
+
+//             <h4>
+//               Learning Beyond
+//               The Classroom
+//             </h4>
+
+//             <p>
+//               Communication • Leadership •
+//               Confidence • Global Learning
+//             </p>
+
+//           </div>
+
+//           <img
+//             src={about2}
+//             alt=""
+//             className="floating-workshop"
+//           />
+
+//         </div>
+
+
 //       </div>
+
 //     </section>
 //   );
 // };
 
 // export default AboutSection;
+
+
+
+
+
+
 import "./AboutSection.css";
+
+import about1 from "../../assets/about/about1.jpg";
+import about2 from "../../assets/about/about2.jpg";
+
 import {
-  Users,
-  Globe,
   GraduationCap,
+  Globe,
+  Users,
   Trophy,
 } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section className="about-section" id="about">
-
-      <div className="about-glow about-glow-1"></div>
-      <div className="about-glow about-glow-2"></div>
+    <section className="eta-about">
 
       <div className="container">
 
-        <div className="about-header">
+        {/* Header */}
 
-          <span className="section-tag">
+        <div className="eta-about__header">
+
+          <span className="eta-about__tag">
             About Endless Transformation Academy
           </span>
 
           <h2>
-            Empowering Communication,
-            Leadership & Global Learning
+            Transforming People.
+            Inspiring Confidence.
           </h2>
 
           <p>
-            Endless Transformation Academy is a
-            transformation-focused learning
-            organization helping students,
-            professionals and institutions build
-            confidence, communication excellence,
-            leadership capability and global
-            language proficiency.
+            A transformation-focused learning organization
+            dedicated to developing confident communicators,
+            emotionally intelligent individuals and
+            future-ready leaders.
           </p>
 
         </div>
 
-        <div className="about-grid">
+        {/* Main Content */}
 
-          {/* Founder */}
+        <div className="eta-about__content">
 
-          <div className="founder-panel">
+          <div className="eta-about__left">
 
-            <div className="founder-image-wrapper">
+            <span className="eta-about__mini-title">
+              A Transformation Focused Learning Organization
+            </span>
 
-              <img
-                src="/images/founder.jpg"
-                alt="Founder"
-              />
+            <h3>
+              Building Confident Communicators,
+              Future-Ready Leaders &
+              Measurable Impact
+            </h3>
 
-              <div className="founder-badge">
-                Founder & Director
+            <p>
+              Endless Transformation Academy empowers
+              students, educators, institutions and
+              professionals through experiential learning,
+              communication mastery, leadership development
+              and behavioral transformation programs.
+            </p>
+
+            <p>
+              Our learning ecosystems are designed to
+              bridge the gap between academic excellence
+              and real-world readiness, creating lasting
+              transformation in individuals and institutions.
+            </p>
+
+            <div className="eta-about__stats">
+
+              <div className="eta-about__stat">
+                <h4>1000+</h4>
+                <span>Learners Impacted</span>
               </div>
 
-            </div>
+              <div className="eta-about__stat">
+                <h4>6+</h4>
+                <span>Core Programs</span>
+              </div>
 
-            <div className="founder-content">
-
-              <h3>
-                Mrs. Ranjeetha Sarath
-              </h3>
-
-              <p>
-                A visionary educator dedicated
-                to transforming lives through
-                communication, leadership,
-                emotional intelligence and
-                experiential learning.
-              </p>
+              <div className="eta-about__stat">
+                <h4>7+</h4>
+                <span>Global Languages</span>
+              </div>
 
             </div>
 
           </div>
 
-          {/* Story */}
+          <div className="eta-about__right">
 
-          <div className="about-story">
+            <img
+              src={about1}
+              alt="ETA Learning Experience"
+              className="eta-about__main-image"
+            />
 
-            <h3>
-              Transforming People.
-              Transforming Lives.
-            </h3>
-
-            <p>
-              We believe communication is more
-              than a skill — it is a life-changing
-              capability that shapes confidence,
-              leadership, opportunities and
-              identity.
-            </p>
-
-            <p>
-              Through structured programs,
-              experiential learning frameworks,
-              leadership development initiatives
-              and international language training,
-              we create measurable personal and
-              institutional impact.
-            </p>
-
-            <div className="about-highlights">
-
-              <div className="highlight-card">
-                <GraduationCap size={26} />
-                <div>
-                  <h4>Student Development</h4>
-                  <span>
-                    Communication & Leadership
-                  </span>
-                </div>
-              </div>
-
-              <div className="highlight-card">
-                <Globe size={26} />
-                <div>
-                  <h4>Language Training</h4>
-                  <span>
-                    Global Certifications
-                  </span>
-                </div>
-              </div>
-
-              <div className="highlight-card">
-                <Users size={26} />
-                <div>
-                  <h4>School Programs</h4>
-                  <span>
-                    Institutional Development
-                  </span>
-                </div>
-              </div>
-
-              <div className="highlight-card">
-                <Trophy size={26} />
-                <div>
-                  <h4>Future Readiness</h4>
-                  <span>
-                    Confidence & Impact
-                  </span>
-                </div>
-              </div>
-
-            </div>
+            <img
+              src={about2}
+              alt="ETA Workshop"
+              className="eta-about__floating-image"
+            />
 
           </div>
 
         </div>
 
-        {/* Stats */}
+        {/* Transformation Pillars */}
 
-        <div className="stats-section">
+        <div className="eta-about__pillars">
 
-          <div className="stat-card">
-            <h3>10K+</h3>
-            <p>Students Impacted</p>
+          <div className="eta-about__pillar">
+
+            <Users size={34} />
+
+            <h4>Confident Communicators</h4>
+
+            <p>
+              Communication mastery,
+              public speaking and articulation.
+            </p>
+
           </div>
 
-          <div className="stat-card">
-            <h3>100+</h3>
-            <p>Programs Delivered</p>
+          <div className="eta-about__pillar">
+
+            <GraduationCap size={34} />
+
+            <h4>Future Ready Leaders</h4>
+
+            <p>
+              Leadership development and
+              confidence building programs.
+            </p>
+
           </div>
 
-          <div className="stat-card">
-            <h3>50+</h3>
-            <p>Institution Partners</p>
+          <div className="eta-about__pillar">
+
+            <Trophy size={34} />
+
+            <h4>Measurable Impact</h4>
+
+            <p>
+              Practical learning with
+              transformational outcomes.
+            </p>
+
           </div>
 
-          <div className="stat-card">
-            <h3>7+</h3>
-            <p>Global Languages</p>
+          <div className="eta-about__pillar">
+
+            <Globe size={34} />
+
+            <h4>Global Language Learning</h4>
+
+            <p>
+              International language
+              training and communication.
+            </p>
+
           </div>
 
         </div>
