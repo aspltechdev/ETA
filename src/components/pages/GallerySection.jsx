@@ -9,63 +9,56 @@ import gallery5 from "../../assets/gallery5.jpg";
 import gallery6 from "../../assets/gallery6.jpg";
 
 const galleryItems = [
-  {
-    image: gallery1,
-    title: "Leadership Workshop",
-  },
-  {
-    image: gallery2,
-    title: "Communication Excellence",
-  },
-  {
-    image: gallery3,
-    title: "Language Academy",
-  },
-  {
-    image: gallery4,
-    title: "Student Engagement",
-  },
-  {
-    image: gallery5,
-    title: "Public Speaking Session",
-  },
-  {
-    image: gallery6,
-    title: "Institution Program",
-  },
+  { image: gallery1, title: "Leadership Workshop" },
+  { image: gallery2, title: "Communication Excellence" },
+  { image: gallery3, title: "Language Academy" },
+  { image: gallery4, title: "Student Engagement" },
+  { image: gallery5, title: "Public Speaking Session" },
+  { image: gallery6, title: "Institution Program" },
 ];
 
 const GallerySection = () => {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
+
     const timer = setInterval(() => {
-      setActive((prev) => (prev + 1) % galleryItems.length);
-    }, 3500);
+
+      setActive((prev) =>
+        (prev + 1) % galleryItems.length
+      );
+
+    }, 6000); // slower transition
 
     return () => clearInterval(timer);
+
   }, []);
 
   return (
     <section className="eta-gallery">
+
       <div className="eta-gallery__glow"></div>
 
       <div className="container">
 
         <div className="eta-gallery__header">
+
           <span className="eta-gallery__tag">
             Transformation In Action
           </span>
 
           <h2>
-            Every Program Creates
-            A Story Worth Sharing
+            Moments Of Growth,
+            <br />
+            Transformation & Success
           </h2>
 
           <p>
-            From leadership workshops and communication mastery
-            to language learning and school transformation.
+            A glimpse into leadership workshops,
+            communication programs, language learning
+            initiatives and transformational experiences.
           </p>
+
         </div>
 
         <div className="eta-gallery__slider">
@@ -76,16 +69,18 @@ const GallerySection = () => {
 
             if (index === active) {
               position = "active";
-            } else if (
+            }
+            else if (
               index ===
               (active - 1 + galleryItems.length) %
-                galleryItems.length
+              galleryItems.length
             ) {
               position = "left";
-            } else if (
+            }
+            else if (
               index ===
               (active + 1) %
-                galleryItems.length
+              galleryItems.length
             ) {
               position = "right";
             }
@@ -95,23 +90,33 @@ const GallerySection = () => {
                 key={index}
                 className={`eta-gallery__slide ${position}`}
               >
+
                 <img
                   src={item.image}
                   alt={item.title}
                 />
 
                 <div className="eta-gallery__slide-overlay">
-                  <span>Featured Experience</span>
 
-                  <h3>{item.title}</h3>
+                  <span>
+                    Featured Experience
+                  </span>
+
+                  <h3>
+                    {item.title}
+                  </h3>
+
                 </div>
+
               </div>
             );
+
           })}
 
         </div>
 
       </div>
+
     </section>
   );
 };
