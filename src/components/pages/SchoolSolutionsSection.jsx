@@ -297,258 +297,376 @@
 
 
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+// import { useState } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
 
-import "./SchoolSolutionsSection.css";
+// import "./SchoolSolutionsSection.css";
 
-import grade1 from "../../assets/hero/hero1.jpg";
-import grade2 from "../../assets/hero/hero2.jpg";
-import grade3 from "../../assets/hero/hero3.jpg";
-import grade4 from "../../assets/hero/hero4.jpg";
+// import grade1 from "../../assets/hero/hero1.jpg";
+// import grade2 from "../../assets/hero/hero2.jpg";
+// import grade3 from "../../assets/hero/hero3.jpg";
+// import grade4 from "../../assets/hero/hero4.jpg";
 
-import { ArrowRight, Check } from "lucide-react";
+// import { ArrowRight, Check } from "lucide-react";
 
-const grades = [
+// const grades = [
+//   {
+//     title: "Grade 1 - 2",
+
+//     image: grade1,
+
+//     subtitle: "Building Confidence Early",
+
+//     points: [
+//       "Expression Skills",
+//       "Listening Skills",
+//       "Social Confidence",
+//       "Interactive Learning",
+//     ],
+//   },
+
+//   {
+//     title: "Grade 3 - 5",
+
+//     image: grade2,
+
+//     subtitle: "Developing Communication",
+
+//     points: [
+//       "Public Speaking",
+//       "Communication Skills",
+//       "Creative Thinking",
+//       "Leadership Basics",
+//     ],
+//   },
+
+//   {
+//     title: "Grade 6 - 8",
+
+//     image: grade3,
+
+//     subtitle: "Growing Future Leaders",
+
+//     points: [
+//       "Leadership Development",
+//       "Confidence Building",
+//       "Team Collaboration",
+//       "Emotional Intelligence",
+//     ],
+//   },
+
+//   {
+//     title: "Grade 9 - 12",
+
+//     image: grade4,
+
+//     subtitle: "Future Readiness Programs",
+
+//     points: [
+//       "Interview Readiness",
+//       "Presentation Skills",
+//       "Career Readiness",
+//       "Future Skills",
+//     ],
+//   },
+// ];
+
+// const SchoolSolutionsSection = () => {
+//   const [active, setActive] = useState(0);
+
+//   return (
+//     <section className="school-solutions">
+
+//       <div className="school-glow"></div>
+
+//       <div className="container">
+
+//         <div className="school-header">
+
+//           <span className="section-tag">
+//             School Solutions
+//           </span>
+
+//           <h2>
+//             Transforming Students Into
+//             <span> Future Leaders</span>
+//           </h2>
+
+//           <p>
+//             Communication, leadership,
+//             confidence and future-readiness
+//             programs designed for modern schools.
+//           </p>
+
+//         </div>
+
+//         <div className="school-dashboard">
+
+//           {/* Left Image */}
+
+//           <AnimatePresence mode="wait">
+
+//             <motion.div
+//               key={active}
+//               className="school-image-box"
+//               initial={{
+//                 opacity: 0,
+//                 scale: 1.1,
+//               }}
+//               animate={{
+//                 opacity: 1,
+//                 scale: 1,
+//               }}
+//               exit={{
+//                 opacity: 0,
+//               }}
+//               transition={{
+//                 duration: 0.6,
+//               }}
+//             >
+//               <img
+//                 src={grades[active].image}
+//                 alt=""
+//               />
+
+//               <div className="image-overlay"></div>
+
+//               <div className="floating-badge">
+//                 10K+ Students Impacted
+//               </div>
+
+//             </motion.div>
+
+//           </AnimatePresence>
+
+//           {/* Right Content */}
+
+//           <div className="school-content">
+
+//             <div className="grade-tabs">
+
+//               {grades.map(
+//                 (item, index) => (
+//                   <button
+//                     key={index}
+//                     className={
+//                       active === index
+//                         ? "active"
+//                         : ""
+//                     }
+//                     onClick={() =>
+//                       setActive(index)
+//                     }
+//                   >
+//                     {item.title}
+//                   </button>
+//                 )
+//               )}
+
+//             </div>
+
+//             <AnimatePresence mode="wait">
+
+//               <motion.div
+//                 key={active}
+//                 className="grade-content"
+//                 initial={{
+//                   opacity: 0,
+//                   x: 40,
+//                 }}
+//                 animate={{
+//                   opacity: 1,
+//                   x: 0,
+//                 }}
+//                 exit={{
+//                   opacity: 0,
+//                   x: -40,
+//                 }}
+//                 transition={{
+//                   duration: 0.5,
+//                 }}
+//               >
+
+//                 <span className="grade-subtitle">
+//                   {grades[active].subtitle}
+//                 </span>
+
+//                 <h3>
+//                   {grades[active].title}
+//                 </h3>
+
+//                 <div className="points-list">
+
+//                   {grades[
+//                     active
+//                   ].points.map(
+//                     (item, index) => (
+//                       <div
+//                         key={index}
+//                         className="point"
+//                       >
+//                         <Check
+//                           size={18}
+//                         />
+//                         {item}
+//                       </div>
+//                     )
+//                   )}
+
+//                 </div>
+
+//                 <div className="stats-row">
+
+//                   <div className="stat-card">
+//                     <h4>50+</h4>
+//                     <span>Schools</span>
+//                   </div>
+
+//                   <div className="stat-card">
+//                     <h4>100+</h4>
+//                     <span>Programs</span>
+//                   </div>
+
+//                   <div className="stat-card">
+//                     <h4>95%</h4>
+//                     <span>Success</span>
+//                   </div>
+
+//                 </div>
+
+//                 <button className="school-btn">
+
+//                   Schedule Consultation
+
+//                   <ArrowRight
+//                     size={18}
+//                   />
+
+//                 </button>
+
+//               </motion.div>
+
+//             </AnimatePresence>
+
+//           </div>
+
+//         </div>
+
+//       </div>
+
+//     </section>
+//   );
+// };
+
+// export default SchoolSolutionsSection;
+
+
+
+import "./SchoolTransformation.css";
+
+import {
+  Smile,
+  Sparkles,
+  Mic2,
+  Crown,
+} from "lucide-react";
+
+import schoolImg from "../../assets/about/about1.jpg";
+
+const journey = [
   {
-    title: "Grade 1 - 2",
-
-    image: grade1,
-
-    subtitle: "Building Confidence Early",
-
-    points: [
-      "Expression Skills",
-      "Listening Skills",
-      "Social Confidence",
-      "Interactive Learning",
-    ],
+    icon: <Smile size={28} />,
+    grade: "Grade 1 - 2",
+    title: "Foundation",
+    desc: "Expression, listening skills, participation confidence and social interaction.",
   },
 
   {
-    title: "Grade 3 - 5",
-
-    image: grade2,
-
-    subtitle: "Developing Communication",
-
-    points: [
-      "Public Speaking",
-      "Communication Skills",
-      "Creative Thinking",
-      "Leadership Basics",
-    ],
+    icon: <Sparkles size={28} />,
+    grade: "Grade 3 - 5",
+    title: "Confidence",
+    desc: "Public speaking basics, classroom participation and leadership foundations.",
   },
 
   {
-    title: "Grade 6 - 8",
-
-    image: grade3,
-
-    subtitle: "Growing Future Leaders",
-
-    points: [
-      "Leadership Development",
-      "Confidence Building",
-      "Team Collaboration",
-      "Emotional Intelligence",
-    ],
+    icon: <Mic2 size={28} />,
+    grade: "Grade 6 - 8",
+    title: "Communication",
+    desc: "Leadership development, structured speaking and collaboration skills.",
   },
 
   {
-    title: "Grade 9 - 12",
-
-    image: grade4,
-
-    subtitle: "Future Readiness Programs",
-
-    points: [
-      "Interview Readiness",
-      "Presentation Skills",
-      "Career Readiness",
-      "Future Skills",
-    ],
+    icon: <Crown size={28} />,
+    grade: "Grade 9 - 12",
+    title: "Leadership",
+    desc: "Interview readiness, presentation mastery and future leadership skills.",
   },
 ];
 
-const SchoolSolutionsSection = () => {
-  const [active, setActive] = useState(0);
-
+export default function SchoolTransformation() {
   return (
-    <section className="school-solutions">
-
-      <div className="school-glow"></div>
+    <section className="school-transform">
 
       <div className="container">
 
         <div className="school-header">
 
-          <span className="section-tag">
-            School Solutions
+          <span className="school-tag">
+            SCHOOL TRANSFORMATION PROGRAM
           </span>
 
           <h2>
-            Transforming Students Into
-            <span> Future Leaders</span>
+            A Journey From
+            <span> Expression To Leadership</span>
           </h2>
 
           <p>
-            Communication, leadership,
-            confidence and future-readiness
-            programs designed for modern schools.
+            Our year-long communication and leadership
+            framework supports students from Grade 1
+            through Grade 12 with age-appropriate
+            transformation experiences.
           </p>
 
         </div>
 
-        <div className="school-dashboard">
+        <div className="school-visual">
 
-          {/* Left Image */}
+          <img
+            src={schoolImg}
+            alt=""
+          />
 
-          <AnimatePresence mode="wait">
+          <div className="school-overlay-card">
+            2 Sessions Per Week
+            <span>
+              Throughout The Academic Year
+            </span>
+          </div>
 
-            <motion.div
-              key={active}
-              className="school-image-box"
-              initial={{
-                opacity: 0,
-                scale: 1.1,
-              }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-              }}
-              exit={{
-                opacity: 0,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
+        </div>
+
+        <div className="journey-line">
+
+          {journey.map((item, index) => (
+            <div
+              className="journey-node"
+              key={index}
             >
-              <img
-                src={grades[active].image}
-                alt=""
-              />
 
-              <div className="image-overlay"></div>
-
-              <div className="floating-badge">
-                10K+ Students Impacted
+              <div className="node-icon">
+                {item.icon}
               </div>
 
-            </motion.div>
+              <span className="grade">
+                {item.grade}
+              </span>
 
-          </AnimatePresence>
+              <h3>{item.title}</h3>
 
-          {/* Right Content */}
-
-          <div className="school-content">
-
-            <div className="grade-tabs">
-
-              {grades.map(
-                (item, index) => (
-                  <button
-                    key={index}
-                    className={
-                      active === index
-                        ? "active"
-                        : ""
-                    }
-                    onClick={() =>
-                      setActive(index)
-                    }
-                  >
-                    {item.title}
-                  </button>
-                )
-              )}
+              <p>{item.desc}</p>
 
             </div>
-
-            <AnimatePresence mode="wait">
-
-              <motion.div
-                key={active}
-                className="grade-content"
-                initial={{
-                  opacity: 0,
-                  x: 40,
-                }}
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                exit={{
-                  opacity: 0,
-                  x: -40,
-                }}
-                transition={{
-                  duration: 0.5,
-                }}
-              >
-
-                <span className="grade-subtitle">
-                  {grades[active].subtitle}
-                </span>
-
-                <h3>
-                  {grades[active].title}
-                </h3>
-
-                <div className="points-list">
-
-                  {grades[
-                    active
-                  ].points.map(
-                    (item, index) => (
-                      <div
-                        key={index}
-                        className="point"
-                      >
-                        <Check
-                          size={18}
-                        />
-                        {item}
-                      </div>
-                    )
-                  )}
-
-                </div>
-
-                <div className="stats-row">
-
-                  <div className="stat-card">
-                    <h4>50+</h4>
-                    <span>Schools</span>
-                  </div>
-
-                  <div className="stat-card">
-                    <h4>100+</h4>
-                    <span>Programs</span>
-                  </div>
-
-                  <div className="stat-card">
-                    <h4>95%</h4>
-                    <span>Success</span>
-                  </div>
-
-                </div>
-
-                <button className="school-btn">
-
-                  Schedule Consultation
-
-                  <ArrowRight
-                    size={18}
-                  />
-
-                </button>
-
-              </motion.div>
-
-            </AnimatePresence>
-
-          </div>
+          ))}
 
         </div>
 
@@ -556,6 +674,4 @@ const SchoolSolutionsSection = () => {
 
     </section>
   );
-};
-
-export default SchoolSolutionsSection;
+}

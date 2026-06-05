@@ -96,9 +96,14 @@ import LearningMethodology from "./LearningMethodology";
 import MissionVisionSection from "./MissionVisionSection";
 import NewsletterSection from "./NewsletterSection";
 import PartnerInstitutionsSection from "./PartnerInstitutionsSection";
+
 import SchoolSolutionsSection from "./SchoolSolutionsSection";
+import SchoolTransformation from "./SchoolTransformation";
+
 import SuccessStoriesSection from "./SuccessStoriesSection";
 import TransformationEcosystem from "./TransformationEcosystem";
+import TransformationPillars from "./TransformationPillars";
+import TrustedBy from "./TrustedCompanies";
 import WhyChooseETA from "./WhyChooseETA";
 
 const Home = () => {
@@ -111,6 +116,12 @@ const Home = () => {
         <section id="home">
           <HeroSection />
         </section>
+        {/* <section>
+          <TrustedBy/>
+        </section>
+        <section>
+          <TransformationPillars/>
+        </section> */}
 
         <section id="about">
           <AboutSection />
@@ -125,6 +136,7 @@ const Home = () => {
         </section>
 
         <section id="programs">
+          <SchoolTransformation/>
           <TransformationEcosystem />
         </section>
 
