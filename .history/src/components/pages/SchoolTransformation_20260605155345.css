@@ -105,18 +105,15 @@
 /* ====================== */
 
 .journey-line {
-  margin-top: 40px;
+  margin-top: 35px;
 
-  display: grid;
+  display: flex;
 
-  grid-template-columns: repeat(4, minmax(0, 0.9fr));
+  justify-content: center;
 
-  gap: 22px;
+  gap: 20px;
 
-  max-width: 1200px;
-
-  margin-left: auto;
-  margin-right: auto;
+  flex-wrap: wrap;
 }
 
 /* ====================== */

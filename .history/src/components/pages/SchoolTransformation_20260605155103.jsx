@@ -8,31 +8,28 @@ import {
 } from "lucide-react";
 
 import schoolImg from "../../assets/about/about1.jpg";
-import scl from "../../assets/about/aboutthree.jpg";
-import Img from "../../assets/about/aboutfour.jpg";
-import mg from "../../assets/about/aboutfive.jpg";
 
 const journey = [
   {
-    // image: schoolImg,
+    icon: <Smile size={22} />,
     grade: "Grade 1 - 2",
     title: "Foundation",
     desc: "Expression, listening skills, participation confidence and social interaction.",
   },
   {
-    image: Img,
+    // icon: <Sparkles size={22} />,
     grade: "Grade 3 - 5",
     title: "Confidence",
     desc: "Effective communication and leadership skills.",
   },
   {
-    image: scl,
+    icon: <Mic2 size={22} />,
     grade: "Grade 6 - 8",
     title: "Communication",
     desc: "Leadership development, structured speaking and collaboration skills.",
   },
   {
-   image: mg,
+    icon: <Crown size={22} />,
     grade: "Grade 9 - 12",
     title: "Leadership",
     desc: "Interview readiness, presentation mastery and future leadership skills.",
@@ -81,9 +78,9 @@ export default function SchoolTransformation() {
 
               <div className="card-image">
                 <img
-  src={item.image}
-  alt={item.title}
-/>
+                  src={schoolImg}
+                  alt={item.title}
+                />
               </div>
 
               <div className="card-content">

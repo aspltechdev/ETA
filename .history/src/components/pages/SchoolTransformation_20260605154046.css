@@ -1,0 +1,339 @@
+.school-transform {
+  position: relative;
+
+  padding: 120px 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+/* Soft white glass layer */
+
+.school-transform::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    rgba(255,255,255,.75);
+
+  backdrop-filter: blur(8px);
+
+  z-index: 1;
+}
+
+/* Floating glow */
+
+.school-transform::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -180px;
+  right: -180px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      rgba(28,43,255,.12),
+      transparent 70%
+    );
+
+  z-index: 0;
+}
+
+.school-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========================= */
+
+.school-header {
+  max-width: 900px;
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.school-tag {
+  display: inline-flex;
+
+  padding: 12px 24px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,.45);
+
+  backdrop-filter: blur(20px);
+
+  border:
+    1px solid rgba(255,255,255,.9);
+
+  color: #1c2bff;
+
+  font-size: .9rem;
+
+  font-weight: 700;
+
+  letter-spacing: .08em;
+
+  box-shadow:
+    0 8px 30px rgba(15,23,42,.04);
+}
+
+.school-header h2 {
+  margin-top: 24px;
+
+  font-size:
+    clamp(3rem,5vw,5rem);
+
+  line-height: 1.05;
+
+  color: #081028;
+
+  font-weight: 800;
+}
+
+.school-header h2 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1c2bff,
+      #4f46e5
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.school-header p {
+  max-width: 720px;
+
+  margin: 24px auto 0;
+
+  color: #475569;
+
+  line-height: 1.9;
+
+  font-size: 1.05rem;
+}
+
+/* ========================= */
+
+.school-overlay-card {
+  width: fit-content;
+
+  margin: 60px auto 0;
+
+  padding: 24px 34px;
+
+  border-radius: 24px;
+
+  background:
+    rgba(255,255,255,.45);
+
+  backdrop-filter: blur(25px);
+
+  border:
+    1px solid rgba(255,255,255,.9);
+
+  box-shadow:
+    0 15px 40px rgba(15,23,42,.08);
+
+  text-align: center;
+
+  font-size: 1.1rem;
+
+  font-weight: 700;
+
+  color: #081028;
+}
+
+.school-overlay-card span {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: .95rem;
+
+  color: #64748b;
+
+  font-weight: 500;
+}
+
+/* ========================= */
+
+.journey-line {
+  margin-top: 80px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap: 24px;
+}
+
+/* ========================= */
+
+.journey-node {
+  padding: 34px 28px;
+
+  border-radius: 28px;
+
+  background:
+    rgba(255,255,255,.38);
+
+  backdrop-filter: blur(25px);
+
+  border:
+    1px solid rgba(255,255,255,.95);
+
+  box-shadow:
+    0 12px 35px rgba(15,23,42,.05);
+
+  text-align: center;
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    background .35s ease;
+}
+
+.journey-node:hover {
+  transform:
+    translateY(-10px);
+
+  background:
+    rgba(255,255,255,.55);
+
+  box-shadow:
+    0 25px 50px rgba(15,23,42,.12);
+}
+
+/* ========================= */
+
+.node-icon {
+  width: 72px;
+  height: 72px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,.65);
+
+  backdrop-filter: blur(20px);
+
+  border:
+    1px solid rgba(255,255,255,.95);
+
+  color: #1c2bff;
+
+  box-shadow:
+    0 10px 25px rgba(28,43,255,.08);
+}
+
+.grade {
+  display: block;
+
+  margin-top: 22px;
+
+  font-size: .85rem;
+
+  font-weight: 700;
+
+  letter-spacing: .08em;
+
+  color: #1c2bff;
+
+  text-transform: uppercase;
+}
+
+.journey-node h3 {
+  margin-top: 10px;
+
+  font-size: 1.4rem;
+
+  font-weight: 700;
+
+  color: #081028;
+}
+
+.journey-node p {
+  margin-top: 12px;
+
+  color: #64748b;
+
+  line-height: 1.8;
+
+  font-size: .95rem;
+}
+
+/* ========================= */
+/* Tablet */
+
+@media (max-width: 992px) {
+  .journey-line {
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .school-header h2 {
+    font-size: 3rem;
+  }
+}
+
+/* ========================= */
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .school-transform {
+    padding: 80px 0;
+  }
+
+  .school-header h2 {
+    font-size: 2.3rem;
+  }
+
+  .school-header p {
+    font-size: .95rem;
+  }
+
+  .school-overlay-card {
+    width: 100%;
+
+    max-width: 320px;
+
+    padding: 20px;
+  }
+
+  .journey-line {
+    margin-top: 50px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .journey-node {
+    padding: 28px 22px;
+  }
+}

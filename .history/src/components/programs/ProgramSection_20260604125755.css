@@ -1,0 +1,37 @@
+.program-section-slider {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+/* dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #2563eb;
+  transform: scale(1.3);
+}

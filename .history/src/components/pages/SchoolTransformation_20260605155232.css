@@ -105,25 +105,20 @@
 /* ====================== */
 
 .journey-line {
-  margin-top: 40px;
+  margin-top: 35px;
 
   display: grid;
 
-  grid-template-columns: repeat(4, minmax(0, 0.9fr));
+  grid-template-columns: repeat(4, 1fr);
 
-  gap: 22px;
+  gap: 18px;
 
-  max-width: 1200px;
-
-  margin-left: auto;
-  margin-right: auto;
+  align-items: stretch;
 }
 
 /* ====================== */
 
 .journey-card {
-  width: 240px;
-
   background: #fff;
 
   border-radius: 18px;
@@ -137,6 +132,8 @@
 
   display: flex;
   flex-direction: column;
+
+  height: 300px;
 }
 
 .journey-card:hover {
@@ -149,7 +146,9 @@
 /* ====================== */
 
 .card-image {
-  height: 110px;
+  height: 95px;
+
+  flex-shrink: 0;
 }
 
 .card-image img {
@@ -231,10 +230,14 @@
 
   color: #1c2bff;
 
+  background: transparent;
+
   width: auto;
   height: auto;
 
-  background: transparent;
+  border-radius: 0;
+
+  flex-shrink: 0;
 }
 
 .card-footer strong {
@@ -266,8 +269,12 @@
     padding: 70px 0;
   }
 
+  .journey-line {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .journey-card {
-    width: 260px;
+    height: 320px;
   }
 }
 
@@ -287,12 +294,13 @@
   }
 
   .journey-line {
+    grid-template-columns: 1fr;
+
     gap: 16px;
   }
 
   .journey-card {
-    width: 100%;
-    max-width: 340px;
+    height: auto;
   }
 
   .card-image {

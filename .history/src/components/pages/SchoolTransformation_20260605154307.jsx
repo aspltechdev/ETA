@@ -8,31 +8,28 @@ import {
 } from "lucide-react";
 
 import schoolImg from "../../assets/about/about1.jpg";
-import scl from "../../assets/about/aboutthree.jpg";
-import Img from "../../assets/about/aboutfour.jpg";
-import mg from "../../assets/about/aboutfive.jpg";
 
 const journey = [
   {
-    // image: schoolImg,
+  
     grade: "Grade 1 - 2",
     title: "Foundation",
     desc: "Expression, listening skills, participation confidence and social interaction.",
   },
   {
-    image: Img,
+   
     grade: "Grade 3 - 5",
     title: "Confidence",
-    desc: "Effective communication and leadership skills.",
+    desc: "Public speaking basics, classroom participation and leadership foundations.",
   },
   {
-    image: scl,
+   
     grade: "Grade 6 - 8",
     title: "Communication",
     desc: "Leadership development, structured speaking and collaboration skills.",
   },
   {
-   image: mg,
+    
     grade: "Grade 9 - 12",
     title: "Leadership",
     desc: "Interview readiness, presentation mastery and future leadership skills.",
@@ -47,12 +44,8 @@ export default function SchoolTransformation() {
         backgroundImage: `url(${schoolImg})`,
       }}
     >
-      <div className="school-overlay"></div>
-
       <div className="container school-content">
-
         <div className="school-header">
-
           <span className="school-tag">
             SCHOOL TRANSFORMATION PROGRAM
           </span>
@@ -68,59 +61,35 @@ export default function SchoolTransformation() {
             through Grade 12 with age-appropriate
             transformation experiences.
           </p>
+        </div>
 
+        <div className="school-overlay-card">
+          2 Sessions Per Week
+          <span>
+            Throughout The Academic Year
+          </span>
         </div>
 
         <div className="journey-line">
-
           {journey.map((item, index) => (
             <div
-              className="journey-card"
+              className="journey-node"
               key={index}
             >
-
-              <div className="card-image">
-                <img
-  src={item.image}
-  alt={item.title}
-/>
+              <div className="node-icon">
+                {item.icon}
               </div>
 
-              <div className="card-content">
+              <span className="grade">
+                {item.grade}
+              </span>
 
-                <span className="grade-badge">
-                  {item.grade}
-                </span>
+              <h3>{item.title}</h3>
 
-                <h3>{item.title}</h3>
-
-                <p>{item.desc}</p>
-
-                <div className="card-footer">
-
-                  <div className="card-icon">
-                    {item.icon}
-                  </div>
-
-                  <div>
-                    <strong>
-                      Student Growth
-                    </strong>
-
-                    <span>
-                      Development Track
-                    </span>
-                  </div>
-
-                </div>
-
-              </div>
-
+              <p>{item.desc}</p>
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
   );

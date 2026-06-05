@@ -68,7 +68,7 @@
 .school-header h2 {
   margin-top: 12px;
 
-  font-size: clamp(2.3rem, 3vw, 3.8rem);
+  font-size: clamp(2.4rem, 3vw, 3.8rem);
 
   line-height: 1.05;
 
@@ -105,25 +105,20 @@
 /* ====================== */
 
 .journey-line {
-  margin-top: 40px;
+  margin-top: 35px;
 
   display: grid;
 
-  grid-template-columns: repeat(4, minmax(0, 0.9fr));
+  grid-template-columns: repeat(4, 1fr);
 
-  gap: 22px;
+  gap: 18px;
 
-  max-width: 1200px;
-
-  margin-left: auto;
-  margin-right: auto;
+  align-items: stretch;
 }
 
 /* ====================== */
 
 .journey-card {
-  width: 240px;
-
   background: #fff;
 
   border-radius: 18px;
@@ -137,6 +132,8 @@
 
   display: flex;
   flex-direction: column;
+
+  height: 340px;
 }
 
 .journey-card:hover {
@@ -149,7 +146,9 @@
 /* ====================== */
 
 .card-image {
-  height: 110px;
+  height: 120px;
+
+  flex-shrink: 0;
 }
 
 .card-image img {
@@ -162,7 +161,7 @@
 /* ====================== */
 
 .card-content {
-  padding: 14px;
+  padding: 16px;
 
   display: flex;
   flex-direction: column;
@@ -183,15 +182,15 @@
 
   color: #1c2bff;
 
-  font-size: .68rem;
+  font-size: .7rem;
 
   font-weight: 700;
 }
 
 .card-content h3 {
-  margin-top: 8px;
+  margin-top: 10px;
 
-  font-size: 1rem;
+  font-size: 1.15rem;
 
   font-weight: 700;
 
@@ -199,13 +198,13 @@
 }
 
 .card-content p {
-  margin-top: 6px;
+  margin-top: 8px;
 
   color: #64748b;
 
-  line-height: 1.45;
+  line-height: 1.5;
 
-  font-size: .8rem;
+  font-size: .84rem;
 
   flex: 1;
 }
@@ -218,29 +217,34 @@
   display: flex;
   align-items: center;
 
-  gap: 8px;
+  gap: 10px;
 
-  padding-top: 10px;
+  padding-top: 12px;
 
   border-top: 1px solid #edf2f7;
 }
 
 .card-icon {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  background: rgba(28,43,255,.08);
 
   color: #1c2bff;
 
-  width: auto;
-  height: auto;
-
-  background: transparent;
+  flex-shrink: 0;
 }
 
 .card-footer strong {
   display: block;
 
-  font-size: .78rem;
+  font-size: .82rem;
 
   color: #081028;
 }
@@ -250,7 +254,7 @@
 
   margin-top: 2px;
 
-  font-size: .68rem;
+  font-size: .72rem;
 
   color: #64748b;
 }
@@ -266,8 +270,12 @@
     padding: 70px 0;
   }
 
+  .journey-line {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .journey-card {
-    width: 260px;
+    height: 340px;
   }
 }
 
@@ -283,19 +291,20 @@
   }
 
   .school-header h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .journey-line {
-    gap: 16px;
+    grid-template-columns: 1fr;
+
+    gap: 18px;
   }
 
   .journey-card {
-    width: 100%;
-    max-width: 340px;
+    height: auto;
   }
 
   .card-image {
-    height: 160px;
+    height: 180px;
   }
 }

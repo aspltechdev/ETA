@@ -1,0 +1,269 @@
+/* ══════════════════════════════════════════
+   SLIDER SHELL — no padding/gap/margin here
+   so translateX(-100%) is always pixel-perfect
+   ══════════════════════════════════════════ */
+.program-slider-section {
+  background: #eef2f8;
+  padding-bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.program-slider-track-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* KEY FIX: track must be exactly (n * 100vw) wide with zero gap */
+.program-slider-track {
+  display: flex;
+  align-items: stretch;
+  gap: 0;              /* ← ZERO gap. Any gap breaks % translate */
+  margin: 0;
+  padding: 0;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* KEY FIX: each slide is EXACTLY 100% of the track-wrap width */
+.program-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 40px 40px 20px; /* visual breathing room lives HERE, not on track */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ══════════════════════════════════════════
+   3D CARD — lives inside the slide, centered
+   ══════════════════════════════════════════ */
+.program-section {
+  width: 100%;
+  max-width: 1200px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 60px 48px;
+  box-sizing: border-box;
+
+  /* no tilt, only scale base */
+  transform: scale(0.97);
+  transform-origin: center;
+
+  box-shadow:
+    0 20px 60px rgba(74, 144, 217, 0.18),
+    0 6px 18px rgba(0, 0, 0, 0.07),
+    inset -2px -2px 0 rgba(255, 255, 255, 0.85);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(74, 144, 217, 0.15);
+}
+
+.program-section:hover {
+  transform: scale(1);
+
+  box-shadow:
+    0 30px 80px rgba(74, 144, 217, 0.22),
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    inset -2px -2px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* ══════════════════════════════════════════
+   INNER LAYOUT — two equal columns
+   ══════════════════════════════════════════ */
+.program-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Reverse: swap image to left side with CSS order, NOT direction:rtl */
+.program-wrapper.reverse .program-image {
+  order: -1;
+}
+
+/* ── Content column ── */
+.program-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.section-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(74, 144, 217, 0.12);
+  color: #4a90d9;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(74, 144, 217, 0.3);
+}
+
+.program-content h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 16px;
+  line-height: 1.3;
+}
+
+.program-content p {
+  font-size: 16px;
+  color: #4a5568;
+  line-height: 1.7;
+  margin: 0 0 24px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.feature-card {
+  background: #eef2f8;
+  border: 1px solid #dde8f5;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #1a1a2e;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(74, 144, 217, 0.15);
+  border-color: #4a90d9;
+  color: #4a90d9;
+}
+
+/* ── Image column ── */
+.program-image {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.program-image img {
+  width: 100%;
+  max-width: 500px;
+  height: 360px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+/* ══════════════════════════════════════════
+   CONTROLS
+   ══════════════════════════════════════════ */
+.program-slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 28px 0 44px;
+  background: #eef2f8;
+}
+
+.slider-nav-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid #4a90d9;
+  background: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a90d9;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.slider-nav-btn:hover {
+  background: #4a90d9;
+  color: #fff;
+}
+
+.slider-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #b0c4de;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  padding: 0;
+}
+
+.slider-dot.active {
+  background: #4a90d9;
+  transform: scale(1.3);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .program-slide {
+    padding: 20px 16px 12px;
+  }
+
+  .program-section {
+    transform: perspective(800px) rotateX(2deg) scale(0.98);
+    padding: 36px 24px;
+  }
+
+  .program-section:hover {
+    transform: perspective(800px) rotateX(0deg) scale(1);
+  }
+
+  .program-wrapper {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .program-content {
+    align-items: center;
+  }
+
+  /* Reset order so image is always below content on mobile */
+  .program-wrapper.reverse .program-image {
+    order: 0;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .program-image img {
+    max-width: 100%;
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}

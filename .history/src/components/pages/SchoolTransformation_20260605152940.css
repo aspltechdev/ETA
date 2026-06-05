@@ -1,0 +1,226 @@
+.school-transform {
+  position: relative;
+
+  padding: 120px 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+.school-bg-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8,16,40,.82),
+      rgba(8,16,40,.75)
+    );
+
+  backdrop-filter: blur(2px);
+}
+
+.school-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ======================== */
+
+.school-header {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.school-tag {
+  display: inline-flex;
+
+  padding: 12px 24px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.08);
+
+  border: 1px solid rgba(255,255,255,.15);
+
+  backdrop-filter: blur(20px);
+
+  color: #fff;
+
+  font-weight: 600;
+
+  letter-spacing: .08em;
+}
+
+.school-header h2 {
+  margin-top: 24px;
+
+  font-size: clamp(3rem, 5vw, 5rem);
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  color: #fff;
+}
+
+.school-header h2 span {
+  display: block;
+
+  color: #8fa3ff;
+}
+
+.school-header p {
+  max-width: 720px;
+
+  margin: 24px auto 0;
+
+  color: rgba(255,255,255,.75);
+
+  line-height: 1.8;
+}
+
+/* ======================== */
+
+.school-overlay-card {
+  width: fit-content;
+
+  margin: 60px auto 0;
+
+  padding: 22px 30px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,.08);
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  backdrop-filter: blur(25px);
+
+  color: #fff;
+
+  text-align: center;
+
+  font-weight: 700;
+}
+
+.school-overlay-card span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: rgba(255,255,255,.7);
+
+  font-size: .95rem;
+
+  font-weight: 500;
+}
+
+/* ======================== */
+
+.journey-line {
+  margin-top: 80px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 24px;
+}
+
+.journey-node {
+  padding: 32px;
+
+  border-radius: 24px;
+
+  background: rgba(255,255,255,.08);
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  backdrop-filter: blur(25px);
+
+  text-align: center;
+
+  transition: .35s;
+}
+
+.journey-node:hover {
+  transform: translateY(-8px);
+
+  background: rgba(255,255,255,.12);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.25);
+}
+
+.node-icon {
+  width: 72px;
+  height: 72px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.1);
+
+  color: #fff;
+}
+
+.grade {
+  display: block;
+
+  margin-top: 20px;
+
+  color: #8fa3ff;
+
+  font-size: .85rem;
+
+  font-weight: 700;
+
+  letter-spacing: .05em;
+}
+
+.journey-node h3 {
+  margin-top: 10px;
+
+  color: #fff;
+}
+
+.journey-node p {
+  margin-top: 12px;
+
+  color: rgba(255,255,255,.72);
+
+  line-height: 1.7;
+}
+
+/* ======================== */
+
+@media (max-width: 992px) {
+  .journey-line {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .school-transform {
+    padding: 80px 0;
+  }
+
+  .school-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .journey-line {
+    grid-template-columns: 1fr;
+  }
+}

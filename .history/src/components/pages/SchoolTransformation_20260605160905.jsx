@@ -14,7 +14,7 @@ import mg from "../../assets/about/aboutfive.jpg";
 
 const journey = [
   {
-    // image: schoolImg,
+    image: schoolImg,
     grade: "Grade 1 - 2",
     title: "Foundation",
     desc: "Expression, listening skills, participation confidence and social interaction.",

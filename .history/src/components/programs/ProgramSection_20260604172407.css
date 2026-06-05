@@ -1,0 +1,25 @@
+.program-slider-section {
+  overflow: hidden;        /* ← this must be here */
+  background: #eef2f8;
+  padding: 40px 20px;
+  /* NO perspective here */
+}
+
+.program-slider-track-wrap {
+  overflow: hidden;        /* ← and here */
+  width: 100%;
+}
+
+.program-section {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 60px 48px;
+  perspective: 1200px;     /* ← perspective ONLY here */
+  transform: rotateX(4deg) rotateY(-3deg) scale(0.97);
+  transform-style: preserve-3d;
+  box-shadow:
+    12px 24px 60px rgba(74, 144, 217, 0.2),
+    4px 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(74, 144, 217, 0.15);
+}
