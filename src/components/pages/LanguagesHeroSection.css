@@ -44,7 +44,7 @@
 }
 
 /* Blue pill badge */
-.section-tag {
+.section-tags {
   display: inline-flex;
   align-items: center;
   margin-top: 10px;
@@ -205,6 +205,7 @@
 .flag-2, .flag-3, .flag-6 { animation-duration: 6.5s; }
 
 .flag-content {
+
   position: absolute;
   inset: 0;
   display: flex;

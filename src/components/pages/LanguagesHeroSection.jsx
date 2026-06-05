@@ -19,7 +19,7 @@ const LanguagesHeroSection = () => {
       />
 
       <div className="container">
-        <span className="section-tag">
+        <span className="section-tags">
           ETA Language Academy
         </span>
 
