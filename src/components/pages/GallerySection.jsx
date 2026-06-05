@@ -1,242 +1,107 @@
-// import "./GallerySection.css";
-// import {
-//   Camera,
-//   PlayCircle,
-// } from "lucide-react";
-
-// const galleryItems = [
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80",
-//     title: "Leadership Workshop",
-//   },
-
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
-//     title: "Communication Program",
-//   },
-
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1200&q=80",
-//     title: "Language Academy",
-//   },
-
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
-//     title: "Student Activity",
-//   },
-
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&q=80",
-//     title: "Public Speaking Session",
-//   },
-
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&q=80",
-//     title: "Institution Program",
-//   },
-// ];
-
-// const GallerySection = () => {
-//   return (
-//     <section className="gallery-section">
-
-//       <div className="gallery-glow"></div>
-
-//       <div className="container">
-
-//         <div className="gallery-header">
-
-//           <span className="section-tag">
-//             Gallery & Events
-//           </span>
-
-//           <h2>
-//             Moments That Inspire
-//             Transformation
-//           </h2>
-
-//           <p>
-//             Explore workshops, leadership
-//             activities, language programs and
-//             transformational learning experiences
-//             happening across ETA.
-//           </p>
-
-//         </div>
-
-//         <div className="gallery-grid">
-
-//           {galleryItems.map((item, index) => (
-//             <div
-//               className="gallery-card"
-//               key={index}
-//             >
-
-//               <img
-//                 src={item.image}
-//                 alt={item.title}
-//               />
-
-//               <div className="gallery-overlay">
-
-//                 <Camera size={22} />
-
-//                 <h4>
-//                   {item.title}
-//                 </h4>
-
-//               </div>
-
-//             </div>
-//           ))}
-
-//         </div>
-
-
-     
-
-//       </div>
-
-//     </section>
-//   );
-// };
-
-// export default GallerySection;
-
-
-
-
-
+import { useState, useEffect } from "react";
 import "./GallerySection.css";
 
-import {
-  Camera,
-  PlayCircle,
-  ArrowRight,
-} from "lucide-react";
+import gallery1 from "../../assets/gallery1.jpg";
+import gallery2 from "../../assets/gallery2.jpg";
+import gallery3 from "../../assets/gallery3.jpg";
+import gallery4 from "../../assets/gallery4.jpg";
+import gallery5 from "../../assets/gallery5.jpg";
+import gallery6 from "../../assets/gallery6.jpg";
 
 const galleryItems = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80",
-    title: "Leadership Workshop",
-    category: "Leadership",
-  },
-
-  {
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
-    title: "Communication Excellence",
-    category: "Soft Skills",
-  },
-
-  {
-    image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1200&q=80",
-    title: "Language Academy",
-    category: "Languages",
-  },
-
-  {
-    image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
-    title: "Student Engagement",
-    category: "Schools",
-  },
+  { image: gallery1, title: "Leadership Workshop" },
+  { image: gallery2, title: "Communication Excellence" },
+  { image: gallery3, title: "Language Academy" },
+  { image: gallery4, title: "Student Engagement" },
+  { image: gallery5, title: "Public Speaking Session" },
+  { image: gallery6, title: "Institution Program" },
 ];
 
 const GallerySection = () => {
-  return (
-    <section className="eta-gallery">
+  const [active, setActive] = useState(0);
 
-      <div className="eta-gallery__glow"></div>
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive((prev) => (prev + 1) % galleryItems.length);
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="etax-gallery">
+
+      <div className="etax-gallery-glow"></div>
 
       <div className="container">
 
-        <div className="eta-gallery__header">
+        <div className="etax-gallery-header">
 
-          <span className="eta-gallery__tag">
+          <span className="etax-gallery-tag">
             Transformation In Action
           </span>
 
           <h2>
-            Every Program Creates
-            A Story Worth Sharing
+            Moments Of Growth,
+            <br />
+            Transformation & Success
           </h2>
 
           <p>
-            From leadership workshops and
-            communication mastery to language
-            learning and school transformation,
-            explore ETA moments that inspire growth.
+            A glimpse into leadership workshops,
+            communication programs, language learning
+            initiatives and transformational experiences.
           </p>
 
         </div>
 
-        {/* Featured Card */}
+        <div className="etax-gallery-slider">
 
-        <div className="eta-gallery__featured">
+          {galleryItems.map((item, index) => {
 
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80"
-            alt=""
-          />
+            let position = "hidden";
 
-          <div className="eta-gallery__featured-overlay">
+            if (index === active) {
+              position = "active";
+            } else if (
+              index ===
+              (active - 1 + galleryItems.length) %
+                galleryItems.length
+            ) {
+              position = "left";
+            } else if (
+              index ===
+              (active + 1) %
+                galleryItems.length
+            ) {
+              position = "right";
+            }
 
-            <span>Featured Event</span>
+            return (
+              <div
+                key={index}
+                className={`etax-gallery-slide ${position}`}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                />
 
-            <h3>
-              Leadership & Personality
-              Development Workshop
-            </h3>
+                <div className="etax-gallery-overlay">
 
-            <button>
-              <PlayCircle size={18} />
-              Watch Highlights
-            </button>
+                  <span>
+                    Featured Experience
+                  </span>
 
-          </div>
+                  <h3>
+                    {item.title}
+                  </h3>
 
-        </div>
-
-        {/* Masonry Grid */}
-
-        <div className="eta-gallery__grid">
-
-          {galleryItems.map((item, index) => (
-            <div
-              className="eta-gallery__card"
-              key={index}
-            >
-
-              <img
-                src={item.image}
-                alt={item.title}
-              />
-
-              <div className="eta-gallery__card-overlay">
-
-                <span>
-                  {item.category}
-                </span>
-
-                <h4>
-                  {item.title}
-                </h4>
-
-                <ArrowRight size={18} />
+                </div>
 
               </div>
-
-            </div>
-          ))}
+            );
+          })}
 
         </div>
 

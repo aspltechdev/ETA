@@ -117,10 +117,10 @@ const Home = () => {
         <section id="home">
           <HeroSection />
         </section>
-        {/* <section>
+        {/*<section>
           <TrustedBy/>
-        </section>
-        <section>
+        </section>*/}
+        {/* <section>
           <TransformationPillars/>
         </section> */}
 
@@ -166,8 +166,12 @@ const Home = () => {
           <SuccessStoriesSection />
         </section>
 
-        <section id="partners">
+        {/*<section id="partners">
           <PartnerInstitutionsSection />
+        </section>*/}
+
+        <section>
+          <TrustedBy/>
         </section>
 
         <section id="gallery">
