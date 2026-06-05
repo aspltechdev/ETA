@@ -1,18 +1,7 @@
-
-
-
+import { useEffect, useRef, useState } from "react";
 import "./CertificationPathway.css";
 
 import worldMap from "../../assets/w1.jpg";
-
-const levels = [
-  "A1",
-  "A2",
-  "B1",
-  "B2",
-  "C1",
-  "C2",
-];
 
 const languages = [
   "🇫🇷 French",
@@ -23,20 +12,43 @@ const languages = [
   "🇨🇳 Chinese",
 ];
 
-const CertificationPathway = () => {
-  return (
-    <section className="certification-section">
+const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
+const CertificationPathway = () => {
+  const sectionRef = useRef(null);
+  const [showBadges, setShowBadges] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowBadges(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      className="certification-section"
+      ref={sectionRef}
+    >
       <div className="certification-glow"></div>
 
       <div className="container">
-
         <div className="certification-wrapper">
 
-          {/* Left */}
-
           <div className="cert-left">
-
             <img
               src={worldMap}
               alt="Global Learning"
@@ -45,21 +57,14 @@ const CertificationPathway = () => {
             <div className="image-overlay"></div>
 
             <div className="image-content">
-
-              <span>
-                Global Learning
-              </span>
+              <span>Global Learning</span>
 
               <h3>
                 Learn Without
                 Borders
               </h3>
-
             </div>
-
           </div>
-
-          {/* Right */}
 
           <div className="cert-right">
 
@@ -79,70 +84,57 @@ const CertificationPathway = () => {
               careers and global opportunities.
             </p>
 
-            <div className="pathway">
+            <div className="cert-badges">
+              {levels.map((level, index) => (
+                <div
+                  key={index}
+                  className={`cert-badge ${
+                    showBadges ? "animate" : ""
+                  }`}
+                  style={{
+                    animationDelay: `${index * 0.25}s`,
+                  }}
+                >
+                  <div className="badge-circle">
+                    {level}
+                  </div>
 
-              {levels.map(
-                (item, index) => (
-                  <>
-                    <div
-                      className="level-box"
-                      key={item}
-                    >
-                      {item}
-                    </div>
-
-                    {index <
-                      levels.length -
-                        1 && (
-                      <span>
-                        →
-                      </span>
-                    )}
-                  </>
-                )
-              )}
-
+                  <div className="badge-ribbon">
+                    Level {level}
+                  </div>
+                </div>
+              ))}
             </div>
 
             <div className="cambridge-box">
-
               <h4>
                 Cambridge Aligned
                 Learning Framework
               </h4>
 
               <p>
-                Structured pathway
-                designed around
-                internationally accepted
-                proficiency standards.
+                Structured pathway designed around
+                internationally accepted proficiency
+                standards.
               </p>
-
             </div>
 
           </div>
 
         </div>
 
-        {/* Languages */}
-
         <div className="language-strip">
-
-          {languages.map(
-            (language, index) => (
-              <div
-                className="language-chip"
-                key={index}
-              >
-                {language}
-              </div>
-            )
-          )}
-
+          {languages.map((language, index) => (
+            <div
+              className="language-chip"
+              key={index}
+            >
+              {language}
+            </div>
+          ))}
         </div>
 
       </div>
-
     </section>
   );
 };
