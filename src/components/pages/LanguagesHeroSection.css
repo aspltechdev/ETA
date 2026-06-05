@@ -337,6 +337,12 @@
   
   .floating-flags {
     height: 500px;
+            position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+      
+        margin-bottom: 250px;
   }
 
   .flag-1, .flag-2, .flag-3, .flag-4, .flag-5, .flag-6 {
@@ -374,12 +380,18 @@
   }
 
   .floating-flags {
-    height: auto;
-    gap: 12px;
+     /* height: 300px; */
+            position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+      
+        margin-bottom: 150px;
+   
   }
 
   .flag-1, .flag-2, .flag-3, .flag-4, .flag-5, .flag-6 {
-    width: 100% !important;
+   
     height: 120px !important;
   }
 }
