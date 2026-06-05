@@ -1,0 +1,43 @@
+.program-slider {
+  position: relative;
+  max-width: 1200px;
+  margin: 60px auto;
+  overflow: hidden;
+}
+
+.slider-track {
+  animation: slideFade 0.5s ease;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.program-slider .nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2563eb;
+  color: white;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.program-slider .nav.left {
+  left: 10px;
+}
+
+.program-slider .nav.right {
+  right: 10px;
+}

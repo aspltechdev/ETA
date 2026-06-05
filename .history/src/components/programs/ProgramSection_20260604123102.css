@@ -1,0 +1,456 @@
+/* ============================================
+   UNIQUE ANIMATION KEYFRAMES
+   ============================================ */
+
+/* 1. Glitch text reveal — heading slices in with skew artifacts */
+@keyframes glitchReveal {
+  0%   { clip-path: inset(0 100% 0 0); opacity: 0; }
+  10%  { clip-path: inset(0 80% 0 0); opacity: 1; transform: skewX(-4deg); }
+  20%  { clip-path: inset(0 60% 0 0); transform: skewX(2deg) translateX(3px); }
+  30%  { clip-path: inset(0 40% 0 0); transform: skewX(-1deg); }
+  40%  { clip-path: inset(0 20% 0 0); transform: skewX(0deg); }
+  50%  { clip-path: inset(0 5% 0 0); }
+  55%  { clip-path: inset(0 0% 0 0); transform: translateX(-2px); }
+  60%  { transform: translateX(1px); }
+  65%, 100% { clip-path: inset(0 0% 0 0); transform: translateX(0); }
+}
+
+/* 2. Tag slides in with a skew snap */
+@keyframes tagSlide {
+  0%   { opacity: 0; transform: translateX(-20px) skewX(10deg); }
+  100% { opacity: 1; transform: translateX(0) skewX(0deg); }
+}
+
+/* 3. Paragraph letter-spacing collapse — text breathes in */
+@keyframes paraFade {
+  0%   { opacity: 0; letter-spacing: 0.15em; }
+  100% { opacity: 1; letter-spacing: normal; }
+}
+
+/* 4. Cards slide up on entrance */
+@keyframes cardReveal {
+  0%   { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 5. SVG border draw-in on feature cards */
+@keyframes drawBorder {
+  0%   { stroke-dashoffset: 400; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* 6. Morphing organic blob shape 1 */
+@keyframes morphBlob1 {
+  0%,  100% { border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; }
+  25%        { border-radius: 30% 70% 40% 60% / 60% 30% 70% 40%; }
+  50%        { border-radius: 50% 50% 30% 70% / 40% 70% 30% 60%; }
+  75%        { border-radius: 70% 30% 60% 40% / 30% 50% 70% 50%; }
+}
+
+/* 7. Morphing organic blob shape 2 */
+@keyframes morphBlob2 {
+  0%,  100% { border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%; }
+  33%        { border-radius: 70% 30% 40% 60% / 40% 60% 30% 70%; }
+  66%        { border-radius: 30% 70% 60% 40% / 50% 30% 70% 50%; }
+}
+
+/* 8. Scan line sweeps across image on hover */
+@keyframes scanLine {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(400%); }
+}
+
+
+/* ============================================
+   PROGRAM SECTION
+   ============================================ */
+
+.program-section {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.program-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.program-wrapper.reverse {
+  direction: rtl;
+}
+
+.program-wrapper.reverse .program-content,
+.program-wrapper.reverse .program-image {
+  direction: ltr;
+}
+
+
+/* ============================================
+   SECTION TAG — skew snap entrance
+   ============================================ */
+
+.section-tag {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+
+  animation: tagSlide 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+
+/* ============================================
+   HEADING — glitch slice reveal
+   ============================================ */
+
+.program-content h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 20px;
+  line-height: 1.2;
+
+  animation: glitchReveal 1s ease 0.3s both;
+}
+
+
+/* ============================================
+   PARAGRAPH — letter-spacing collapse
+   ============================================ */
+
+.program-content p {
+  color: #64748b;
+  line-height: 1.9;
+  font-size: 1.05rem;
+  margin-bottom: 35px;
+
+  animation: paraFade 0.8s ease 0.9s both;
+}
+
+
+/* ============================================
+   FEATURE GRID
+   ============================================ */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+
+/* ============================================
+   FEATURE CARDS — SVG border draw-in + radial
+   cursor spotlight on hover
+   ============================================ */
+
+.feature-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px 20px;
+  color: #334155;
+  font-weight: 500;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+
+  animation: cardReveal 0.5s ease both;
+}
+
+.feature-card:nth-child(1) { animation-delay: 1s; }
+.feature-card:nth-child(2) { animation-delay: 1.1s; }
+.feature-card:nth-child(3) { animation-delay: 1.2s; }
+.feature-card:nth-child(4) { animation-delay: 1.3s; }
+
+/* SVG border element — add inside each .feature-card in HTML:
+   <svg class="border-draw" ...><rect .../></svg>
+   See JS snippet below to auto-set dasharray to perimeter. */
+.feature-card svg.border-draw {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.feature-card svg.border-draw rect {
+  fill: none;
+  stroke: #2563eb;
+  stroke-width: 1.5;
+  stroke-dasharray: 400;   /* replaced by JS at runtime */
+  stroke-dashoffset: 400;  /* replaced by JS at runtime */
+  animation: drawBorder 0.7s ease both;
+}
+
+.feature-card:nth-child(1) svg.border-draw rect { animation-delay: 1s; }
+.feature-card:nth-child(2) svg.border-draw rect { animation-delay: 1.1s; }
+.feature-card:nth-child(3) svg.border-draw rect { animation-delay: 1.2s; }
+.feature-card:nth-child(4) svg.border-draw rect { animation-delay: 1.3s; }
+
+.feature-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: #60a5fa;
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.12);
+}
+
+/* Cursor spotlight — applied via JS mousemove as inline style:
+   card.style.background = `radial-gradient(circle at Xpx Ypx,
+     rgba(37,99,235,0.06) 0%, #fff 60%)`;
+*/
+
+
+/* ============================================
+   PROGRAM IMAGE — morphing blobs + magnetic
+   3D tilt + scan line on hover
+   ============================================ */
+
+.program-image {
+  position: relative;
+  cursor: none; /* hide system cursor; use JS custom cursor */
+}
+
+/* Morphing blob accents */
+.program-image::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: rgba(37, 99, 235, 0.08);
+  top: -30px;
+  left: -30px;
+  z-index: 0;
+
+  animation: morphBlob1 7s ease-in-out infinite;
+}
+
+.program-image::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(96, 165, 250, 0.12);
+  bottom: -20px;
+  right: -20px;
+  z-index: 0;
+
+  animation: morphBlob2 6s ease-in-out 1s infinite;
+}
+
+/* Wrap your <img> in a div.img-wrap */
+.img-wrap {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1);
+  transition: box-shadow 0.4s ease;
+  z-index: 1;
+
+  /* 3D tilt applied via JS:
+     imgWrap.style.transform =
+       `perspective(800px) rotateX(Xdeg) rotateY(Ydeg)`; */
+}
+
+.img-wrap:hover {
+  box-shadow: 0 30px 60px rgba(37, 99, 235, 0.18);
+}
+
+.img-wrap img {
+  width: 100%;
+  display: block;
+  border-radius: 24px;
+  object-fit: cover;
+  transition: transform 0.1s linear;
+  /* Parallax shift applied via JS:
+     img.style.transform =
+       `scale(1.05) translate(Xpx, Ypx)`; */
+}
+
+/* Scan line overlay — add a div.scan inside .img-wrap */
+.scan {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.scan::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(
+    transparent,
+    rgba(37, 99, 235, 0.07),
+    transparent
+  );
+  animation: scanLine 2s linear infinite;
+}
+
+.img-wrap:hover .scan {
+  opacity: 1;
+}
+
+
+/* ============================================
+   CUSTOM MAGNETIC CURSOR
+   Place .cursor-dot and .cursor-ring in <body>
+   ============================================ */
+
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #2563eb;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s, height 0.15s, opacity 0.2s;
+  z-index: 9999;
+  opacity: 0;
+  mix-blend-mode: multiply;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(37, 99, 235, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  opacity: 0;
+  transition: width 0.2s, height 0.2s, opacity 0.2s;
+}
+
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 992px) {
+  .program-wrapper {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .program-wrapper.reverse {
+    direction: ltr;
+  }
+  .program-content h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .program-section {
+    padding: 70px 20px;
+  }
+  .program-content h2 {
+    font-size: 2rem;
+  }
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  .program-content p {
+    font-size: 1rem;
+  }
+}
+
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .section-tag,
+  .program-content h2,
+  .program-content p,
+  .feature-card,
+  .feature-card svg.border-draw rect,
+  .program-image::before,
+  .program-image::after,
+  .scan::after {
+    animation: none;
+  }
+  .img-wrap img {
+    transition: none;
+  }
+}
+
+
+/* ============================================
+   REQUIRED JS SNIPPETS (add to your script)
+   ============================================
+
+// 1. Custom magnetic cursor
+const dot = document.querySelector('.cursor-dot');
+const ring = document.querySelector('.cursor-ring');
+let ringX = 0, ringY = 0, mouseX = 0, mouseY = 0;
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX; mouseY = e.clientY;
+  dot.style.left = mouseX + 'px'; dot.style.top = mouseY + 'px';
+  dot.style.opacity = '1'; ring.style.opacity = '1';
+});
+(function animRing() {
+  ringX += (mouseX - ringX) * 0.12;
+  ringY += (mouseY - ringY) * 0.12;
+  ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
+  requestAnimationFrame(animRing);
+})();
+
+// 2. Magnetic 3D tilt on image
+const imgWrap = document.querySelector('.img-wrap');
+const img = imgWrap.querySelector('img');
+document.querySelector('.program-image').addEventListener('mousemove', e => {
+  const r = imgWrap.getBoundingClientRect();
+  const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+  const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+  imgWrap.style.transform =
+    `perspective(800px) rotateX(${-dy * 12}deg) rotateY(${dx * 12}deg)`;
+  img.style.transform = `scale(1.05) translate(${dx * 10}px, ${dy * 10}px)`;
+  dot.style.width = '18px'; dot.style.height = '18px';
+  ring.style.width = '60px'; ring.style.height = '60px';
+});
+document.querySelector('.program-image').addEventListener('mouseleave', () => {
+  imgWrap.style.transform = 'perspective(800px) rotateX(0) rotateY(0)';
+  img.style.transform = 'scale(1) translate(0,0)';
+  dot.style.width = '10px'; dot.style.height = '10px';
+  ring.style.width = '36px'; ring.style.height = '36px';
+});
+
+// 3. SVG border draw — set dasharray to real perimeter
+document.querySelectorAll('.feature-card').forEach(card => {
+  const rect = card.querySelector('svg.border-draw rect');
+  const w = card.offsetWidth, h = card.offsetHeight;
+  const p = (w + h) * 2;
+  rect.setAttribute('stroke-dasharray', p);
+  rect.setAttribute('stroke-dashoffset', p);
+  rect.setAttribute('width', w);
+  rect.setAttribute('height', h);
+});
+
+// 4. Cursor radial spotlight on feature cards
+document.querySelectorAll('.feature-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.background =
+      `radial-gradient(circle at ${e.clientX - r.left}px ${e.clientY - r.top}px,
+        rgba(37,99,235,0.06) 0%, #fff 60%)`;
+  });
+  card.addEventListener('mouseleave', () => { card.style.background = '#fff'; });
+});
+
+   ============================================ */

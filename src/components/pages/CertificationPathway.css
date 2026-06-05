@@ -1,36 +1,18 @@
 .certification-section {
   position: relative;
-
   padding: 100px 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      #ffffff,
-      #f8fbff
-    );
-
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
   overflow: hidden;
 }
 
-/* Glow */
-
+/* Glow Effect layer */
 .certification-glow {
   position: absolute;
-
   width: 700px;
   height: 700px;
-
   top: -200px;
   left: -200px;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(0,194,255,.12),
-      transparent 70%
-    );
-
+  background: radial-gradient(circle, rgba(0, 194, 255, 0.12), transparent 70%);
   filter: blur(120px);
 }
 
@@ -39,277 +21,266 @@
   z-index: 2;
 }
 
-/* Layout */
-
+/* Layout Framework - Rebuilt using CSS Grid to support full-width spanning elements */
 .certification-wrapper {
   display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap: 60px;
-
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 60px;
+  align-items: start;
 }
 
-/* Left */
-
+/* Left Panel Map Stack */
 .cert-left {
   position: relative;
-
-  height: 500px;
-
+  grid-column: 1;
+  height: 380px; /* Trimmed height slightly so it lines up beautifully with text blocks */
   border-radius: 32px;
-
   overflow: hidden;
-
-  box-shadow:
-    0 25px 60px
-    rgba(15,23,42,.08);
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.06);
 }
 
 .cert-left img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   transition: 1s ease;
 }
 
 .cert-left:hover img {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .cert-left::after {
   content: "";
-
   position: absolute;
   inset: 0;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,.75),
-      rgba(0,0,0,.1)
-    );
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
 }
 
 .map-content {
   position: absolute;
-
   left: 35px;
   bottom: 35px;
-
   z-index: 2;
-
   color: white;
 }
 
 .map-content span {
   display: inline-flex;
-
   padding: 10px 18px;
-
   border-radius: 50px;
-
-  background:
-    rgba(255,255,255,.12);
-
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .map-content h3 {
   margin-top: 16px;
-
-  font-size: 2.5rem;
-
+  font-size: 2.3rem;
   line-height: 1.1;
 }
 
-/* Right */
+/* Right Content Structure */
+.cert-right {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
 
 .cert-right h2 {
-  margin-top: 20px;
-
-  font-size:
-    clamp(3rem,5vw,4.5rem);
-
-  line-height: 1;
-
+  margin-top: 10px;
+  font-size: clamp(2.8rem, 4.5vw, 4rem);
+  line-height: 1.1;
   color: #111827;
 }
 
 .cert-right p {
-  margin-top: 20px;
-
+  margin-top: 15px;
   color: #6b7280;
-
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
-/* Pathway */
+/* ==================================================================
+   ENLARGED FULL-WIDTH CAMBRIDGE CARD (OCCUPIES LEFT SPACE)
+================================================================== */
+.cambridge-box {
+  grid-column: 1 / -1; /* FORCES THE CARD TO SPAN BOTH COLUMNS UNDER THE IMAGE */
+  margin-top: 20px;
+  padding: 32px;
+  border-radius: 28px;
+  width: 100%;
+  box-sizing: border-box;
 
-.pathway {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+  
   display: flex;
-
   align-items: center;
-
-  gap: 12px;
-
-  flex-wrap: wrap;
-
-  margin-top: 40px;
+  gap: 32px;
+  
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.level {
-  width: 70px;
-  height: 70px;
+.cambridge-box:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.25);
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+}
 
-  border-radius: 50%;
-
+.cambridge-logo-wrapper {
+  flex-shrink: 0;
+  width: 150px;
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-weight: 700;
-
-  background: white;
-
-  color: #111827;
-
-  box-shadow:
-    0 15px 30px
-    rgba(15,23,42,.08);
-
-  transition: .3s;
 }
 
-.level:hover {
-  transform:
-    translateY(-5px);
-
-  background:
-    linear-gradient(
-      135deg,
-      #00c2ff,
-      #7c4dff
-    );
-
-  color: white;
+.cambridge-logo-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-.pathway span {
-  font-size: 1.5rem;
-
-  color: #7c4dff;
-}
-
-/* Cambridge */
-
-.cambridge-box {
-  margin-top: 40px;
-
-  padding: 28px;
-
-  border-radius: 24px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #00c2ff10,
-      #7c4dff10
-    );
-
-  border:
-    1px solid
-    rgba(124,77,255,.15);
+.cambridge-text-wrapper {
+  flex-grow: 1;
 }
 
 .cambridge-box h4 {
-  color: #111827;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff; 
+  margin: 0 0 8px 0;
 }
 
 .cambridge-box p {
-  margin-top: 8px;
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-/* Language Strip */
+.section-tag-c {
+    display: inline-flex;
+    padding: 10px 18px;
+    border-radius: 50px;
+    color: rgb(255, 255, 255);
+    background: rgba(10, 62, 249, 0.741);
+    border: 1px solid rgba(136, 138, 228, 0.12);
+    backdrop-filter: blur(80px);
+     font-size: 18px;
+         box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+}
 
-.language-strip {
+/* ==================================================================
+   CERTIFICATION BADGES
+================================================================== */
+.cert-badges {
   display: flex;
-
-  justify-content: center;
-
   flex-wrap: wrap;
-
   gap: 16px;
-
-  margin-top: 60px;
+  margin-top: 30px;
+  width: 100%;
 }
 
-.language-pill {
+.cert-badge {
   display: flex;
-
+  flex-direction: column;
   align-items: center;
-
   gap: 10px;
-
-  padding: 14px 22px;
-
-  border-radius: 50px;
-
-  background: white;
-
-  box-shadow:
-    0 10px 30px
-    rgba(15,23,42,.06);
-
-  font-weight: 600;
-
-  transition: .3s;
+  opacity: 0;
+  transform: translateX(-30px);
+  flex: 1;
+  min-width: 75px;
 }
 
-.language-pill:hover {
-  transform:
-    translateY(-4px);
+.cert-badge.animate {
+  animation: 
+    badgeElegantReveal 0.8s cubic-bezier(0.215, 0.610, 0.355, 1) var(--slide-delay) forwards,
+    badgeElegantFloat 5s ease-in-out var(--wave-delay) infinite;
 }
 
-.language-pill span {
-  font-size: 1.4rem;
+.badge-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08), inset 0 0 12px rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Responsive */
+.badge-ribbon {
+  margin: 0;
+  padding: 0;
+  color: #475569;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 
+.cert-badge:hover .badge-circle {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
+  border-color: #ffffff;
+}
+
+.cert-badge:hover .badge-ribbon { color: #1e3a8a; }
+
+.cert-badge:nth-child(1) .badge-circle { background: linear-gradient(135deg, #475d62, #6a888f); }
+.cert-badge:nth-child(2) .badge-circle { background: linear-gradient(135deg, #497a5b, #6da381); }
+.cert-badge:nth-child(3) .badge-circle { background: linear-gradient(135deg, #b88225, #dda84a); }
+.cert-badge:nth-child(4) .badge-circle { background: linear-gradient(135deg, #c4761f, #eb9c43); }
+.cert-badge:nth-child(5) .badge-circle { background: linear-gradient(135deg, #a85858, #ce7c7c); }
+.cert-badge:nth-child(6) .badge-circle { background: linear-gradient(135deg, #844874, #aa6d9a); }
+
+@keyframes badgeElegantReveal {
+  0% { opacity: 0; transform: translateX(-30px) scale(0.9); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes badgeElegantFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ==================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+================================================================== */
 @media (max-width: 992px) {
-
-  .certification-wrapper {
+  .certification-wrapper { 
     grid-template-columns: 1fr;
+    gap: 30px; 
   }
-
-  .cert-left {
-    height: 350px;
+  .cert-left { 
+    height: 320px; 
   }
-
-  .pathway {
-    justify-content: center;
+  .cambridge-box { 
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 20px; 
   }
-
 }
 
 @media (max-width: 768px) {
-
-  .cert-right h2 {
-    font-size: 2.5rem;
-  }
-
-  .level {
-    width: 60px;
-    height: 60px;
-  }
-
-  .map-content h3 {
-    font-size: 2rem;
-  }
-
+  .certification-section { padding: 60px 0; }
+  .cert-right h2 { font-size: 2.3rem; }
+  .cert-badges { justify-content: center; }
+  .badge-circle { width: 62px; height: 62px; font-size: 1.15rem; }
 }

@@ -1,0 +1,9 @@
+<div className="program-slider">
+  <div className="slide">
+    <ProgramSection />
+  </div>
+
+  <div className="slide">
+    <ProgramSection />
+  </div>
+</div>

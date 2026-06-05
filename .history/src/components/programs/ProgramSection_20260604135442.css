@@ -1,0 +1,199 @@
+
+/* =========================
+   SECTION (NEW LAYOUT STYLE)
+========================= */
+
+.program-section {
+  width: 100%;
+  padding: 110px 20px;
+  display: flex;
+  justify-content: center;
+
+  background: #f6f7fb;
+}
+
+/* inner container becomes “panel card” */
+.program-wrapper {
+  max-width: 1200px;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 70px;
+
+  background: white;
+  border-radius: 28px;
+
+  padding: 60px;
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+}
+
+/* reverse layout */
+.program-wrapper.reverse {
+  direction: rtl;
+}
+
+.program-wrapper.reverse > * {
+  direction: ltr;
+}
+
+/* =========================
+   LEFT CONTENT (STRUCTURED)
+========================= */
+
+.program-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-tag {
+  display: inline-block;
+
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  color: #4f46e5;
+
+  margin-bottom: 18px;
+}
+
+.program-content h2 {
+  font-size: 44px;
+  font-weight: 800;
+
+  color: #111827;
+
+  margin-bottom: 16px;
+}
+
+.program-content p {
+  font-size: 16px;
+  line-height: 1.8;
+
+  color: #6b7280;
+
+  margin-bottom: 30px;
+
+  max-width: 500px;
+}
+
+/* =========================
+   FEATURES (NEW CARD SYSTEM)
+========================= */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.feature-card {
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+
+  transition: all 0.25s ease;
+
+  position: relative;
+}
+
+/* left accent bar */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+
+  width: 3px;
+  background: #4f46e5;
+
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  background: white;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+/* =========================
+   IMAGE (NEW STYLE)
+========================= */
+
+.program-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.program-image img {
+  width: 100%;
+  height: 420px;
+
+  object-fit: cover;
+
+  border-radius: 22px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .program-wrapper {
+    grid-template-columns: 1fr;
+    padding: 30px;
+    gap: 40px;
+  }
+
+  .program-content h2 {
+    font-size: 32px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-image img {
+    height: 300px;
+  }
+}
+.program-slider {
+  width: 100%;
+  padding: 40px 0;
+}
+
+/* Swiper spacing fix */
+.swiper {
+  padding-bottom: 50px;
+}
+
+/* Optional: make arrows cleaner */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #4f46e5;
+}
+
+/* Pagination dots */
+.swiper-pagination-bullet-active {
+  background: #4f46e5;
+}
