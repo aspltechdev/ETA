@@ -1,5 +1,5 @@
 .languages-hero {
-  min-height: 90vh;
+  min-height: 95vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -7,494 +7,314 @@
 }
 
 /* Background Image */
-
 .hero-bg-image {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   z-index: 0;
 }
 
 /* Dark blue overlay */
-
 .languages-hero::after {
   content: "";
   position: absolute;
   inset: 0;
-
   background: linear-gradient(
     90deg,
-    rgba(10, 20, 90, 0.85) 0%,
-    rgba(15, 30, 120, 0.75) 45%,
+    rgba(10, 20, 90, 0.88) 0%,
+    rgba(15, 30, 120, 0.78) 45%,
     rgba(10, 20, 90, 0.55) 100%
   );
-
   z-index: 1;
 }
 
 /* Main container */
-
 .languages-hero .container {
   position: relative;
   z-index: 2;
-
   width: 90%;
   max-width: 1300px;
   margin: auto;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-bottom: 40px; 
 }
 
-/* Blue pill */
-
+/* Blue pill badge */
 .section-tag {
   display: inline-flex;
   align-items: center;
-
-  margin-top: 150px;
-
+  margin-top: 10px;
   padding: 14px 28px;
-
   border-radius: 999px;
-
-  background: linear-gradient(
-    135deg,
-    #2563eb,
-    #4f46e5
-  );
-
-  color: white;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: #ffffff; /* white text */
   font-weight: 600;
-
-  margin-bottom: 30px;
-
+  margin-bottom: 20px;
   box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
-
   opacity: 0;
   animation: slideDown 0.8s ease forwards;
 }
 
 /* Main heading */
-
 .languages-hero h1 {
-  max-width: 900px;
-
-  font-size: clamp(3rem, 6vw, 5.5rem);
-
-  line-height: 0.95;
-
+  max-width: 700px; 
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  line-height: 1.1; 
   font-weight: 700;
-
   margin: 0;
-
   background: linear-gradient(
     90deg,
     #ffffff 0%,
-    #ffffff 50%,
-    #7dd3fc 50%,
+    #ffffff 60%,
+    #7dd3fc 80%,
     #2563eb 100%
   );
-
   -webkit-background-clip: text;
   background-clip: text;
-
   -webkit-text-fill-color: transparent;
   color: transparent;
-
   text-shadow: 0 10px 30px rgba(0,0,0,0.3);
-
   opacity: 0;
   animation: slideLeft 1s ease forwards;
   animation-delay: 0.3s;
 }
 
-/* Paragraph */
-
+/* Paragraph text */
 .hero-subtext {
-  margin-top: 30px;
-
+  margin-top: 20px;
   max-width: 700px;
-
-  font-size: 1.25rem;
-
-  line-height: 1.8;
-
-  color: rgba(255,255,255,0.95);
-
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
   opacity: 0;
   animation: slideLeft 1s ease forwards;
   animation-delay: 0.6s;
 }
 
-/* =========================
-   FLOATING STATS
-========================= */
-
+/* ==========================================================
+   FLOATING STATS - ALL ALIGNED IN ONE SINGLE LINE
+========================================================== */
 .language-stats {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 16px;
+  width: 100%;
+  max-width: 750px; 
+  margin-top: 40px;
+  pointer-events: auto;
 }
 
 .language-stats div {
-  position: absolute;
-
-  width: 190px;
+  position: relative;
+  width: 100%;
   min-height: 110px;
-
-  padding: 22px;
-
+  padding: 20px 16px;
+  box-sizing: border-box;
   background: rgba(255,255,255,0.12);
-
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-
   border: 1px solid rgba(255,255,255,0.15);
-
   border-radius: 24px;
-
   color: white;
-
   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-
-  pointer-events: auto;
-
   opacity: 0;
-
   transition: all 0.3s ease;
+  animation: popCard 0.8s ease forwards;
 }
 
 .language-stats div:hover {
-  transform: translateY(-10px) scale(1.04);
+  transform: translateY(-8px) scale(1.03);
 }
 
 .language-stats h3 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 1.8rem;
+  margin: 0 0 6px 0;
   color: white;
 }
 
 .language-stats span {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: rgba(255,255,255,0.9);
+  display: block;
+  white-space: nowrap; 
 }
 
-/* Card Positions */
+.language-stats div:nth-child(1) { animation-delay: 0.8s; }
+.language-stats div:nth-child(2) { animation-delay: 1.0s; }
+.language-stats div:nth-child(3) { animation-delay: 1.2s; }
+.language-stats div:nth-child(4) { animation-delay: 1.4s; }
 
-.language-stats div:nth-child(1) {
+/* ==========================================================
+   DYNAMIC ALTERNATING MOSAIC FLAG GRID (RIGHT SIDE)
+========================================================== */
+.floating-flags {
+  position: absolute;
   top: 8%;
-  right: 8%;
-
-  animation:
-    popCard 0.8s ease forwards,
-    floating 4s ease-in-out infinite;
-
-  animation-delay:
-    1.1s,
-    2s;
+  right: 4%; 
+  width: 440px; 
+  height: 84%;
+  z-index: 4;
+  pointer-events: auto;
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  gap: 16px; 
 }
 
-.language-stats div:nth-child(2) {
-  top: 42%;
-  right: 2%;
-
-  animation:
-    popCard 0.8s ease forwards,
-    floating 5s ease-in-out infinite;
-
-  animation-delay:
-    1.3s,
-    2.2s;
+.flag {
+  height: calc(33.33% - 11px); 
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.3);
+  position: relative;
+  
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  will-change: background-size, border-color;
+  transition: background-size 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+  animation: floatCard 6s ease-in-out infinite;
 }
 
-.language-stats div:nth-child(3) {
-  top: 72%;
-  right: 10%;
-
-  animation:
-    popCard 0.8s ease forwards,
-    floating 4.5s ease-in-out infinite;
-
-  animation-delay:
-    1.5s,
-    2.4s;
+.flag:hover {
+  background-size: 112% 112%;
+  border-color: rgba(255,255,255,0.7);
 }
 
-.language-stats div:nth-child(4) {
-  top: 25%;
-  right: 30%;
+/* Row 1 Alternating Logic */
+.flag-1 { width: calc(62% - 8px); animation-delay: 0s; }
+.flag-2 { width: calc(38% - 8px); animation-delay: 0.3s; }
 
-  animation:
-    popCard 0.8s ease forwards,
-    floating 5.5s ease-in-out infinite;
+/* Row 2 Alternating Logic */
+.flag-3 { width: calc(38% - 8px); animation-delay: 0.6s; }
+.flag-4 { width: calc(62% - 8px); animation-delay: 0.9s; }
 
-  animation-delay:
-    1.7s,
-    2.6s;
+/* Row 3 Alternating Logic */
+.flag-5 { width: calc(62% - 8px); animation-delay: 1.2s; }
+.flag-6 { width: calc(38% - 8px); animation-delay: 1.5s; }
+
+/* Staggered durations */
+.flag-1, .flag-4, .flag-5 { animation-duration: 5.5s; }
+.flag-2, .flag-3, .flag-6 { animation-duration: 6.5s; }
+
+.flag-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  box-sizing: border-box;
+  background: transparent; 
+}
+
+/* Clean black wording style with absolutely no text shadows */
+.flag-content h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #000000;
+  text-shadow: none; /* Completely removed all shadows */
+}
+
+.flag-content span {
+  font-size: 0.75rem;
+  font-weight: 700; /* Increased to bold weight for crisp legibility */
+  color: #000000;
+  text-shadow: none; /* Completely removed all shadows */
 }
 
 /* =========================
    ANIMATIONS
 ========================= */
-
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-80px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes popCard {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-
-  70% {
-    transform: scale(1.05);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+  0% { opacity: 0; transform: scale(0.8); }
+  70% { transform: scale(1.03); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
-@keyframes floating {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 /* =========================
-   MOBILE
+   MOBILE RESPONSIVENESS
 ========================= */
+@media (max-width: 1200px) {
+  .languages-hero .container {
+    max-width: 100%;
+    width: 95%;
+  }
+  .floating-flags {
+    width: 380px;
+  }
+  .language-stats {
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .languages-hero {
+    align-items: flex-start;
+    padding-top: 60px;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .floating-flags {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+  }
+  
+  .flag {
+    height: calc(50% - 8px); 
+  }
+  
+  .flag-1, .flag-2, .flag-3, .flag-4, .flag-5, .flag-6 {
+    width: calc(33.33% - 11px); 
+  }
+
+  .language-stats {
+    max-width: 100%;
+  }
+}
 
 @media (max-width: 768px) {
   .language-stats {
-    position: relative;
-
-    display: grid;
-    grid-template-columns: 1fr;
-
-    gap: 15px;
-
-    margin-top: 40px;
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  
+  .floating-flags {
+    height: 600px;
   }
 
-  .language-stats div {
-    position: relative;
-
-    top: auto !important;
-    right: auto !important;
-
-    width: 100%;
-  }
-
-  .section-tag {
-    margin-top: 100px;
+  .flag-1, .flag-2, .flag-3, .flag-4, .flag-5, .flag-6 {
+    width: calc(50% - 8px); 
   }
 
   .languages-hero h1 {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-  }
-
-  .hero-subtext {
-    font-size: 1rem;
-  }
-}
-/* Floating Animation */
-
-@keyframes cardFloat {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-/* Individual floating delays */
-
-.language-card:nth-child(1) {
-  animation: cardFloat 4s ease-in-out infinite;
-}
-
-.language-card:nth-child(2) {
-  animation: cardFloat 5s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-
-.language-card:nth-child(3) {
-  animation: cardFloat 4.5s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-.language-card:nth-child(4) {
-  animation: cardFloat 5.5s ease-in-out infinite;
-  animation-delay: 1.5s;
-}
-/* =========================
-   FLOATING FLAGS
-========================= */
-
-.floating-flags {
-  position: absolute;
-  inset: 0;
-
-  z-index: 1;
-
-  pointer-events: none;
-}
-
-.flag {
-  position: absolute;
-
-  width: 180px;
-  height: 180px;
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 90px;
-
-  background: rgba(255,255,255,0.08);
-
-  backdrop-filter: blur(10px);
-
-  border: 3px solid rgba(255,255,255,0.15);
-
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.25);
-
-  animation: floatFlag 6s ease-in-out infinite;
-}
-
-/* France */
-
-.flag-1 {
-  top: 34%;
-  left: 18%;
-}
-
-/* UK */
-
-.flag-2 {
-  top: 10%;
-  left: 38%;
-
-  animation-delay: 1s;
-}
-
-/* USA */
-
-.flag-3 {
-  top: 30%;
-  left: 52%;
-
-  animation-delay: 2s;
-}
-
-/* Canada */
-
-.flag-4 {
-  top: 68%;
-  left: 16%;
-
-  animation-delay: 3s;
-}
-
-@keyframes floatFlag {
-
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-15px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-
-}
-
-/* Keep text above flags */
-
-.languages-hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-/* Mobile */
-
-@media (max-width: 768px) {
-
-  .flag {
-    width: 110px;
-    height: 110px;
-
-    font-size: 55px;
-  }
-
-  .flag-1 {
-    left: 5%;
-    top: 40%;
-  }
-
-  .flag-2 {
-    left: 35%;
-    top: 12%;
-  }
-
-  .flag-3 {
-    left: 55%;
-    top: 35%;
-  }
-
-  .flag-4 {
-    left: 10%;
-    top: 75%;
+    font-size: clamp(2.2rem, 7vw, 3.5rem);
   }
 }

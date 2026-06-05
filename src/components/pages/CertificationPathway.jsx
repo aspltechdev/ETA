@@ -2,15 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./CertificationPathway.css";
 
 import worldMap from "../../assets/w1.jpg";
-
-const languages = [
-  "🇫🇷 French",
-  "🇩🇪 German",
-  "🇪🇸 Spanish",
-  "🇯🇵 Japanese",
-  "🇰🇷 Korean",
-  "🇨🇳 Chinese",
-];
+import cambridgeLogo from "../../assets/cambridge-logo.png"; 
 
 const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
@@ -26,9 +18,7 @@ const CertificationPathway = () => {
           observer.disconnect();
         }
       },
-      {
-        threshold: 0.5,
-      }
+      { threshold: 0.15 }
     );
 
     if (sectionRef.current) {
@@ -39,101 +29,73 @@ const CertificationPathway = () => {
   }, []);
 
   return (
-    <section
-      className="certification-section"
-      ref={sectionRef}
-    >
+    <section className="certification-section" ref={sectionRef}>
       <div className="certification-glow"></div>
 
       <div className="container">
+        {/* Restructured into a clean 2-column grid with a full-width bottom row */}
         <div className="certification-wrapper">
-
+          
+          {/* Top Left: Image */}
           <div className="cert-left">
-            <img
-              src={worldMap}
-              alt="Global Learning"
-            />
-
+            <img src={worldMap} alt="Global Learning" />
             <div className="image-overlay"></div>
-
-            <div className="image-content">
+            <div className="map-content">
               <span>Global Learning</span>
-
-              <h3>
-                Learn Without
-                Borders
-              </h3>
+              <h3>Learn Without Borders</h3>
             </div>
           </div>
 
+          {/* Top Right: Content & Badges */}
           <div className="cert-right">
-
-            <span className="section-tag">
+            <span className="section-tag-c">
               International Certification Pathway
             </span>
 
-            <h2>
-              From Beginner
-              To Global Fluency
-            </h2>
+            <h2>From Beginner To Global Fluency</h2>
 
             <p>
-              Progress through internationally
-              recognized CEFR levels and build
-              language skills for education,
-              careers and global opportunities.
+              Progress through internationally recognized CEFR levels and build
+              language skills for education, careers and global opportunities.
             </p>
 
             <div className="cert-badges">
               {levels.map((level, index) => (
                 <div
                   key={index}
-                  className={`cert-badge ${
-                    showBadges ? "animate" : ""
-                  }`}
+                  className={`cert-badge ${showBadges ? "animate" : ""}`}
                   style={{
-                    animationDelay: `${index * 0.25}s`,
+                    "--slide-delay": `${index * 0.15}s`,
+                    "--wave-delay": `${2.0 + index * 0.2}s`
                   }}
                 >
-                  <div className="badge-circle">
-                    {level}
-                  </div>
-
-                  <div className="badge-ribbon">
-                    Level {level}
-                  </div>
+                  <div className="badge-circle">{level}</div>
+                  <div className="badge-ribbon">Level {level}</div>
                 </div>
               ))}
             </div>
+          </div>
 
-            <div className="cambridge-box">
-              <h4>
-                Cambridge Aligned
-                Learning Framework
-              </h4>
-
+          {/* Bottom: Moved out to span full width and take up the left empty space */}
+          <div className="cambridge-box">
+            <div className="cambridge-logo-wrapper">
+              <img 
+                src={cambridgeLogo} 
+                alt="University of Cambridge" 
+                className="cambridge-logo-img"
+              />
+            </div>
+            <div className="cambridge-text-wrapper">
+              <h4>Cambridge Aligned Learning Framework</h4>
               <p>
-                Structured pathway designed around
-                internationally accepted proficiency
-                standards.
+                Our curriculum architecture is structurally aligned with 
+                internationally accepted proficiency standards, providing you 
+                with elite global recognition and measurable milestones.
               </p>
             </div>
-
           </div>
 
         </div>
-
-        <div className="language-strip">
-          {languages.map((language, index) => (
-            <div
-              className="language-chip"
-              key={index}
-            >
-              {language}
-            </div>
-          ))}
-        </div>
-
       </div>
     </section>
   );

@@ -1,46 +1,30 @@
 import "./LanguagesHeroSection.css";
+
 import heroImage from "../../assets/study-abroad.png";
+
+import french from "../../assets/french.png";
+import german from "../../assets/ger.png";
+import spain from "../../assets/spain.png";
+import japan from "../../assets/japan.png";
+import korean from "../../assets/kor.png"; 
+import chinese from "../../assets/chin.png";
 
 const LanguagesHeroSection = () => {
   return (
     <section className="languages-hero">
-
       <img
         src={heroImage}
         alt="Study Abroad"
         className="hero-bg-image"
       />
 
-      {/* Floating Flags */}
-
-      <div className="floating-flags">
-
-        <div className="flag flag-1">
-          🇫🇷
-        </div>
-
-        <div className="flag flag-2">
-          🇬🇧
-        </div>
-
-        <div className="flag flag-3">
-          🇺🇸
-        </div>
-
-        <div className="flag flag-4">
-          🇨🇦
-        </div>
-
-      </div>
-
       <div className="container">
-
         <span className="section-tag">
           ETA Language Academy
         </span>
 
         <h1>
-          Learn Languages.
+          Learn Languages.<br />
           Unlock Global Opportunities.
         </h1>
 
@@ -51,10 +35,11 @@ const LanguagesHeroSection = () => {
           pathways.
         </p>
 
+        {/* 4 Stats Cards - Now aligned side-by-side in one perfect row */}
         <div className="language-stats">
-
+          {/* Modified here: Changed from 7 to 6+ */}
           <div>
-            <h3>7+</h3>
+            <h3>6+</h3>
             <span>Languages</span>
           </div>
 
@@ -72,140 +57,82 @@ const LanguagesHeroSection = () => {
             <h3>Global</h3>
             <span>Recognition</span>
           </div>
+        </div>
+
+        {/* Alternating Masonry Grid Side-Panel */}
+        <div className="floating-flags">
+          
+          {/* French Card */}
+          <div 
+            className="flag flag-1" 
+            style={{ backgroundImage: `url(${french})` }}
+          >
+            <div className="flag-content">
+              <h4>French</h4>
+              <span>A1 - C2</span>
+            </div>
+          </div>
+
+          {/* German Card */}
+          <div 
+            className="flag flag-2" 
+            style={{ backgroundImage: `url(${german})` }}
+          >
+            <div className="flag-content">
+              <h4>German</h4>
+              <span>A1 - C2</span>
+            </div>
+          </div>
+
+          {/* Spanish Card */}
+          <div 
+            className="flag flag-3" 
+            style={{ backgroundImage: `url(${spain})` }}
+          >
+            <div className="flag-content">
+              <h4>Spanish</h4>
+              <span>A1 - C2</span>
+            </div>
+          </div>
+
+          {/* Japanese Card */}
+          <div 
+            className="flag flag-4" 
+            style={{ backgroundImage: `url(${japan})` }}
+          >
+            <div className="flag-content">
+              <h4>Japanese</h4>
+              <span>JLPT N5 - N1</span>
+            </div>
+          </div>
+
+          {/* Korean Card */}
+          <div 
+            className="flag flag-5" 
+            style={{ backgroundImage: `url(${korean})` }}
+          >
+            <div className="flag-content">
+              <h4>Korean</h4>
+              <span>TOPIK I - II</span>
+            </div>
+          </div>
+
+          {/* Chinese Card */}
+          <div 
+            className="flag flag-6" 
+            style={{ backgroundImage: `url(${chinese})` }}
+          >
+            <div className="flag-content">
+              <h4>Chinese</h4>
+              <span>HSK 1 - 6</span>
+            </div>
+          </div>
 
         </div>
 
       </div>
-
     </section>
   );
 };
 
 export default LanguagesHeroSection;
-/* =========================
-   FLOATING FLAGS
-========================= */
-
-.floating-flags {
-  position: absolute;
-  inset: 0;
-
-  z-index: 1;
-
-  pointer-events: none;
-}
-
-.flag {
-  position: absolute;
-
-  width: 180px;
-  height: 180px;
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 90px;
-
-  background: rgba(255,255,255,0.08);
-
-  backdrop-filter: blur(10px);
-
-  border: 3px solid rgba(255,255,255,0.15);
-
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.25);
-
-  animation: floatFlag 6s ease-in-out infinite;
-}
-
-/* France */
-
-.flag-1 {
-  top: 34%;
-  left: 18%;
-}
-
-/* UK */
-
-.flag-2 {
-  top: 10%;
-  left: 38%;
-
-  animation-delay: 1s;
-}
-
-/* USA */
-
-.flag-3 {
-  top: 30%;
-  left: 52%;
-
-  animation-delay: 2s;
-}
-
-/* Canada */
-
-.flag-4 {
-  top: 68%;
-  left: 16%;
-
-  animation-delay: 3s;
-}
-
-@keyframes floatFlag {
-
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-15px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-
-}
-
-/* Keep text above flags */
-
-.languages-hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-/* Mobile */
-
-@media (max-width: 768px) {
-
-  .flag {
-    width: 110px;
-    height: 110px;
-
-    font-size: 55px;
-  }
-
-  .flag-1 {
-    left: 5%;
-    top: 40%;
-  }
-
-  .flag-2 {
-    left: 35%;
-    top: 12%;
-  }
-
-  .flag-3 {
-    left: 55%;
-    top: 35%;
-  }
-
-  .flag-4 {
-    left: 10%;
-    top: 75%;
-  }
-}
