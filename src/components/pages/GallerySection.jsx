@@ -21,29 +21,23 @@ const GallerySection = () => {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-
     const timer = setInterval(() => {
-
-      setActive((prev) =>
-        (prev + 1) % galleryItems.length
-      );
-
-    }, 6000); // slower transition
+      setActive((prev) => (prev + 1) % galleryItems.length);
+    }, 6000);
 
     return () => clearInterval(timer);
-
   }, []);
 
   return (
-    <section className="eta-gallery">
+    <section className="etax-gallery">
 
-      <div className="eta-gallery__glow"></div>
+      <div className="etax-gallery-glow"></div>
 
       <div className="container">
 
-        <div className="eta-gallery__header">
+        <div className="etax-gallery-header">
 
-          <span className="eta-gallery__tag">
+          <span className="etax-gallery-tag">
             Transformation In Action
           </span>
 
@@ -61,7 +55,7 @@ const GallerySection = () => {
 
         </div>
 
-        <div className="eta-gallery__slider">
+        <div className="etax-gallery-slider">
 
           {galleryItems.map((item, index) => {
 
@@ -69,18 +63,16 @@ const GallerySection = () => {
 
             if (index === active) {
               position = "active";
-            }
-            else if (
+            } else if (
               index ===
               (active - 1 + galleryItems.length) %
-              galleryItems.length
+                galleryItems.length
             ) {
               position = "left";
-            }
-            else if (
+            } else if (
               index ===
               (active + 1) %
-              galleryItems.length
+                galleryItems.length
             ) {
               position = "right";
             }
@@ -88,15 +80,14 @@ const GallerySection = () => {
             return (
               <div
                 key={index}
-                className={`eta-gallery__slide ${position}`}
+                className={`etax-gallery-slide ${position}`}
               >
-
                 <img
                   src={item.image}
                   alt={item.title}
                 />
 
-                <div className="eta-gallery__slide-overlay">
+                <div className="etax-gallery-overlay">
 
                   <span>
                     Featured Experience
@@ -110,7 +101,6 @@ const GallerySection = () => {
 
               </div>
             );
-
           })}
 
         </div>

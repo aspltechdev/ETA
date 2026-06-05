@@ -1,8 +1,8 @@
-/* ==========================
-   ETA GALLERY SECTION
-========================== */
+/* ==================================
+   ETAX GALLERY SECTION
+================================== */
 
-.eta-gallery{
+.etax-gallery {
   position: relative;
   padding: 90px 0 110px;
   overflow: hidden;
@@ -15,26 +15,27 @@
   );
 }
 
-/* Floating particles */
+/* Floating Particles */
 
-.eta-gallery::before{
+.etax-gallery::before {
   content: "";
   position: absolute;
   inset: 0;
 
   background-image:
     radial-gradient(
-      rgba(255,255,255,0.06) 1px,
+      rgba(255, 255, 255, 0.06) 1px,
       transparent 1px
     );
 
   background-size: 50px 50px;
-  opacity: .25;
+  opacity: 0.25;
   pointer-events: none;
 }
 
-/* REMOVE BIG WHITE CIRCLE */
-.eta-gallery__glow{
+/* Glow */
+
+.etax-gallery-glow {
   position: absolute;
   top: 18%;
   left: 50%;
@@ -47,15 +48,18 @@
 
   background: radial-gradient(
     circle,
-    rgba(255,255,255,0.15) 0%,
-    rgba(255,255,255,0.05) 40%,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 40%,
     transparent 75%
   );
 
   filter: blur(70px);
   pointer-events: none;
 }
-.eta-gallery__header{
+
+/* Header */
+
+.etax-gallery-header {
   text-align: center;
   max-width: 850px;
   margin: auto;
@@ -63,59 +67,70 @@
   z-index: 10;
 }
 
-.eta-gallery__tag{
+.etax-gallery-tag {
   display: inline-flex;
   align-items: center;
+
   padding: 12px 28px;
+
   border-radius: 999px;
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.12);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
   backdrop-filter: blur(20px);
+
   color: #9ab7ff;
-  font-size: .95rem;
+
+  font-size: 0.95rem;
   font-weight: 600;
+
   margin-bottom: 10px;
 }
 
-.eta-gallery__header h2{
-  font-size: clamp(2rem,3vw,4.4rem);
+.etax-gallery-header h2 {
+  font-size: clamp(2rem, 3vw, 4.4rem);
   line-height: 1.08;
   font-weight: 700;
+
   color: #fff;
+
   margin-bottom: 18px;
+
   letter-spacing: -2px;
 }
 
-.eta-gallery__header p{
+.etax-gallery-header p {
   max-width: 720px;
   margin: auto;
+
   color: #cbd5e1;
+
   font-size: 1.08rem;
   line-height: 1.8;
 }
 
-/* ==========================
-   SLIDER
-========================== */
+/* Slider */
 
-.eta-gallery__slider{
+.etax-gallery-slider {
   position: relative;
   width: 100%;
   height: 470px;
   margin-top: 60px;
 }
 
-/* ==========================
-   CARDS
-========================== */
+/* Cards */
 
-.eta-gallery__slide{
+.etax-gallery-slide {
   position: absolute;
   top: 50%;
+
   overflow: hidden;
   border-radius: 28px;
 
   transform: translateY(-50%);
+
   transition: all 1.5s cubic-bezier(
     0.22,
     1,
@@ -124,94 +139,89 @@
   );
 
   box-shadow:
-    0 25px 60px rgba(0,0,0,.35);
+    0 25px 60px rgba(0, 0, 0, 0.35);
 }
 
-.eta-gallery__slide img{
+.etax-gallery-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* ==========================
-   ACTIVE CARD
-========================== */
+/* Active */
 
-.eta-gallery__slide.active{
+.etax-gallery-slide.active {
   width: 38%;
   height: 410px;
 
   left: 50%;
 
   transform:
-    translate(-50%,-50%)
+    translate(-50%, -50%)
     scale(1.04);
 
   opacity: 1;
   z-index: 5;
 
   box-shadow:
-    0 30px 120px rgba(0,0,0,.55);
+    0 30px 120px rgba(0, 0, 0, 0.55);
 
   animation:
-    floatCard 5s ease-in-out infinite;
+    etaxFloatCard 5s ease-in-out infinite;
 }
 
-.eta-gallery__slide.active img{
+.etax-gallery-slide.active img {
   animation:
-    zoomImage 8s ease-in-out infinite alternate;
+    etaxZoomImage 8s ease-in-out infinite alternate;
 }
 
-/* ==========================
-   LEFT
-========================== */
+/* Left */
 
-.eta-gallery__slide.left{
+.etax-gallery-slide.left {
   width: 24%;
   height: 280px;
+
   left: 8%;
-  opacity: .55;
+
+  opacity: 0.55;
   z-index: 2;
 
   filter:
-    brightness(.7)
-    saturate(.8);
+    brightness(0.7)
+    saturate(0.8);
 }
 
-/* ==========================
-   RIGHT
-========================== */
+/* Right */
 
-.eta-gallery__slide.right{
+.etax-gallery-slide.right {
   width: 24%;
   height: 280px;
+
   right: 8%;
-  opacity: .55;
+
+  opacity: 0.55;
   z-index: 2;
 
   filter:
-    brightness(.7)
-    saturate(.8);
+    brightness(0.7)
+    saturate(0.8);
 }
 
-/* ==========================
-   HIDDEN
-========================== */
+/* Hidden */
 
-.eta-gallery__slide.hidden{
+.etax-gallery-slide.hidden {
   opacity: 0;
+
   pointer-events: none;
 
   transform:
     translateY(-50%)
-    scale(.75);
+    scale(0.75);
 }
 
-/* ==========================
-   OVERLAY
-========================== */
+/* Overlay */
 
-.eta-gallery__slide-overlay{
+.etax-gallery-overlay {
   position: absolute;
   inset: 0;
 
@@ -224,98 +234,98 @@
   background:
     linear-gradient(
       transparent 40%,
-      rgba(0,0,0,.88)
+      rgba(0, 0, 0, 0.88)
     );
 
-  color: white;
+  color: #fff;
 }
 
-.eta-gallery__slide-overlay span{
+.etax-gallery-overlay span {
   color: #9ab7ff;
-  font-size: .82rem;
+
+  font-size: 0.82rem;
   font-weight: 700;
+
   text-transform: uppercase;
   letter-spacing: 2px;
+
   margin-bottom: 10px;
 }
 
-.eta-gallery__slide-overlay h3{
+.etax-gallery-overlay h3 {
   font-size: 1.8rem;
   font-weight: 800;
+
   line-height: 1.1;
   margin: 0;
 
   text-shadow:
-    0 10px 30px rgba(0,0,0,.5);
+    0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* ==========================
-   ANIMATION
-========================== */
+/* Animations */
 
-@keyframes floatCard{
-  0%{
+@keyframes etaxFloatCard {
+  0% {
     transform:
-      translate(-50%,-50%)
-      translateY(0px);
+      translate(-50%, -50%)
+      translateY(0);
   }
 
-  50%{
+  50% {
     transform:
-      translate(-50%,-50%)
+      translate(-50%, -50%)
       translateY(-8px);
   }
 
-  100%{
+  100% {
     transform:
-      translate(-50%,-50%)
-      translateY(0px);
+      translate(-50%, -50%)
+      translateY(0);
   }
 }
 
-@keyframes zoomImage{
-  from{
+@keyframes etaxZoomImage {
+  from {
     transform: scale(1);
   }
 
-  to{
+  to {
     transform: scale(1.08);
   }
 }
 
-/* ==========================
-   MOBILE
-========================== */
+/* Mobile */
 
-@media(max-width:768px){
+@media (max-width: 768px) {
 
-  .eta-gallery{
+  .etax-gallery {
     padding: 80px 0;
   }
 
-  .eta-gallery__header h2{
+  .etax-gallery-header h2 {
     font-size: 2.3rem;
   }
 
-  .eta-gallery__header p{
+  .etax-gallery-header p {
     font-size: 1rem;
   }
 
-  .eta-gallery__slider{
+  .etax-gallery-slider {
     height: 360px;
   }
 
-  .eta-gallery__slide.left,
-  .eta-gallery__slide.right{
+  .etax-gallery-slide.left,
+  .etax-gallery-slide.right {
     display: none;
   }
 
-  .eta-gallery__slide.active{
+  .etax-gallery-slide.active {
     width: 100%;
     height: 320px;
   }
 
-  .eta-gallery__slide-overlay h3{
+  .etax-gallery-overlay h3 {
     font-size: 1.3rem;
   }
 }
