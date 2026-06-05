@@ -62,7 +62,7 @@
 /* Main heading */
 .languages-hero h1 {
   max-width: 700px; 
-  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-size: clamp(2.2rem, 5vw, 5rem); /* Updated minimum scale safely */
   line-height: 1.1; 
   font-weight: 700;
   margin: 0;
@@ -87,7 +87,7 @@
 .hero-subtext {
   margin-top: 20px;
   max-width: 700px;
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 1.5vw, 1.15rem); /* Handles text scaling smoothly across all viewports */
   line-height: 1.6;
   color: rgba(255,255,255,0.9);
   opacity: 0;
@@ -103,7 +103,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
   gap: 16px;
-  width: 100%;
+  width: 58%;
   max-width: 750px; 
   margin-top: 40px;
   pointer-events: auto;
@@ -205,7 +205,6 @@
 .flag-2, .flag-3, .flag-6 { animation-duration: 6.5s; }
 
 .flag-content {
-
   position: absolute;
   inset: 0;
   display: flex;
@@ -222,14 +221,14 @@
   font-size: 1.15rem;
   font-weight: 700;
   color: #000000;
-  text-shadow: none; /* Completely removed all shadows */
+  text-shadow: none; 
 }
 
 .flag-content span {
   font-size: 0.75rem;
-  font-weight: 700; /* Increased to bold weight for crisp legibility */
+  font-weight: 700; 
   color: #000000;
-  text-shadow: none; /* Completely removed all shadows */
+  text-shadow: none; 
 }
 
 /* =========================
@@ -256,28 +255,50 @@
   50% { transform: translateY(-10px); }
 }
 
-/* =========================
-   MOBILE RESPONSIVENESS
-========================= */
-@media (max-width: 1200px) {
+/* ==========================================================================
+   COMPREHENSIVE ALL-DEVICE RESPONSIVENESS BREAKPOINTS
+========================================================================== */
+
+/* 1. Large Laptops and Small Desktops (1200px - 1400px) */
+@media (max-width: 1400px) {
   .languages-hero .container {
-    max-width: 100%;
-    width: 95%;
+    max-width: 1140px;
   }
   .floating-flags {
-    width: 380px;
-  }
-  .language-stats {
-    max-width: 650px;
+    width: 400px;
+    right: 2%;
   }
 }
 
-@media (max-width: 1080px) {
+/* 2. Standard Laptops (1024px - 1200px) */
+@media (max-width: 1200px) {
+  .languages-hero .container {
+    max-width: 960px;
+    width: 95%;
+  }
+  .floating-flags {
+    width: 360px;
+    top: 10%;
+    height: 80%;
+  }
+  .language-stats {
+    max-width: 600px;
+    gap: 12px;
+  }
+}
+
+/* 3. Tablets Landscape & Small Laptops (769px - 1023px) */
+@media (max-width: 1024px) {
   .languages-hero {
     align-items: flex-start;
-    padding-top: 60px;
+    padding-top: 80px;
     height: auto;
     min-height: 100vh;
+  }
+  
+  .languages-hero .container {
+    width: 90%;
+    margin: 0 auto;
   }
   
   .floating-flags {
@@ -285,7 +306,7 @@
     top: auto;
     right: auto;
     width: 100%;
-    height: 400px;
+    height: 380px;
     margin-top: 50px;
   }
   
@@ -294,28 +315,98 @@
   }
   
   .flag-1, .flag-2, .flag-3, .flag-4, .flag-5, .flag-6 {
-    width: calc(33.33% - 11px); 
+    width: calc(33.33% - 11px) !important; 
   }
 
   .language-stats {
     max-width: 100%;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
+/* 4. Tablets Portrait (577px - 768px) */
 @media (max-width: 768px) {
+  .languages-hero {
+    padding-top: 60px;
+  }
+
   .language-stats {
     grid-template-columns: repeat(2, 1fr); 
+    gap: 16px;
   }
   
   .floating-flags {
-    height: 600px;
+    height: 500px;
   }
 
   .flag-1, .flag-2, .flag-3, .flag-4, .flag-5, .flag-6 {
-    width: calc(50% - 8px); 
+    width: calc(50% - 8px) !important; 
+  }
+}
+
+/* 5. Large Mobile Devices (426px - 576px) */
+@media (max-width: 576px) {
+  .languages-hero {
+    padding-top: 50px;
+  }
+  
+  .languages-hero .container {
+    width: 92%;
   }
 
-  .languages-hero h1 {
-    font-size: clamp(2.2rem, 7vw, 3.5rem);
+  .language-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .language-stats div {
+    min-height: auto;
+    padding: 16px 12px;
+  }
+
+  .language-stats h3 {
+    font-size: 1.5rem;
+  }
+
+  .language-stats span {
+    font-size: 0.8rem;
+    white-space: normal;
+  }
+
+  .floating-flags {
+    height: auto;
+    gap: 12px;
+  }
+
+  .flag-1, .flag-2, .flag-3, .flag-4, .flag-5, .flag-6 {
+    width: 100% !important;
+    height: 120px !important;
+  }
+}
+
+/* 6. Small Mobile Devices (Up to 425px) */
+@media (max-width: 425px) {
+  .languages-hero {
+    padding-top: 40px;
+  }
+
+  .section-tags {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+
+  .language-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .flag-1, .flag-2, .flag-3, .flag-4, .flag-5, .flag-6 {
+    height: 100px !important;
+    border-radius: 16px;
+  }
+  
+  .language-stats div {
+    border-radius: 16px;
   }
 }
