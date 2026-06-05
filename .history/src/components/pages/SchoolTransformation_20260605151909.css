@@ -1,0 +1,254 @@
+.school-transform {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.school-header {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.school-tag {
+  display: inline-flex;
+
+  padding: 12px 22px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(28,43,255,.06);
+
+  border:
+    1px solid rgba(28,43,255,.1);
+
+  color: #1c2bff;
+
+  font-weight: 600;
+}
+
+.school-header h2 {
+  margin-top: 25px;
+
+  font-size:
+    clamp(3rem,5vw,5rem);
+
+  line-height: 1.05;
+
+  color: #081028;
+
+  font-weight: 800;
+}
+
+.school-header h2 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0A0A8F,
+      #1C2BFF
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.school-header p {
+  margin-top: 20px;
+
+  color: #64748b;
+
+  line-height: 1.8;
+}
+
+/* ==================== */
+
+.school-visual {
+  margin-top: 70px;
+
+  position: relative;
+}
+
+.school-visual img {
+  width: 100%;
+
+  height: 500px;
+
+  object-fit: cover;
+
+  border-radius: 30px;
+}
+
+.school-overlay-card {
+  position: absolute;
+
+  bottom: 30px;
+  left: 30px;
+
+  background:
+    rgba(255,255,255,.92);
+
+  backdrop-filter: blur(20px);
+
+  padding: 20px 25px;
+
+  border-radius: 20px;
+
+  font-weight: 700;
+
+  color: #081028;
+}
+
+.school-overlay-card span {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: .9rem;
+
+  color: #64748b;
+}
+
+/* ==================== */
+
+.journey-line {
+  margin-top: 80px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap: 24px;
+
+  position: relative;
+}
+
+.journey-line::before {
+  content: "";
+
+  position: absolute;
+
+  top: 40px;
+  left: 10%;
+  right: 10%;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #1C2BFF,
+      #8FA3FF
+    );
+}
+
+.journey-node {
+  position: relative;
+
+  background: #fff;
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  border:
+    1px solid #e2e8f0;
+
+  text-align: center;
+
+  z-index: 2;
+
+  transition: .35s;
+}
+
+.journey-node:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 25px 50px rgba(28,43,255,.08);
+}
+
+.node-icon {
+  width: 70px;
+  height: 70px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background:
+    rgba(28,43,255,.08);
+
+  color: #1c2bff;
+}
+
+.grade {
+  display: block;
+
+  margin-top: 20px;
+
+  font-size: .85rem;
+
+  color: #1c2bff;
+
+  font-weight: 700;
+}
+
+.journey-node h3 {
+  margin-top: 10px;
+
+  color: #081028;
+}
+
+.journey-node p {
+  margin-top: 10px;
+
+  color: #64748b;
+
+  line-height: 1.7;
+}
+
+/* ==================== */
+
+@media(max-width:992px){
+
+  .journey-line{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+
+  .journey-line::before{
+    display:none;
+  }
+}
+
+@media(max-width:768px){
+
+  .school-transform{
+    padding:80px 0;
+  }
+
+  .school-header h2{
+    font-size:2.4rem;
+  }
+
+  .school-visual img{
+    height:320px;
+  }
+
+  .journey-line{
+    grid-template-columns:1fr;
+  }
+
+  .school-overlay-card{
+    left:15px;
+    right:15px;
+    bottom:15px;
+  }
+}

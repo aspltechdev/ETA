@@ -32,7 +32,7 @@ const journey = [
     desc: "Leadership development, structured speaking and collaboration skills.",
   },
   {
-   image: mage,
+   image: mageg,
     grade: "Grade 9 - 12",
     title: "Leadership",
     desc: "Interview readiness, presentation mastery and future leadership skills.",

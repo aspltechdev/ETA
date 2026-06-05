@@ -1,0 +1,130 @@
+.framework-section {
+  padding: 100px 20px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.framework-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 70px;
+}
+
+.section-tag {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.section-heading p {
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.framework-flow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  position: relative;
+}
+
+.framework-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  border-radius: 24px;
+  padding: 35px 20px;
+  text-align: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.framework-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+}
+
+.framework-card span {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #60a5fa
+  );
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.framework-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.5;
+}
+
+/* Connection Line */
+.framework-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 60px;
+  right: -25px;
+  width: 25px;
+  height: 2px;
+  background: #93c5fd;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .framework-flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .framework-card::after {
+    display: none;
+  }
+
+  .section-heading h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .framework-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+  }
+
+  .framework-card {
+    padding: 30px 20px;
+  }
+}

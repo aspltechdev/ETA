@@ -10,11 +10,10 @@ import {
 import schoolImg from "../../assets/about/about1.jpg";
 import scl from "../../assets/about/aboutthree.jpg";
 import Img from "../../assets/about/aboutfour.jpg";
-import mage from "../../assets/about/aboutfive.jpg";
 
 const journey = [
   {
-    // image: schoolImg,
+    image: schoolImg,
     grade: "Grade 1 - 2",
     title: "Foundation",
     desc: "Expression, listening skills, participation confidence and social interaction.",
@@ -32,7 +31,7 @@ const journey = [
     desc: "Leadership development, structured speaking and collaboration skills.",
   },
   {
-   image: mage,
+   image: schoolImg,
     grade: "Grade 9 - 12",
     title: "Leadership",
     desc: "Interview readiness, presentation mastery and future leadership skills.",

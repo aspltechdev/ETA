@@ -137,7 +137,7 @@ const Home = () => {
         </section>
 
         <section id="programs">
-          <SchoolTransformation/>
+ 
           <TransformationEcosystem />
         </section>
 
@@ -151,7 +151,7 @@ const Home = () => {
         </section>
 
         <section id="schools">
-          <SchoolSolutionsSection />
+                <SchoolTransformation/>
         </section>
 
         <section id="methodology">

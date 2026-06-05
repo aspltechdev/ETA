@@ -1,0 +1,327 @@
+.program-section {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.program-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.program-wrapper.reverse {
+  direction: rtl;
+}
+
+.program-wrapper.reverse .program-content,
+.program-wrapper.reverse .program-image {
+  direction: ltr;
+}
+
+.section-tag {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.program-content h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.program-content p {
+  color: #64748b;
+  line-height: 1.9;
+  font-size: 1.05rem;
+  margin-bottom: 35px;
+}
+
+/* ── Banner slideshow wrapper (replaces the old 2x2 grid) ── */
+.feature-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.07);
+  height: 240px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-grid:hover {
+  box-shadow: 0 24px 60px rgba(37, 99, 235, 0.15);
+}
+
+/* Shine overlay */
+.feature-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+/* ── Left image panel ── */
+.feature-img-side {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+
+.feature-slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.feature-slide-img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.feature-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 65%, rgba(255, 255, 255, 0.92));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Right content panel ── */
+.feature-content-side {
+  padding: 24px 24px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.feature-panes {
+  position: relative;
+  flex: 1;
+}
+
+/* Each slide pane — keeps original .feature-card name */
+.feature-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.feature-card.active {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+  pointer-events: auto;
+}
+
+.feature-card .section-tag {
+  margin-bottom: 8px;
+  padding: 4px 12px;
+  font-size: 11px;
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ── Controls ── */
+.feature-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.feature-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.feature-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.18);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.feature-dot.active {
+  background: #2563eb;
+  width: 22px;
+  border-radius: 4px;
+}
+
+.feature-nav {
+  display: flex;
+  gap: 7px;
+  margin-left: auto;
+}
+
+.feature-nav-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(37, 99, 235, 0.2);
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.feature-nav-btn:hover {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+  transform: scale(1.08);
+}
+
+/* ── Progress bar ── */
+.feature-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 0 2px 2px 0;
+  transition: width 0.1s linear;
+  z-index: 5;
+}
+
+/* ── Program image (right side of section) ── */
+.program-image {
+  position: relative;
+}
+
+.program-image img {
+  width: 100%;
+  display: block;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1);
+  transition: all 0.4s ease;
+}
+
+.program-image img:hover {
+  transform: scale(1.03);
+}
+
+.program-image::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 50%;
+  top: -30px;
+  left: -30px;
+  z-index: -1;
+}
+
+.program-image::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(96, 165, 250, 0.12);
+  border-radius: 50%;
+  bottom: -20px;
+  right: -20px;
+  z-index: -1;
+}
+
+/* ── Tablet ── */
+@media (max-width: 992px) {
+  .program-wrapper {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .program-wrapper.reverse {
+    direction: ltr;
+  }
+
+  .program-content h2 {
+    font-size: 2.3rem;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .program-section {
+    padding: 70px 20px;
+  }
+
+  .program-content h2 {
+    font-size: 2rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px 1fr;
+    height: auto;
+  }
+
+  .feature-img-side {
+    height: 180px;
+  }
+
+  .feature-img-overlay {
+    background: linear-gradient(to bottom, transparent 60%, rgba(255, 255, 255, 0.92));
+  }
+
+  .program-content p {
+    font-size: 1rem;
+  }
+}

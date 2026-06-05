@@ -1,0 +1,147 @@
+.programs-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f0f9ff 40%,
+    #dbeafe 100%
+  );
+  color: #0f172a;
+}
+
+.programs-glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: rgba(59, 130, 246, 0.25);
+  filter: blur(120px);
+  top: -120px;
+  left: -100px;
+  border-radius: 50%;
+}
+
+.glow-2 {
+  right: -100px;
+  left: auto;
+  bottom: -100px;
+  top: auto;
+  background: rgba(168, 85, 247, 0.2);
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.section-tag {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.programs-hero h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.programs-hero h1 span {
+  display: block;
+  background: linear-gradient(90deg, #60a5fa, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.programs-hero p {
+  max-width: 750px;
+  margin: 0 auto 35px;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 60px;
+}
+
+.primary-btn {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  padding: 14px 30px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  padding: 30px 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(96,165,250,0.5);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #60a5fa;
+}
+
+.stat-card span {
+  color: rgba(255,255,255,0.75);
+}
+
+@media (max-width: 768px) {
+  .programs-hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
