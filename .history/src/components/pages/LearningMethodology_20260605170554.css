@@ -1,0 +1,289 @@
+.eta-banner {
+  padding: 120px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f7f9ff
+    );
+}
+
+/* ===================== */
+
+.eta-banner-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.1fr .9fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+/* ===================== */
+/* LEFT */
+
+.eta-tag {
+  display: inline-block;
+
+  padding: 10px 20px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(11,15,158,.08);
+
+  color: #0B0F9E;
+
+  font-size: .9rem;
+
+  font-weight: 700;
+}
+
+.eta-left h2 {
+  margin-top: 24px;
+
+  font-size:
+    clamp(2.8rem,5vw,4.5rem);
+
+  line-height: 1.05;
+
+  color: #081028;
+
+  font-weight: 800;
+}
+
+.eta-left h2 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0B0F9E,
+      #2437ff
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.eta-left p {
+  margin-top: 22px;
+
+  color: #64748b;
+
+  line-height: 1.9;
+
+  max-width: 620px;
+}
+
+/* ===================== */
+/* JOURNEY */
+
+.eta-journey {
+  margin-top: 40px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+.eta-journey span {
+  padding: 12px 20px;
+
+  border-radius: 999px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  font-weight: 600;
+
+  color: #081028;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.04);
+}
+
+/* ===================== */
+/* RIGHT */
+
+.eta-right {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+/* ETA CARD */
+
+.eta-card {
+  width: 280px;
+  height: 280px;
+
+  border-radius: 40px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0B0F9E,
+      #2437ff
+    );
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  color: white;
+
+  box-shadow:
+    0 30px 60px rgba(11,15,158,.25);
+
+  transform:
+    perspective(1000px)
+    rotateX(8deg);
+}
+
+.eta-card h3 {
+  font-size: 3rem;
+
+  font-weight: 800;
+}
+
+.eta-card p {
+  margin-top: 10px;
+
+  font-size: 1rem;
+
+  opacity: .9;
+}
+
+/* SLIDER */
+
+.slider-card {
+  width: 280px;
+
+  padding: 22px;
+
+  text-align: center;
+
+  background: white;
+
+  border-radius: 24px;
+
+  border: 1px solid #e5e7eb;
+
+  font-size: 1.15rem;
+
+  font-weight: 700;
+
+  color: #0B0F9E;
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.06);
+
+  transition: .4s ease;
+}
+
+/* ===================== */
+/* STATS */
+
+.eta-stats {
+  margin-top: 80px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap: 24px;
+}
+
+.stat-card {
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  text-align: center;
+
+  border: 1px solid #eef2ff;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.05);
+}
+
+.stat-card h3 {
+  font-size: 2.2rem;
+
+  color: #0B0F9E;
+
+  font-weight: 800;
+}
+
+.stat-card p {
+  margin-top: 8px;
+
+  color: #64748b;
+}
+
+/* ===================== */
+/* TABLET */
+
+@media (max-width: 992px) {
+
+  .eta-banner-grid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .eta-right {
+    order: -1;
+  }
+
+  .eta-stats {
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+}
+
+/* ===================== */
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .eta-banner {
+    padding: 80px 0;
+  }
+
+  .eta-left h2 {
+    font-size: 2.4rem;
+  }
+
+  .eta-card {
+    width: 240px;
+    height: 240px;
+  }
+
+  .slider-card {
+    width: 240px;
+  }
+
+  .eta-stats {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,305 @@
+/* ========================= */
+/* SECTION */
+/* ========================= */
+
+.eta-banner {
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+  background: #f7f9ff;
+  overflow: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ========================= */
+/* LAYOUT */
+/* ========================= */
+
+.eta-banner-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ========================= */
+/* LEFT */
+/* ========================= */
+
+.eta-tag {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #f7f9ff;
+  color: #2437ff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow:
+    5px 5px 12px rgba(174,174,192,.18),
+    -5px -5px 12px rgba(255,255,255,.95);
+}
+
+.eta-left h2 {
+  margin-top: 20px;
+  font-size: clamp(2.8rem,4vw,4.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  color: #081028;
+}
+
+.eta-left h2 span {
+  display: block;
+  color: #2437ff;
+}
+
+.eta-left p {
+  margin-top: 20px;
+  max-width: 620px;
+  color: #64748b;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* ========================= */
+/* JOURNEY */
+/* ========================= */
+
+.eta-journey {
+  margin-top: 35px;
+
+  display: flex;
+  align-items: center;
+  gap: 0;
+
+  flex-wrap: nowrap;
+}
+
+.eta-journey span {
+  position: relative;
+
+  padding: 12px 20px;
+
+  border-radius: 999px;
+
+  background: #f7f9ff;
+
+  color: #081028;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  box-shadow:
+    5px 5px 12px rgba(174,174,192,.18),
+    -5px -5px 12px rgba(255,255,255,.95);
+}
+
+/* line between items */
+.eta-journey span:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 100%;
+
+  width: 24px;
+  height: 2px;
+
+  background: #2437ff;
+
+  transform: translateY(-50%);
+}
+
+/* ========================= */
+/* RIGHT */
+/* ========================= */
+
+.eta-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.eta-right::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(
+    rgba(36,55,255,.08),
+    transparent 70%
+  );
+  filter: blur(60px);
+  z-index: 0;
+}
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+
+.slider-card {
+  position: relative;
+  width: 430px;
+  border-radius: 35px;
+  overflow: hidden;
+  background: #f7f9ff;
+  z-index: 2;
+  box-shadow:
+    20px 20px 40px rgba(174,174,192,.25),
+    -20px -20px 40px rgba(255,255,255,.95);
+  transition: all .4s ease;
+}
+
+.slider-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    24px 24px 50px rgba(174,174,192,.28),
+    -24px -24px 50px rgba(255,255,255,1);
+}
+
+/* ========================= */
+/* IMAGE */
+/* ========================= */
+
+.slider-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.slide-content {
+  padding: 28px;
+}
+
+.slide-label {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  color: #2437ff;
+  font-size: .8rem;
+  font-weight: 700;
+  background: #f7f9ff;
+  box-shadow:
+    inset 3px 3px 8px rgba(174,174,192,.18),
+    inset -3px -3px 8px rgba(255,255,255,.9);
+  margin-bottom: 20px;
+}
+
+.slide-content h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #081028;
+  margin-bottom: 12px;
+}
+
+.slide-content p {
+  color: #64748b;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* ========================= */
+/* STATS */
+/* ========================= */
+
+.eta-stats {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  padding: 24px;
+  text-align: center;
+  border-radius: 28px;
+  background: #f7f9ff;
+  box-shadow:
+    10px 10px 25px rgba(174,174,192,.18),
+    -10px -10px 25px rgba(255,255,255,.95);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2437ff;
+}
+
+.stat-card p {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: .95rem;
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width: 992px) {
+
+  .eta-banner {
+    padding: 70px 0;
+  }
+
+  .eta-banner-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .slider-card {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .eta-stats {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .eta-banner {
+    padding: 60px 0;
+  }
+
+  .eta-left h2 {
+    font-size: 2.5rem;
+  }
+
+  .slider-card {
+    width: 100%;
+  }
+
+  .slider-image {
+    height: 200px;
+  }
+
+  .slide-content {
+    padding: 24px;
+  }
+
+  .slide-content h3 {
+    font-size: 2rem;
+  }
+
+  .eta-stats {
+    grid-template-columns: 1fr;
+  }
+}

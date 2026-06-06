@@ -1,0 +1,328 @@
+.eta-methodology {
+  padding: 120px 0;
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #f8faff
+  );
+}
+
+/* ========================= */
+/* Header */
+
+.eta-methodology__header {
+  max-width: 850px;
+  text-align: center;
+  margin: auto;
+}
+
+.eta-methodology__tag {
+  display: inline-block;
+
+  padding: 10px 22px;
+
+  border-radius: 999px;
+
+  background: rgba(11,15,158,.08);
+
+  color: #0B0F9E;
+
+  font-weight: 700;
+
+  font-size: .9rem;
+}
+
+.eta-methodology__header h2 {
+  margin-top: 20px;
+
+  font-size: clamp(2.5rem,5vw,4rem);
+
+  line-height: 1.1;
+
+  color: #111827;
+
+  font-weight: 800;
+}
+
+.eta-methodology__header p {
+  margin-top: 18px;
+
+  color: #6b7280;
+
+  line-height: 1.8;
+
+  max-width: 700px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================= */
+/* Journey */
+
+.eta-methodology__journey {
+  margin-top: 70px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 18px;
+
+  flex-wrap: wrap;
+}
+
+.eta-methodology__journey div {
+  background: white;
+
+  padding: 14px 26px;
+
+  border-radius: 999px;
+
+  font-weight: 700;
+
+  color: #111827;
+
+  border: 1px solid #eef2ff;
+
+  box-shadow:
+    0 10px 25px rgba(15,23,42,.05);
+}
+
+.eta-methodology__journey span {
+  width: 35px;
+  height: 2px;
+
+  background: #0B0F9E;
+}
+
+/* ========================= */
+/* Framework Section */
+
+.eta-methodology__ecosystem {
+  margin-top: 90px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 24px;
+}
+
+/* Center Card */
+
+.eta-methodology__center {
+  position: relative;
+
+  grid-column: span 3;
+
+  background: linear-gradient(
+    135deg,
+    #0B0F9E,
+    #2437ff
+  );
+
+  color: white;
+
+  border-radius: 30px;
+
+  padding: 50px;
+
+  text-align: center;
+
+  box-shadow:
+    0 25px 50px rgba(11,15,158,.15);
+}
+
+.eta-methodology__center h3 {
+  font-size: 3rem;
+
+  font-weight: 800;
+}
+
+.eta-methodology__center p {
+  margin-top: 10px;
+
+  font-size: 1rem;
+
+  opacity: .9;
+}
+
+/* Pillar Cards */
+
+.eta-methodology__pillar {
+  position: relative;
+
+  width: 100%;
+  height: auto;
+
+  min-height: 180px;
+
+  background: rgba(255,255,255,.85);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,.9);
+
+  border-radius: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 14px;
+
+  text-align: center;
+
+  padding: 35px;
+
+  box-shadow:
+    0 12px 35px rgba(15,23,42,.06);
+
+  transition: all .35s ease;
+}
+
+.eta-methodology__pillar:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 45px rgba(15,23,42,.1);
+}
+
+.eta-methodology__pillar svg {
+  color: #0B0F9E;
+
+  width: 34px;
+  height: 34px;
+}
+
+.eta-methodology__pillar span {
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  color: #111827;
+}
+
+/* Remove Old Absolute Positioning */
+
+.eta-methodology__pillar-1,
+.eta-methodology__pillar-2,
+.eta-methodology__pillar-3,
+.eta-methodology__pillar-4,
+.eta-methodology__pillar-5,
+.eta-methodology__pillar-6 {
+  position: relative;
+
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+
+  transform: none;
+}
+
+/* ========================= */
+/* Stats */
+
+.eta-methodology__stats {
+  margin-top: 80px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  gap: 24px;
+}
+
+.eta-methodology__stat {
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 24px;
+
+  text-align: center;
+
+  border: 1px solid #eef2ff;
+
+  box-shadow:
+    0 12px 30px rgba(15,23,42,.05);
+}
+
+.eta-methodology__stat h3 {
+  color: #0B0F9E;
+
+  font-size: 2.2rem;
+
+  font-weight: 800;
+}
+
+.eta-methodology__stat p {
+  margin-top: 8px;
+
+  color: #6b7280;
+}
+
+/* ========================= */
+/* Tablet */
+
+@media (max-width: 992px) {
+
+  .eta-methodology {
+    padding: 100px 0;
+  }
+
+  .eta-methodology__ecosystem {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .eta-methodology__center {
+    grid-column: span 2;
+  }
+
+  .eta-methodology__stats {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+/* ========================= */
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .eta-methodology {
+    padding: 80px 0;
+  }
+
+  .eta-methodology__header h2 {
+    font-size: 2.3rem;
+  }
+
+  .eta-methodology__journey {
+    gap: 12px;
+  }
+
+  .eta-methodology__journey span {
+    display: none;
+  }
+
+  .eta-methodology__ecosystem {
+    grid-template-columns: 1fr;
+  }
+
+  .eta-methodology__center {
+    grid-column: span 1;
+
+    padding: 40px 25px;
+  }
+
+  .eta-methodology__center h3 {
+    font-size: 2.3rem;
+  }
+
+  .eta-methodology__stats {
+    grid-template-columns: 1fr;
+  }
+}
