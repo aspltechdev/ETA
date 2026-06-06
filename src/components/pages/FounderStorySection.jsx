@@ -7,6 +7,7 @@ import {
   GraduationCap,
   ArrowRight,
 } from "lucide-react";
+import founder from "../../assets/founder.jpeg";
 
 const FounderStorySection = () => {
   return (
@@ -26,7 +27,7 @@ const FounderStorySection = () => {
             <div className="founder-image-card">
 
               <img
-                src="/images/founder.jpg"
+                src={founder}
                 alt="Mrs. Ranjeetha Sarath"
               />
 
@@ -47,10 +48,7 @@ const FounderStorySection = () => {
             </span>
 
             <h2>
-              A Vision To Create
-              Confident Communicators,
-              Future Leaders &
-              Global Citizens
+           The Story Behind Our Mission
             </h2>
 
             <h4>

@@ -142,7 +142,7 @@ const Home = () => {
         </section>
 
         <section id="languages">
-          <ForeignLanguageAcademy />
+          {/* <ForeignLanguageAcademy /> */}
           <LanguagesHeroSection/>
         </section>
 
