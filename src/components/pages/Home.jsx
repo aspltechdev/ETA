@@ -92,6 +92,7 @@ import FounderStorySection from "./FounderStorySection";
 import GallerySection from "./GallerySection";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
+import LanguagesHeroSection from "./LanguagesHeroSection";
 import LearningMethodology from "./LearningMethodology";
 import MissionVisionSection from "./MissionVisionSection";
 import NewsletterSection from "./NewsletterSection";
@@ -116,10 +117,10 @@ const Home = () => {
         <section id="home">
           <HeroSection />
         </section>
-        {/* <section>
+        {/*<section>
           <TrustedBy/>
-        </section>
-        <section>
+        </section>*/}
+        {/* <section>
           <TransformationPillars/>
         </section> */}
 
@@ -142,6 +143,7 @@ const Home = () => {
 
         <section id="languages">
           <ForeignLanguageAcademy />
+          <LanguagesHeroSection/>
         </section>
 
         <section id="certification">
@@ -164,8 +166,12 @@ const Home = () => {
           <SuccessStoriesSection />
         </section>
 
-        <section id="partners">
+        {/*<section id="partners">
           <PartnerInstitutionsSection />
+        </section>*/}
+
+        <section>
+          <TrustedBy/>
         </section>
 
         <section id="gallery">

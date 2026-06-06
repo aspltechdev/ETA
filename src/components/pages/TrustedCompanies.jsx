@@ -1,110 +1,49 @@
-// import "./TrustedCompanies.css";
-
-// import cambridge from "../../assets/cam.png";
-// import hcl from "../../assets/hcl.png";
-// import partner1 from "../../assets/cam.png";
-// import partner2 from "../../assets/hcl.png";
-// import partner3 from "../../assets/cam.png";
-// import partner4 from "../../assets/hcl.png";
-
-// const logos = [
-//   cambridge,
-//   hcl,
-//   partner1,
-//   partner2,
-//   partner3,
-//   partner4,
-// ];
-
-// export default function TrustedBy() {
-//   return (
-//     <section className="trusted">
-
-//       <div className="container">
-
-//         <div className="trusted-header">
-
-//           <span className="trusted-tag">
-//             TRUSTED BY
-//           </span>
-
-//           <h2>
-//             Leading Schools,
-//             Institutions &
-//             Industry Partners
-//           </h2>
-
-//           <p>
-//             Collaborating with educational institutions,
-//             training partners and organizations to create
-//             transformational learning experiences.
-//           </p>
-
-//         </div>
-
-//         <div className="trusted-marquee">
-
-//           <div className="trusted-track">
-
-//             {logos.map((logo, index) => (
-//               <div
-//                 key={index}
-//                 className="trusted-logo"
-//               >
-//                 <img
-//                   src={logo}
-//                   alt=""
-//                 />
-//               </div>
-//             ))}
-
-//             {logos.map((logo, index) => (
-//               <div
-//                 key={`copy-${index}`}
-//                 className="trusted-logo"
-//               >
-//                 <img
-//                   src="https://www.financialexpress.com/wp-content/uploads/2022/09/hcl1.jpg?resize=768"
-//                   alt=""
-//                 />
-//               </div>
-//             ))}
-
-//           </div>
-
-//         </div>
-
-//       </div>
-
-//     </section>
-//   );
-// }
-
-
-
-
-
-
-
 import "./TrustedCompanies.css";
 import { motion } from "framer-motion";
 
-import cambridge from "../../assets/cam.png";
+import upskill from "../../assets/upskill.jpg";
+import onlyinterns from "../../assets/onlyinterns.jpg";
+import tnauto from "../../assets/tnauto.jpg";
+import uvagai from "../../assets/uvagai.jpg";
+import cambridge from "../../assets/cambridge.jpg";
 import hcl from "../../assets/hcl.png";
 
-const logos = [
-  cambridge,
-  hcl,
-  cambridge,
-  hcl,
-  cambridge,
-  hcl,
+const partners = [
+  {
+    logo: upskill,
+    name: "Upskill",
+    category: "Language Partner",
+  },
+  {
+    logo: onlyinterns,
+    name: "OnlyInterns",
+    category: "MOU",
+  },
+  {
+    logo: tnauto,
+    name: "TN Auto Skills",
+    category: "MOU",
+  },
+  {
+    logo: uvagai,
+    name: "Uvagai Foundation",
+    category: "NGO Collaboration",
+  },
+  {
+    logo: cambridge,
+    name: "Cambridge",
+    category: "Certification Partner",
+  },
+  {
+    logo: hcl,
+    name: "HCL",
+    category: "Industry Partner",
+  },
 ];
 
 export default function TrustedCompanies() {
   return (
     <section className="trusted">
-
       <div className="trusted-glow"></div>
 
       <div className="container">
@@ -116,7 +55,6 @@ export default function TrustedCompanies() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-
           <span className="trusted-tag">
             TRUSTED PARTNERS
           </span>
@@ -135,19 +73,13 @@ export default function TrustedCompanies() {
           </p>
 
           <div className="trusted-keywords">
-
             <span>Schools</span>
-
             <span>Colleges</span>
-
             <span>Organizations</span>
-
             <span>Industry Partners</span>
-
           </div>
-
         </motion.div>
-
+          
         <div className="trusted-marquee">
 
           <div className="trusted-marquee-fade-left"></div>
@@ -155,26 +87,39 @@ export default function TrustedCompanies() {
 
           <div className="trusted-track">
 
-            {[...logos, ...logos].map(
-              (logo, index) => (
-                <div
-                  key={index}
-                  className="trusted-logo-card"
-                >
+            {[...partners, ...partners].map((partner, index) => (
+
+              <div
+                key={index}
+                className="trusted-partner"
+              >
+
+                <div className="trusted-logo-card">
+
                   <img
-                    src={logo}
-                    alt="Partner Logo"
+                    src={partner.logo}
+                    alt={partner.name}
                   />
+
                 </div>
-              )
-            )}
+
+                <h4 className="partner-name">
+                  {partner.name}
+                </h4>
+
+                <span className="partner-category">
+                  {partner.category}
+                </span>
+
+              </div>
+
+            ))}
 
           </div>
 
         </div>
 
       </div>
-
     </section>
   );
 }
