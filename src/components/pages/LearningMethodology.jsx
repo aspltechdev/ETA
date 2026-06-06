@@ -1,136 +1,150 @@
 import "./LearningMethodology.css";
+import { useEffect, useState } from "react";
 
-import {
-  Brain,
-  Mic,
-  Users,
-  Globe,
-  Rocket,
-  Trophy,
-} from "lucide-react";
+import cImg from "../../assets/about/commu.jpg";
+import eImg from "../../assets/about/emotionalintelligence.jpg";
+import gImg from "../../assets/about/global exposure.jpg";
+import lImg from "../../assets/about/leadership.jpg";
+import pImg from "../../assets/about/practicallearning.jpg";
+import tImg from "../../assets/about/transformation.jpg";
 
-const pillars = [
+const slides = [
   {
-    icon: <Mic size={30} />,
     title: "Communication",
+    image: cImg,
+    desc: "Develop clear expression, public speaking and confidence."
   },
   {
-    icon: <Users size={30} />,
     title: "Leadership",
+    image: lImg,
+    desc: "Build decision-making and team leadership abilities."
   },
   {
-    icon: <Brain size={30} />,
     title: "Emotional Intelligence",
+    image: eImg,
+    desc: "Strengthen empathy, self-awareness and relationships."
   },
   {
-    icon: <Globe size={30} />,
     title: "Global Exposure",
+    image: gImg,
+    desc: "Prepare students for diverse global opportunities."
   },
   {
-    icon: <Rocket size={30} />,
     title: "Practical Learning",
+    image: pImg,
+    desc: "Learn through real-world experiences and projects."
   },
   {
-    icon: <Trophy size={30} />,
     title: "Transformation",
+    image: tImg,
+    desc: "Create lasting personal and professional growth."
   },
 ];
 
-const LearningMethodology = () => {
+export default function LearningMethodology() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive((prev) => (prev + 1) % slides.length);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="eta-methodology">
+    <section className="eta-banner">
 
-      <div className="container">
+   <div className="bg-fold fold-1"></div>
+  <div className="bg-fold fold-2"></div>
+  <div className="bg-fold fold-3"></div>
+  <div className="bg-fold fold-4"></div>
+  <div className="bg-fold fold-5"></div>
 
-        <div className="eta-methodology__header">
+  <div className="container">
 
-          <span className="eta-methodology__tag">
-            ETA Transformation Framework
-          </span>
+        <div className="eta-banner-grid">
 
-          <h2>
-            Learning That Creates
-            Lasting Transformation
-          </h2>
+          {/* LEFT SIDE */}
+          <div className="eta-left">
 
-          <p>
-            Our methodology combines experiential
-            learning, leadership development,
-            communication mastery and practical
-            implementation to create measurable impact.
-          </p>
+            <span className="eta-tag">
+              ETA Transformation Framework
+            </span>
 
-        </div>
-
-        {/* Journey */}
-
-        <div className="eta-methodology__journey">
-
-          <div>Discover</div>
-          <span></span>
-
-          <div>Experience</div>
-          <span></span>
-
-          <div>Practice</div>
-          <span></span>
-
-          <div>Lead</div>
-          <span></span>
-
-          <div>Transform</div>
-
-        </div>
-
-        {/* Transformation Wheel */}
-
-        <div className="eta-methodology__ecosystem">
-
-          <div className="eta-methodology__center">
-
-            <h3>
-              ETA
-            </h3>
+            <h2>
+              Learning That Creates
+              <span> Lasting Transformation</span>
+            </h2>
 
             <p>
-              Transformation
-              Journey
+              Our methodology combines experiential learning,
+              leadership development, communication mastery
+              and practical implementation to create measurable impact.
             </p>
+
+            <div className="eta-journey">
+              <span>Discover</span>
+              <span>Experience</span>
+              <span>Practice</span>
+              <span>Lead</span>
+              <span>Transform</span>
+            </div>
 
           </div>
 
-          {pillars.map((item, index) => (
-            <div
-              key={index}
-              className={`eta-methodology__pillar eta-methodology__pillar-${index + 1}`}
-            >
-              {item.icon}
-              <span>{item.title}</span>
+          {/* RIGHT SIDE */}
+          <div className="eta-right">
+
+            <div className="slider-card">
+
+              <img
+                src={slides[active].image}
+                alt={slides[active].title}
+                className="slider-image"
+              />
+
+              <div className="slide-content">
+
+                <span className="slide-label">
+                  ETA Transformation Journey
+                </span>
+
+                <h3>
+                  {slides[active].title}
+                </h3>
+
+                <p>
+                  {slides[active].desc}
+                </p>
+
+              </div>
+
             </div>
-          ))}
+
+          </div>
 
         </div>
 
-        {/* Impact Stats */}
+        {/* STATS */}
+        <div className="eta-stats">
 
-        <div className="eta-methodology__stats">
-
-          <div className="eta-methodology__stat">
+          <div className="stat-card">
             <h3>1000+</h3>
             <p>Learners Impacted</p>
           </div>
 
-          <div className="eta-methodology__stat">
+          <div className="stat-card">
             <h3>50+</h3>
             <p>Workshops Conducted</p>
           </div>
 
-          <div className="eta-methodology__stat">
+          <div className="stat-card">
             <h3>7+</h3>
             <p>Languages Offered</p>
           </div>
 
-          <div className="eta-methodology__stat">
+          <div className="stat-card">
             <h3>100%</h3>
             <p>Experiential Learning</p>
           </div>
@@ -138,9 +152,6 @@ const LearningMethodology = () => {
         </div>
 
       </div>
-
     </section>
   );
-};
-
-export default LearningMethodology;
+}

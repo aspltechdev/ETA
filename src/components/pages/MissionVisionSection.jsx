@@ -566,7 +566,7 @@ import h4 from "../../assets/hero/h4.jpg";
 import h8 from "../../assets/hero/h8.jpg";
 import h5 from "../../assets/hero/h5.jpg";
 import h6 from "../../assets/hero/h6.jpg";
-import h9 from "../../assets/hero/h9.jpg";
+import h9 from "../../assets/about/bgimg.jpeg";
 
 const MissionVisionSection = () => {
   const [scrollY, setScrollY] = useState(0);

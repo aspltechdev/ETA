@@ -25,7 +25,7 @@
   background-size: cover;
   background-position: center;
   opacity: 0.06;
-  filter: saturate(0.3) brightness(1.2);
+  filter: saturate(3.3) brightness(1.2);
   transition: transform 0.1s linear;
   will-change: transform;
 }
