@@ -1,0 +1,253 @@
+.school-transform {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(160deg, #08103c 0%, #0e1e64 50%, #0a1450 100%);
+}
+
+/* Remove white overlay — no longer needed */
+.school-overlay {
+  display: none;
+}
+
+.school-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 60px 0;
+}
+
+/* ====================== */
+/* Header */
+/* ====================== */
+
+.school-header {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.school-tag {
+  display: inline-flex;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #93c5fd;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.school-header h2 {
+  margin-top: 12px;
+  font-size: clamp(2.3rem, 3vw, 3.8rem);
+  line-height: 1.05;
+  font-weight: 800;
+  color: #f1f5f9;
+}
+
+.school-header h2 span {
+  display: block;
+  background: linear-gradient(135deg, #60a5fa, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.school-header p {
+  max-width: 620px;
+  margin: 10px auto 0;
+  color: #94a3b8;
+  line-height: 1.6;
+  font-size: .92rem;
+}
+
+/* ====================== */
+/* Journey Grid */
+/* ====================== */
+
+.journey-line {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ====================== */
+/* Swiper */
+/* ====================== */
+
+.school-swiper {
+  margin-top: 50px;
+  padding-bottom: 50px !important;
+}
+
+.school-swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+.school-swiper .swiper-pagination-bullet-active {
+  background: #60a5fa;
+}
+
+.school-swiper .swiper-button-next,
+.school-swiper .swiper-button-prev {
+  color: #60a5fa;
+}
+
+/* ====================== */
+/* Cards */
+/* ====================== */
+
+.journey-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all .35s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(96, 165, 250, 0.3);
+}
+
+/* ====================== */
+/* Image */
+/* ====================== */
+
+.card-image {
+  height: 150px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.journey-card:hover .card-image img {
+  transform: scale(1.06);
+}
+
+/* ====================== */
+/* Content */
+/* ====================== */
+
+.card-content {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: #ffffff;
+}
+
+.grade-badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: #1e40af;
+  font-size: .7rem;
+  font-weight: 700;
+}
+
+.card-content h3 {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.card-content p {
+  margin-top: 8px;
+  color: #64748b;
+  line-height: 1.5;
+  font-size: .85rem;
+  flex: 1;
+}
+
+/* ====================== */
+/* Footer */
+/* ====================== */
+
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+}
+
+.card-footer strong {
+  display: block;
+  font-size: .8rem;
+  color: #0f172a;
+}
+
+.card-footer span {
+  display: block;
+  margin-top: 2px;
+  font-size: .7rem;
+  color: #64748b;
+}
+
+/* ====================== */
+/* Large Tablet */
+/* ====================== */
+
+@media (max-width: 992px) {
+  .school-transform { min-height: auto; }
+  .school-content { padding: 70px 0; }
+  .journey-line { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .school-header h2 { font-size: 2.7rem; }
+}
+
+/* ====================== */
+/* Mobile */
+/* ====================== */
+
+@media (max-width: 768px) {
+  .school-content { padding: 60px 20px; }
+  .school-header h2 { font-size: 2rem; line-height: 1.15; }
+  .school-header p { font-size: .9rem; }
+  .journey-line { grid-template-columns: 1fr; gap: 20px; max-width: 400px; }
+  .card-image { height: 200px; }
+  .card-content { padding: 18px; }
+}
+
+/* ====================== */
+/* Small Mobile */
+/* ====================== */
+
+@media (max-width: 480px) {
+  .school-content { padding: 50px 16px; }
+  .school-header h2 { font-size: 1.75rem; }
+  .school-header p { font-size: .85rem; }
+  .school-tag { font-size: .72rem; padding: 7px 14px; }
+  .card-image { height: 180px; }
+  .card-content h3 { font-size: 1rem; }
+  .card-content p { font-size: .8rem; }
+  .card-footer strong { font-size: .75rem; }
+  .card-footer span { font-size: .65rem; }
+}

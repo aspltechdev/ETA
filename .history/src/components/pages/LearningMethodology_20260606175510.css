@@ -1,0 +1,458 @@
+/* ========================= */
+/* SECTION */
+/* ========================= */
+
+.eta-banner {
+  position: relative;
+  padding: 80px 0;
+  overflow: hidden;
+  background-image: url('your-image.jpg'); /* replace with your image */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Dark blue overlay over image */
+.eta-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(8, 16, 60, 0.92) 0%,
+    rgba(14, 30, 100, 0.88) 50%,
+    rgba(10, 20, 80, 0.92) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ambient blue glow on top */
+.eta-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(96, 165, 250, 0.06) 25%,
+    rgba(96, 165, 250, 0.12) 50%,
+    rgba(96, 165, 250, 0.06) 75%,
+    transparent 100%
+  );
+  filter: blur(40px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ========================= */
+/* GLASS FOLDS - dark version */
+/* ========================= */
+
+.bg-fold {
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(14px);
+}
+
+.fold-1 {
+  left: 8%;
+  width: 180px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(96, 165, 250, 0.04) 20%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(96, 165, 250, 0.04) 80%,
+    transparent 100%
+  );
+}
+
+.fold-2 {
+  left: 28%;
+  width: 220px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(96, 165, 250, 0.06) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(96, 165, 250, 0.06) 75%,
+    transparent 100%
+  );
+}
+
+.fold-3 {
+  left: 48%;
+  width: 260px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(96, 165, 250, 0.08) 20%,
+    rgba(255, 255, 255, 0.10) 50%,
+    rgba(96, 165, 250, 0.08) 80%,
+    transparent 100%
+  );
+}
+
+.fold-4 {
+  right: 18%;
+  width: 200px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(96, 165, 250, 0.05) 25%,
+    rgba(255, 255, 255, 0.07) 50%,
+    rgba(96, 165, 250, 0.05) 75%,
+    transparent 100%
+  );
+}
+
+.fold-5 {
+  right: -40px;
+  width: 250px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(96, 165, 250, 0.04) 20%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(96, 165, 250, 0.04) 80%,
+    transparent 100%
+  );
+}
+
+/* ========================= */
+/* LAYOUT */
+/* ========================= */
+
+.eta-banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* ========================= */
+/* LEFT */
+/* ========================= */
+
+.eta-tag {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #93c5fd;
+  font-size: 0.9rem;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+}
+
+.eta-left h2 {
+  margin-top: 20px;
+  font-size: clamp(3rem, 4vw, 5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  color: #f1f5f9;
+}
+
+.eta-left h2 span {
+  display: block;
+  background: linear-gradient(135deg, #60a5fa, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.eta-left p {
+  margin-top: 24px;
+  max-width: 650px;
+  color: #94a3b8;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* ========================= */
+/* JOURNEY */
+/* ========================= */
+
+.eta-journey {
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+
+.eta-journey span {
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: #e2e8f0;
+  font-weight: 600;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+}
+
+.eta-journey span:not(:last-child) {
+  margin-right: 20px;
+  position: relative;
+}
+
+.eta-journey span:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 20px;
+  height: 2px;
+  background: #60a5fa;
+  transform: translateY(-50%);
+}
+
+/* ========================= */
+/* RIGHT */
+/* ========================= */
+
+.eta-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.eta-right::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(rgba(96, 165, 250, 0.12), transparent 70%);
+  filter: blur(80px);
+  z-index: 0;
+}
+
+/* ========================= */
+/* CARD - Glassmorphism */
+/* ========================= */
+
+.slider-card {
+  position: relative;
+  width: 380px;
+  border-radius: 35px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  z-index: 2;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  transition: all .4s ease;
+}
+
+.slider-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(96, 165, 250, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================= */
+/* IMAGE */
+/* ========================= */
+
+.slider-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.slide-content {
+  padding: 32px;
+}
+
+.slide-label {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  color: #93c5fd;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(96, 165, 250, 0.10);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  margin-bottom: 20px;
+}
+
+.slide-content h3 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.slide-content p {
+  color: #94a3b8;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* ========================= */
+/* STATS - Glassmorphism */
+/* ========================= */
+
+.eta-stats {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  padding: 28px;
+  text-align: center;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(96, 165, 250, 0.25);
+  transform: translateY(-4px);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #60a5fa;
+}
+
+.stat-card p {
+  margin-top: 8px;
+  color: #94a3b8;
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width: 992px) {
+  .eta-banner { padding: 70px 0; }
+  .eta-banner-grid { grid-template-columns: 1fr; gap: 50px; }
+  .eta-left { text-align: center; }
+  .eta-left p { margin-left: auto; margin-right: auto; }
+  .eta-journey { justify-content: center; }
+  .slider-card { width: 380px; max-width: 380px; margin: auto; }
+  .slider-image { height: 220px; }
+  .eta-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .eta-banner { padding: 60px 0; }
+  .eta-left h2 { font-size: 2.5rem; }
+  .slider-card { width: 100%; max-width: 380px; margin: auto; }
+  .slider-image { height: 220px; }
+  .slide-content { padding: 24px; }
+  .slide-content h3 { font-size: 2rem; }
+  .eta-stats { grid-template-columns: 1fr; }
+}
+
+/* ================================= */
+/* LARGE TABLETS (1024px) */
+/* ================================= */
+
+@media (max-width: 1024px) {
+  .eta-banner-grid { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+  .eta-left p { margin-left: auto; margin-right: auto; }
+  .eta-journey { justify-content: center; flex-wrap: wrap; }
+  .eta-right { order: -1; }
+  .slider-card { width: 100%; max-width: 420px; margin: auto; }
+  .eta-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ================================= */
+/* TABLETS (768px) */
+/* ================================= */
+
+@media (max-width: 768px) {
+  .container { width: 92%; }
+  .eta-left h2 { font-size: 2.6rem; line-height: 1.1; }
+  .eta-left p { font-size: 1rem; }
+  .eta-journey { gap: 10px; justify-content: center; }
+  .eta-journey span { padding: 10px 16px; font-size: 0.85rem; }
+  .eta-journey span:not(:last-child)::before { display: none; }
+  .slider-card { max-width: 100%; border-radius: 28px; }
+  .slider-image { height: 240px; }
+  .slide-content { padding: 24px; }
+  .slide-content h3 { font-size: 2rem; }
+  .slide-content p { font-size: 0.95rem; }
+  .eta-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .stat-card { padding: 22px; }
+}
+
+/* ================================= */
+/* MOBILE (576px) */
+/* ================================= */
+
+@media (max-width: 576px) {
+  .eta-banner { padding: 50px 0; }
+  .eta-left h2 { font-size: 2rem; }
+  .eta-left p { font-size: 0.9rem; line-height: 1.7; }
+  .eta-tag { font-size: 0.8rem; padding: 10px 18px; }
+  .eta-journey { flex-direction: column; align-items: stretch; gap: 12px; }
+  .eta-journey span { width: 100%; text-align: center; }
+  .slider-image { height: 200px; }
+  .slide-content { padding: 20px; }
+  .slide-content h3 { font-size: 1.7rem; }
+  .slide-content p { font-size: 0.9rem; }
+  .eta-stats { grid-template-columns: 1fr; }
+  .stat-card { padding: 20px; }
+  .stat-card h3 { font-size: 1.7rem; }
+}
+
+/* ================================= */
+/* SMALL MOBILE (400px) */
+/* ================================= */
+
+@media (max-width: 400px) {
+  .eta-left h2 { font-size: 1.75rem; }
+  .slider-image { height: 180px; }
+  .slide-content h3 { font-size: 1.5rem; }
+  .slide-content { padding: 18px; }
+  .eta-tag { font-size: 0.75rem; padding: 8px 14px; }
+}
+
+/* ================================= */
+/* HIDE FOLDS ON MOBILE */
+/* ================================= */
+
+@media (max-width: 768px) {
+  .fold-1, .fold-2, .fold-3, .fold-4, .fold-5 {
+    opacity: 0.2;
+    filter: blur(10px);
+  }
+  .eta-right::before { width: 300px; height: 300px; }
+}
