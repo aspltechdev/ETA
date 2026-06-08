@@ -100,6 +100,7 @@ import PartnerInstitutionsSection from "./PartnerInstitutionsSection";
 
 import SchoolSolutionsSection from "./SchoolSolutionsSection";
 import SchoolTransformation from "./SchoolTransformation";
+import SocialWall from "./SocialWall";
 
 import SuccessStoriesSection from "./SuccessStoriesSection";
 import TransformationEcosystem from "./TransformationEcosystem";
@@ -184,6 +185,10 @@ const Home = () => {
 
         <section id="newsletter">
           <NewsletterSection />
+        </section>
+
+        <section>
+          <SocialWall/>
         </section>
 
         <section id="contact">
