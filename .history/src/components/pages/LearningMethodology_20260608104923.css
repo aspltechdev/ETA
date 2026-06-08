@@ -28,7 +28,7 @@
 
 /* Soft Moving Glow — more concentrated, higher contrast */
 .eta-banner::after {
-    content: "";
+    /* content: ""; */
     position: absolute;
     inset: 0;
     z-index: 0;
