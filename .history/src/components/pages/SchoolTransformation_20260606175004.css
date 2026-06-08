@@ -1,0 +1,335 @@
+.school-transform {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+ 
+  overflow: hidden;
+  background: linear-gradient(160deg, #08103c 0%, #0e1e64 50%, #0a1450 100%);
+}
+
+/* Background Overlay */
+.school-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.school-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 60px 0;
+}
+
+/* ====================== */
+/* Header */
+/* ====================== */
+
+.school-header {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.school-tag {
+  display: inline-flex;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(255,255,255,.9);
+  color: #1c2bff;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.school-header h2 {
+  margin-top: 12px;
+  font-size: clamp(2.3rem, 3vw, 3.8rem);
+  line-height: 1.05;
+  font-weight: 800;
+  color: #081028;
+}
+
+.school-header h2 span {
+  display: block;
+  background: linear-gradient(
+    135deg,
+    #1c2bff,
+    #4f46e5
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.school-header p {
+  max-width: 620px;
+  margin: 10px auto 0;
+  color: #475569;
+  line-height: 1.6;
+  font-size: .92rem;
+}
+
+/* ====================== */
+/* Journey Grid */
+/* ====================== */
+
+.journey-line {
+  margin-top: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 24px;
+
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ====================== */
+/* Cards */
+/* ====================== */
+
+.journey-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow:
+    0 10px 30px rgba(15,23,42,.08);
+
+  transition: all .35s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(15,23,42,.12);
+}
+
+/* ====================== */
+/* Image */
+/* ====================== */
+
+.card-image {
+  height: 150px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ====================== */
+/* Content */
+/* ====================== */
+
+.card-content {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.grade-badge {
+  display: inline-flex;
+
+  width: fit-content;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: rgba(28,43,255,.08);
+
+  color: #1c2bff;
+
+  font-size: .7rem;
+
+  font-weight: 700;
+}
+
+.card-content h3 {
+  margin-top: 10px;
+
+  font-size: 1.1rem;
+
+  font-weight: 700;
+
+  color: #081028;
+}
+
+.card-content p {
+  margin-top: 8px;
+
+  color: #64748b;
+
+  line-height: 1.5;
+
+  font-size: .85rem;
+
+  flex: 1;
+}
+
+/* ====================== */
+/* Footer */
+/* ====================== */
+
+.card-footer {
+  margin-top: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #edf2f7;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #1c2bff;
+}
+
+.card-footer strong {
+  display: block;
+
+  font-size: .8rem;
+
+  color: #081028;
+}
+
+.card-footer span {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: .7rem;
+
+  color: #64748b;
+}
+
+/* ====================== */
+/* Large Tablet */
+/* 4 → 2 cards */
+/* ====================== */
+
+@media (max-width: 992px) {
+
+  .school-transform {
+    min-height: auto;
+  }
+
+  .school-content {
+    padding: 70px 0;
+  }
+
+  .journey-line {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .school-header h2 {
+    font-size: 2.7rem;
+  }
+}
+
+/* ====================== */
+/* Mobile */
+/* 2 → 1 card */
+/* ====================== */
+
+@media (max-width: 768px) {
+
+  .school-content {
+    padding: 60px 20px;
+  }
+
+  .school-header h2 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .school-header p {
+    font-size: .9rem;
+  }
+
+  .journey-line {
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    max-width: 400px;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .card-content {
+    padding: 18px;
+  }
+}
+
+/* ====================== */
+/* Small Mobile */
+/* ====================== */
+
+@media (max-width: 480px) {
+
+  .school-content {
+    padding: 50px 16px;
+  }
+
+  .school-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .school-header p {
+    font-size: .85rem;
+  }
+
+  .school-tag {
+    font-size: .72rem;
+    padding: 7px 14px;
+  }
+
+  .card-image {
+    height: 180px;
+  }
+
+  .card-content h3 {
+    font-size: 1rem;
+  }
+
+  .card-content p {
+    font-size: .8rem;
+  }
+
+  .card-footer strong {
+    font-size: .75rem;
+  }
+
+  .card-footer span {
+    font-size: .65rem;
+  }
+}
