@@ -37,14 +37,14 @@ const LanguagesHeroSection = () => {
 
         {/* 4 Stats Cards - Now aligned side-by-side in one perfect row */}
         <div className="language-stats">
-          {/* Modified here: Changed from 7 to 6+ */}
+          {/* Modified here: Changed from 6 to 7+ */}
           <div>
-            <h3>6+</h3>
+            <h3>7+</h3>
             <span>Languages</span>
           </div>
 
           <div>
-            <h3>5000+</h3>
+            <h3>10K+</h3>
             <span>Learners</span>
           </div>
 

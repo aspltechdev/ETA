@@ -214,49 +214,129 @@
 
 /* ======================== */
 
-.social-footer {
-  display: flex;
 
-  justify-content: center;
 
-  margin-top: 70px;
-}
+/* ======================== */
 
-.social-btn {
+/* ======================== */
+/* New Social Tabs CSS      */
+/* ======================== */
+
+.social-tabs {
   display: inline-flex;
+  background: #f1f5f9;
+  padding: 6px;
+  border-radius: 99px;
+  margin-top: 32px;
+  border: 1px solid #e2e8f0;
+  gap: 6px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+}
 
+.tab-btn {
+  display: inline-flex;
   align-items: center;
-
-  gap: 10px;
-
-  padding: 16px 28px;
-
-  border-radius: 999px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #0A0A8F,
-      #1C2BFF
-    );
-
-  color: white;
-
-  text-decoration: none;
-
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 99px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 0.95rem;
   font-weight: 600;
-
-  transition: .35s ease;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-btn:hover {
-  transform:
-    translateY(-4px);
-
-  box-shadow:
-    0 15px 40px rgba(28,43,255,.2);
+.tab-btn:hover {
+  color: #0f172a;
 }
 
+.tab-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.tab-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Tab Active States */
+.tab-btn.active-instagram,
+.tab-btn.active-linkedin,
+.tab-btn.active-youtube,
+.tab-btn.active-facebook {
+  background: #1c2bff;
+  color: white;
+  box-shadow: 0 4px 15px rgba(28, 43, 255, 0.3);
+}
+
+/* Card Branding Colors */
+.card-top.instagram-color,
+.card-top.linkedin-color,
+.card-top.youtube-color,
+.card-top.facebook-color {
+  color: #1c2bff;
+  border-bottom: 1px solid rgba(28, 43, 255, 0.1);
+}
+
+.embed-wrapper.linkedin-wrapper {
+  min-height: 668px;
+  background: #f8fafc;
+}
+
+
+
+/* YouTube Integration CSS */
+.youtube-card {
+  width: 480px;
+  border-radius: 28px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 50px rgba(15,23,42,.05);
+  overflow: hidden;
+  transition: .4s ease;
+}
+
+.youtube-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 70px rgba(28, 43, 255, 0.12);
+}
+
+.embed-wrapper.youtube-wrapper {
+  min-height: 270px;
+  background: #000;
+}
+
+.youtube-embed {
+  width: 100%;
+  height: 270px;
+  border: none;
+  display: block;
+}
+
+/* Facebook Integration CSS */
+.facebook-card {
+  width: 480px;
+  border-radius: 28px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 50px rgba(15,23,42,.05);
+  overflow: hidden;
+  transition: .4s ease;
+}
+
+.facebook-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 70px rgba(28, 43, 255, 0.12);
+}
+
+.embed-wrapper.facebook-wrapper {
+  min-height: 500px;
+  background: #f0f2f5;
+}
+
+/* ======================== */
+/* Responsive Styles        */
 /* ======================== */
 
 @media(max-width:768px){
@@ -269,8 +349,20 @@
     font-size: 2.4rem;
   }
 
-  .social-card {
+  .social-card,
+  .youtube-card,
+  .facebook-card {
     width: 300px;
+  }
+
+  .embed-wrapper.youtube-wrapper,
+  .youtube-embed {
+    height: 180px;
+    min-height: 180px;
+  }
+
+  .embed-wrapper.facebook-wrapper {
+    min-height: 350px;
   }
 
   .social-marquee::before,
@@ -281,15 +373,45 @@
   .social-track {
     gap: 16px;
   }
+
+  /* Show only icons on smaller devices */
+  .social-tabs .tab-text {
+    display: none;
+  }
+
+  .social-tabs {
+    display: inline-flex;
+    justify-content: center;
+    width: auto;
+    margin-top: 24px;
+    padding: 6px;
+    gap: 8px;
+    border-radius: 99px;
+    overflow-x: visible;
+    box-shadow: none;
+  }
+
+  .tab-btn {
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
 }
 
-@media(max-width:480px){
+@media(max-width:600px){
 
-  .social-card {
+  .social-card,
+  .youtube-card,
+  .facebook-card {
     width: 280px;
   }
 
   .social-header h2 {
     font-size: 2rem;
   }
-}
+}

@@ -112,9 +112,8 @@ export default function HeroSection() {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`hero-bg ${
-              current === index ? "active" : ""
-            }`}
+            className={`hero-bg ${current === index ? "active" : ""
+              }`}
             style={{
               backgroundImage: `url(${slide.bgImage})`,
             }}
@@ -150,7 +149,7 @@ export default function HeroSection() {
             <span>
               {slides[current].highlight}
             </span>
-{/* 
+            {/* 
             <br /> */}
 
             {slides[current].title2}
@@ -252,7 +251,7 @@ export default function HeroSection() {
           <div className="metric-card metric-1">
             <GraduationCap size={18} />
             <div>
-              <h4>15K+</h4>
+              <h4>10K+</h4>
               <span>Students Impacted</span>
             </div>
           </div>

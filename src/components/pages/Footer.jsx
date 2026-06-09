@@ -1,5 +1,6 @@
 
 import "./Footer.css";
+import logo from "../../assets/logo.jpeg";
 
 import {
   Mail,
@@ -15,7 +16,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
-import { Link } from "react-router-dom";
+
 
 const Footer = () => {
   return (
@@ -28,8 +29,8 @@ const Footer = () => {
           <div className="footer-column footer-about">
             <div className="footer-logo">
               <img
-                src="/logo.png"
-                alt="ETA"
+                src={logo}
+                alt="ETA Logo"
               />
 
               <div>
@@ -83,32 +84,32 @@ const Footer = () => {
           <div className="footer-column">
             <h4>Quick Links</h4>
 
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/programs">Programs</Link>
-            <Link to="/languages">Languages</Link>
-            <Link to="/contact">Contact</Link>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#programs">Programs</a>
+            <a href="#languages">Languages</a>
+            <a href="#contact">Contact</a>
           </div>
 
           {/* Programs */}
           <div className="footer-column">
             <h4>Programs</h4>
 
-            <a href="#">Communication Skills</a>
-            <a href="#">Leadership Development</a>
-            <a href="#">Emotional Intelligence</a>
-            <a href="#">Behavioral Transformation</a>
+            <a href="#programs">Communication Skills</a>
+            <a href="#programs">Leadership Development</a>
+            <a href="#programs">Emotional Intelligence</a>
+            <a href="#programs">Behavioral Transformation</a>
           </div>
 
           {/* Languages */}
           <div className="footer-column">
             <h4>Languages</h4>
 
-            <a href="#">French</a>
-            <a href="#">German</a>
-            <a href="#">Spanish</a>
-            <a href="#">Japanese</a>
-            <a href="#">Korean</a>
+            <a href="#languages">French</a>
+            <a href="#languages">German</a>
+            <a href="#languages">Spanish</a>
+            <a href="#languages">Japanese</a>
+            <a href="#languages">Korean</a>
           </div>
 
           {/* Contact */}

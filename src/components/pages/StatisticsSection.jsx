@@ -8,12 +8,12 @@ const StatisticsSection = () => {
         <div className="stats-grid">
 
           <div className="stat-card">
-            <h2>400K+</h2>
+            <h2>10K+</h2>
             <p>Students</p>
           </div>
 
           <div className="stat-card">
-            <h2>40+</h2>
+            <h2>7+</h2>
             <p>Languages</p>
           </div>
 

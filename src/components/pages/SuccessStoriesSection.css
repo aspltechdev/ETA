@@ -183,8 +183,7 @@
 
   .impact-section {
     height: auto;
-
-    padding: 100px 0;
+    padding: 80px 0;
   }
 
   .impact-content h2 {
@@ -192,7 +191,23 @@
   }
 
   .impact-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
+}
 
+@media (max-width: 480px) {
+  .impact-section {
+    padding: 60px 0;
+  }
+  .stat {
+    padding: 16px 12px;
+    border-radius: 16px;
+  }
+  .stat h3 {
+    font-size: 1.8rem;
+  }
+  .stat span {
+    font-size: 0.8rem;
+  }
 }

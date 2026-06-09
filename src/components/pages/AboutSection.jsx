@@ -529,33 +529,36 @@ const AboutSection = () => {
             data-reveal-id="card-stack"
           >
             <div className="ab-card-stack__container">
-              {/* Main Card */}
-              <div
-                className="ab-card ab-card--main"
-                ref={(el) => (cardStackRef.current[0] = el)}
-                onMouseMove={(e) => handleCardMouseMove(e, 0)}
-                onMouseLeave={() => handleCardMouseLeave(0)}
-              >
-                <div className="ab-card__shine" />
-                <img src={about1} alt="Learning Experience" className="ab-card__image" />
-                <div className="ab-card__overlay">
-                  <span className="ab-card__tag">Experiential Learning</span>
-                  <span className="ab-card__arrow">→</span>
+              {/* Image wrapper keeps float card scoped to image area */}
+              <div className="ab-card-images">
+                {/* Main Card */}
+                <div
+                  className="ab-card ab-card--main"
+                  ref={(el) => (cardStackRef.current[0] = el)}
+                  onMouseMove={(e) => handleCardMouseMove(e, 0)}
+                  onMouseLeave={() => handleCardMouseLeave(0)}
+                >
+                  <div className="ab-card__shine" />
+                  <img src={about1} alt="Learning Experience" className="ab-card__image" />
+                  <div className="ab-card__overlay">
+                    <span className="ab-card__tag">Experiential Learning</span>
+                    <span className="ab-card__arrow">→</span>
+                  </div>
+                  <div className="ab-card__border-glow" />
                 </div>
-                <div className="ab-card__border-glow" />
-              </div>
 
-              {/* Floating Secondary Card */}
-              <div
-                className="ab-card ab-card--float"
-                ref={(el) => (cardStackRef.current[1] = el)}
-                onMouseMove={(e) => handleCardMouseMove(e, 1)}
-                onMouseLeave={() => handleCardMouseLeave(1)}
-              >
-                <div className="ab-card__shine" />
-                <img src={about2} alt="Workshop" className="ab-card__image" />
-                <div className="ab-card__overlay">
-                  <span className="ab-card__tag">Workshop Excellence</span>
+                {/* Floating Secondary Card */}
+                <div
+                  className="ab-card ab-card--float"
+                  ref={(el) => (cardStackRef.current[1] = el)}
+                  onMouseMove={(e) => handleCardMouseMove(e, 1)}
+                  onMouseLeave={() => handleCardMouseLeave(1)}
+                >
+                  <div className="ab-card__shine" />
+                  <img src={about2} alt="Workshop" className="ab-card__image" />
+                  <div className="ab-card__overlay">
+                    <span className="ab-card__tag">Workshop Excellence</span>
+                  </div>
                 </div>
               </div>
 
@@ -563,7 +566,7 @@ const AboutSection = () => {
               <div className="ab-counter-rings">
                 <div
                   className="ab-counter-ring"
-                  data-counter-id="1000-learners"
+                  data-counter-id="10-learners"
                   ref={(el) => (counterRingRefs.current[0] = el)}
                 >
                   <svg viewBox="0 0 100 100" className="ab-counter-ring__svg">
@@ -575,13 +578,13 @@ const AboutSection = () => {
                       cx="50" cy="50" r="42"
                       className="ab-counter-ring__progress"
                       style={{
-                        strokeDashoffset: 264 - (264 * (counters["1000-learners"] || 0)) / 1000,
+                        strokeDashoffset: 0,
                       }}
                     />
                   </svg>
                   <div className="ab-counter-ring__content">
                     <span className="ab-counter-ring__value">
-                      {counters["1000-learners"] || 0}+
+                      10K+
                     </span>
                     <span className="ab-counter-ring__label">Learners</span>
                   </div>
@@ -589,7 +592,7 @@ const AboutSection = () => {
 
                 <div
                   className="ab-counter-ring"
-                  data-counter-id="6-programs"
+                  data-counter-id="200-programs"
                   ref={(el) => (counterRingRefs.current[1] = el)}
                 >
                   <svg viewBox="0 0 100 100" className="ab-counter-ring__svg">
@@ -601,13 +604,13 @@ const AboutSection = () => {
                       cx="50" cy="50" r="42"
                       className="ab-counter-ring__progress"
                       style={{
-                        strokeDashoffset: 264 - (264 * (counters["6-programs"] || 0)) / 6,
+                        strokeDashoffset: 0,
                       }}
                     />
                   </svg>
                   <div className="ab-counter-ring__content">
                     <span className="ab-counter-ring__value">
-                      {counters["6-programs"] || 0}+
+                      200+
                     </span>
                     <span className="ab-counter-ring__label">Programs</span>
                   </div>
@@ -689,12 +692,12 @@ const AboutSection = () => {
               className={`ab-cta ${isRevealed("cta") ? "revealed" : ""}`}
               data-reveal-id="cta"
             >
-              <button className="ab-cta__button">
-                <span>Discover Our Story</span>
+              <a href="#contact" className="ab-cta__button">
+                <span>Talk To Us</span>
                 <div className="ab-cta__button-icon">
                   <ArrowRight size={16} />
                 </div>
-              </button>
+              </a>
               <div className="ab-cta__glow" />
             </div>
           </div>

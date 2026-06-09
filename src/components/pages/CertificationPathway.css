@@ -169,23 +169,23 @@
 }
 
 .section-tag-c {
-    display: inline-flex;
-    padding: 10px 18px;
-    border-radius: 50px;
-    color: rgb(255, 255, 255);
-    background: rgba(10, 62, 249, 0.741);
-    border: 1px solid rgba(136, 138, 228, 0.12);
-    backdrop-filter: blur(80px);
-     font-size: 18px;
-         box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+  display: inline-flex;
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: #1c2bff;
+  background: rgba(28, 43, 255, 0.06);
+  border: 1px solid rgba(28, 43, 255, 0.12);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 /* ==================================================================
    CERTIFICATION BADGES
 ================================================================== */
 .cert-badges {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 16px;
   margin-top: 30px;
   width: 100%;
@@ -198,8 +198,6 @@
   gap: 10px;
   opacity: 0;
   transform: translateX(-30px);
-  flex: 1;
-  min-width: 75px;
 }
 
 .cert-badge.animate {
@@ -266,21 +264,46 @@
 @media (max-width: 992px) {
   .certification-wrapper { 
     grid-template-columns: 1fr;
-    gap: 30px; 
+    gap: 40px; 
   }
   .cert-left { 
+    grid-column: 1 / -1;
     height: 320px; 
   }
+  .cert-right {
+    grid-column: 1 / -1;
+  }
   .cambridge-box { 
+    grid-column: 1 / -1;
     flex-direction: column; 
-    align-items: flex-start; 
+    align-items: center;
+    text-align: center;
     gap: 20px; 
   }
 }
 
 @media (max-width: 768px) {
   .certification-section { padding: 60px 0; }
-  .cert-right h2 { font-size: 2.3rem; }
-  .cert-badges { justify-content: center; }
+  .cert-right h2 { font-size: 2.2rem; }
+  .cert-badges { 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 12px;
+  }
   .badge-circle { width: 62px; height: 62px; font-size: 1.15rem; }
+}
+
+@media (max-width: 480px) {
+  .cert-left {
+    height: 240px;
+  }
+  .map-content {
+    left: 20px;
+    bottom: 20px;
+  }
+  .map-content h3 {
+    font-size: 1.6rem;
+  }
+  .cambridge-box {
+    padding: 24px 20px;
+  }
 }

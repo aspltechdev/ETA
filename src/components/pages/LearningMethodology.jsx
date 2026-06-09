@@ -130,7 +130,7 @@ export default function LearningMethodology() {
         <div className="eta-stats">
 
           <div className="stat-card">
-            <h3>1000+</h3>
+            <h3>10K+</h3>
             <p>Learners Impacted</p>
           </div>
 

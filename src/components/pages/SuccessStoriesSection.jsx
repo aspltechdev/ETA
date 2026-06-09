@@ -185,7 +185,7 @@ const SuccessStoriesSection = () => {
           </div>
 
           <div className="stat">
-            <h3>100+</h3>
+            <h3>200+</h3>
             <span>
               Programs
             </span>

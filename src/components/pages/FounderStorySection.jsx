@@ -143,7 +143,7 @@ const FounderStorySection = () => {
 
             <Award size={28} />
 
-            <h3>100+</h3>
+            <h3>200+</h3>
 
             <span>
               Programs Delivered

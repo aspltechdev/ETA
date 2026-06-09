@@ -39,22 +39,22 @@ const ConsultationCTA = () => {
 
             <div className="consultation-features">
 
-              <div className="feature-item">
+              <div className="consultation-feature-item">
                 <GraduationCap size={24} />
                 Free Career Guidance
               </div>
 
-              <div className="feature-item">
+              <div className="consultation-feature-item">
                 <Globe size={24} />
                 Language Assessment
               </div>
 
-              <div className="feature-item">
+              <div className="consultation-feature-item">
                 <School size={24} />
                 School Consultation
               </div>
 
-              <div className="feature-item">
+              <div className="consultation-feature-item">
                 <Phone size={24} />
                 Program Counseling
               </div>
@@ -76,10 +76,10 @@ const ConsultationCTA = () => {
               the right program for your goals.
             </p>
 
-            <button>
-              Schedule Consultation
+            <a href="#contact" className="consultation-cta-btn">
+              Contact Us Now
               <ArrowRight size={18} />
-            </button>
+            </a>
 
             <div className="consultation-stats">
 

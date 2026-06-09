@@ -645,6 +645,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .eta-header__btn--primary {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
   .eta-header__btn--primary span {
     display: none;

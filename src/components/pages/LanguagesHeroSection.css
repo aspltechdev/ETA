@@ -48,13 +48,16 @@
   display: inline-flex;
   align-items: center;
   margin-top: 10px;
-  padding: 14px 28px;
+  padding: 10px 20px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #2563eb, #4f46e5);
-  color: #ffffff; /* white text */
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
   font-weight: 600;
+  font-size: 0.95rem;
   margin-bottom: 20px;
-  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   opacity: 0;
   animation: slideDown 0.8s ease forwards;
 }
@@ -212,23 +215,23 @@
   justify-content: flex-end;
   padding: 16px;
   box-sizing: border-box;
-  background: transparent; 
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%); 
 }
 
-/* Clean black wording style with absolutely no text shadows */
+/* Premium white text style with subtle drop shadow for perfect legibility over flag colors */
 .flag-content h4 {
   margin: 0 0 4px 0;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #000000;
-  text-shadow: none; 
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
 }
 
 .flag-content span {
   font-size: 0.75rem;
   font-weight: 700; 
-  color: #000000;
-  text-shadow: none; 
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); 
 }
 
 /* =========================
@@ -306,19 +309,21 @@
     top: auto;
     right: auto;
     width: 100%;
-    height: 380px;
+    height: auto;
     margin-top: 50px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
   
   .flag {
-    height: calc(50% - 8px); 
-  }
-  
-  .flag-1, .flag-2, .flag-3, .flag-4, .flag-5, .flag-6 {
-    width: calc(33.33% - 11px) !important; 
+    width: 100% !important;
+    height: 120px !important;
   }
 
   .language-stats {
+    width: 100%;
     max-width: 100%;
     grid-template-columns: repeat(4, 1fr);
   }
@@ -331,22 +336,23 @@
   }
 
   .language-stats {
+    width: 100%;
+    max-width: 100%;
     grid-template-columns: repeat(2, 1fr); 
     gap: 16px;
   }
   
   .floating-flags {
-    height: 500px;
-            position: relative;
-        top: auto;
-        right: auto;
-        width: 100%;
-      
-        margin-bottom: 250px;
-  }
-
-  .flag-1, .flag-2, .flag-3, .flag-4, .flag-5, .flag-6 {
-    width: calc(50% - 8px) !important; 
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }
 
@@ -361,6 +367,8 @@
   }
 
   .language-stats {
+    width: 100%;
+    max-width: 100%;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
@@ -378,22 +386,6 @@
     font-size: 0.8rem;
     white-space: normal;
   }
-
-  .floating-flags {
-     /* height: 300px; */
-            position: relative;
-        top: auto;
-        right: auto;
-        width: 100%;
-      
-        margin-bottom: 150px;
-   
-  }
-
-  .flag-1, .flag-2, .flag-3, .flag-4, .flag-5, .flag-6 {
-   
-    height: 120px !important;
-  }
 }
 
 /* 6. Small Mobile Devices (Up to 425px) */
@@ -403,22 +395,27 @@
   }
 
   .section-tags {
-    padding: 10px 20px;
-    font-size: 0.85rem;
-    margin-bottom: 15px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    margin-bottom: 12px;
   }
 
   .language-stats {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-
-  .flag-1, .flag-2, .flag-3, .flag-4, .flag-5, .flag-6 {
-    height: 100px !important;
-    border-radius: 16px;
-  }
   
   .language-stats div {
+    border-radius: 16px;
+  }
+
+  .floating-flags {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+
+  .flag {
+    height: 100px !important;
     border-radius: 16px;
   }
 }

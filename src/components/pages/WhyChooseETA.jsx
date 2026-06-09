@@ -78,7 +78,7 @@ const WhyChooseETA = () => {
       delay: 0,
     },
     {
-      value: "100+",
+      value: "200+",
       label: "Training Programs",
       img: trainingImg,
       description: "Comprehensive curricula for transformative learning",
@@ -222,13 +222,13 @@ const WhyChooseETA = () => {
             ))}
           </div>
 
-          <button className="why-premium__cta">
-            <span>Start Your Journey</span>
+          <a href="#contact" className="why-premium__cta">
+            <span>Get In Touch</span>
             <div className="why-premium__cta-arrow">
               <ArrowRight size={18} />
             </div>
             <div className="why-premium__cta-glow" />
-          </button>
+          </a>
         </div>
 
         {/* Right: Stats */}
