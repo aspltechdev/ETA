@@ -1,221 +1,311 @@
+
+// // import "./SocialWall.css";
+
+// // import {
+// //   InstagramEmbed,
+// // } from "react-social-media-embed";
+
+// // import {
+// //   ArrowUpRight,
+// // } from "lucide-react";
+
+// // const instagramPosts = [
+// //   "https://www.instagram.com/reel/DZSbIToS2dp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+// //   "https://www.instagram.com/p/DY07oXKkn1S/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+// //   "https://www.instagram.com/reel/DXBH5Eby1Dx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+// //   "https://www.instagram.com/reel/DWyJkvmDDPc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+// //   "https://www.instagram.com/p/DYTc6klGcus/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+// // ];
+
+// // export default function SocialWall() {
+// //   return (
+// //     <section className="social-wall">
+
+// //       <div className="container">
+
+// //         <div className="social-header">
+
+// //           <span className="social-tag">
+// //             FOLLOW OUR JOURNEY
+// //           </span>
+
+// //           <h2>
+// //             Stories, Workshops &
+// //             <span>
+// //               Student Transformations
+// //             </span>
+// //           </h2>
+
+// //           <p>
+// //             Explore leadership workshops,
+// //             communication activities,
+// //             student success stories,
+// //             language learning experiences
+// //             and transformational moments
+// //             from Endless Transformation Academy.
+// //           </p>
+
+// //         </div>
+
+// //         <div className="social-grid">
+
+// //           {instagramPosts.map(
+// //             (url, index) => (
+// //               <div
+// //                 key={index}
+// //                 className="social-card"
+// //               >
+
+// //                 <InstagramEmbed
+// //                   url={url}
+// //                   width="100%"
+// //                 />
+
+// //               </div>
+// //             )
+// //           )}
+
+// //         </div>
+
+// //         <div className="social-footer">
+
+// //           <a
+// //             href="https://www.instagram.com/"
+// //             target="_blank"
+// //             rel="noreferrer"
+// //             className="social-btn"
+// //           >
+
+// //             View More On Instagram
+
+// //             <ArrowUpRight size={18} />
+
+// //           </a>
+
+// //         </div>
+
+// //       </div>
+
+// //     </section>
+// //   );
+// // }
+
+
+
+
+
+
+
+
+// import "./SocialWall.css";
+
+// import { InstagramEmbed } from "react-social-media-embed";
+
+// import {
+//   ArrowUpRight,
+//   Instagram,
+// } from "lucide-react";
+
+// const instagramPosts = [
+//   "https://www.instagram.com/reel/DZSbIToS2dp/",
+//   "https://www.instagram.com/p/DY07oXKkn1S/",
+//   "https://www.instagram.com/reel/DXBH5Eby1Dx/",
+//   "https://www.instagram.com/reel/DWyJkvmDDPc/",
+//   "https://www.instagram.com/p/DYTc6klGcus/",
+// ];
+
+// export default function SocialWall() {
+//   return (
+//     <section className="social-wall">
+
+//       <div className="social-bg-glow"></div>
+
+//       <div className="container">
+
+//         <div className="social-header">
+
+//           <span className="social-tag">
+//             FOLLOW OUR JOURNEY
+//           </span>
+
+//           <h2>
+//             Real Stories.
+//             <span> Real Transformations.</span>
+//           </h2>
+
+//           <p>
+//             Explore workshops, leadership activities,
+//             language programs and student transformation
+//             moments happening at ETA.
+//           </p>
+
+//         </div>
+
+//       </div>
+
+//       <div className="social-marquee">
+
+//         <div className="social-track">
+
+//           {[...instagramPosts, ...instagramPosts].map(
+//             (url, index) => (
+//               <div
+//                 key={index}
+//                 className="social-card"
+//               >
+
+//                 <div className="card-top">
+
+//                   <Instagram size={18} />
+
+//                   <span>
+//                     Endless Transformation Academy
+//                   </span>
+
+//                 </div>
+
+//                 <InstagramEmbed
+//                   url={url}
+//                   width="100%"
+//                 />
+
+//               </div>
+//             )
+//           )}
+
+//         </div>
+
+//       </div>
+
+//       <div className="social-footer">
+
+//         <a
+//           href="https://www.instagram.com/endless_transformation_academy/"
+//           target="_blank"
+//           rel="noreferrer"
+//           className="social-btn"
+//         >
+
+//           Follow ETA On Instagram
+
+//           <ArrowUpRight size={18} />
+
+//         </a>
+
+//       </div>
+
+//     </section>
+//   );
+// }
+
+
+
+
+
 import "./SocialWall.css";
 
-import {
-  ArrowUpRight,
-  Heart,
-  MessageCircle,
-} from "lucide-react";
+import { InstagramEmbed } from "react-social-media-embed";
 
-import {
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa6";
+import { ArrowUpRight } from "lucide-react";
 
-const posts = [
-  {
-    platform: "Instagram",
+import { FaInstagram } from "react-icons/fa6";
 
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200",
-
-    title: "Leadership Workshop 2025",
-
-    description:
-      "Students developing leadership, communication and confidence skills.",
-
-    likes: "1.2K",
-  },
-
-  {
-    platform: "LinkedIn",
-
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200",
-
-    title: "Institution Partnership",
-
-    description:
-      "ETA signs a strategic learning partnership for future-ready education.",
-
-    likes: "850",
-  },
-
-  {
-    platform: "Instagram",
-
-    image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200",
-
-    title: "Language Academy",
-
-    description:
-      "Interactive foreign language learning sessions in progress.",
-
-    likes: "920",
-  },
-
-  {
-    platform: "LinkedIn",
-
-    image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1200",
-
-    title: "Student Success Story",
-
-    description:
-      "Recognizing outstanding growth and transformation.",
-
-    likes: "700",
-  },
+const instagramPosts = [
+  "https://www.instagram.com/reel/DZSbIToS2dp/",
+  "https://www.instagram.com/p/DY07oXKkn1S/",
+  "https://www.instagram.com/reel/DXBH5Eby1Dx/",
+  "https://www.instagram.com/reel/DWyJkvmDDPc/",
+  "https://www.instagram.com/p/DYTc6klGcus/",
 ];
 
-const SocialWall = () => {
+export default function SocialWall() {
   return (
     <section className="social-wall">
+
+      <div className="social-bg-glow"></div>
 
       <div className="container">
 
         <div className="social-header">
 
-          <span className="section-tag">
-            Latest From ETA
+          <span className="social-tag">
+            FOLLOW OUR JOURNEY
           </span>
 
           <h2>
-            Stories, Achievements &
-            <span>
-              Social Highlights
-            </span>
+            Real Stories.
+            <span> Real Transformations.</span>
           </h2>
 
           <p>
-            Follow our latest workshops,
-            language academy activities,
-            partnerships and student success stories.
+            Explore workshops, leadership activities,
+            language programs and student transformation
+            moments happening at Endless Transformation Academy.
           </p>
-
-        </div>
-
-        <div className="social-layout">
-
-          {/* Featured Post */}
-
-          <div className="featured-post">
-
-            <img
-              src={posts[0].image}
-              alt=""
-            />
-
-            <div className="featured-overlay"></div>
-
-            <div className="featured-content">
-
-              <div className="platform-badge">
-
-                <FaInstagram />
-
-                Instagram
-
-              </div>
-
-              <h3>
-                {posts[0].title}
-              </h3>
-
-              <p>
-                {posts[0].description}
-              </p>
-
-            </div>
-
-          </div>
-
-          {/* Feed */}
-
-          <div className="social-feed">
-
-            {posts.map(
-              (post, index) => (
-                <div
-                  className="social-card"
-                  key={index}
-                >
-
-                  <img
-                    src={post.image}
-                    alt=""
-                  />
-
-                  <div className="social-info">
-
-                    <div className="social-top">
-
-                      <span>
-
-                        {post.platform ===
-                        "Instagram" ? (
-                          <FaInstagram />
-                        ) : (
-                          <FaLinkedinIn />
-                        )}
-
-                        {post.platform}
-
-                      </span>
-
-                      <ArrowUpRight
-                        size={16}
-                      />
-
-                    </div>
-
-                    <h4>
-                      {post.title}
-                    </h4>
-
-                    <p>
-                      {post.description}
-                    </p>
-
-                    <div className="social-meta">
-
-                      <span>
-
-                        <Heart
-                          size={14}
-                        />
-
-                        {post.likes}
-
-                      </span>
-
-                      <span>
-
-                        <MessageCircle
-                          size={14}
-                        />
-
-                        45
-
-                      </span>
-
-                    </div>
-
-                  </div>
-
-                </div>
-              )
-            )}
-
-          </div>
 
         </div>
 
       </div>
 
+      {/* Marquee */}
+
+      <div className="social-marquee">
+
+        <div className="social-track">
+
+          {[...instagramPosts, ...instagramPosts].map(
+            (url, index) => (
+              <div
+                key={index}
+                className="social-card"
+              >
+
+                <div className="card-top">
+
+                  <FaInstagram />
+
+                  <span>
+                    Endless Transformation Academy
+                  </span>
+
+                </div>
+
+                <div className="embed-wrapper">
+
+                  <InstagramEmbed
+                    url={url}
+                    width="100%"
+                  />
+
+                </div>
+
+              </div>
+            )
+          )}
+
+        </div>
+
+      </div>
+
+      {/* CTA */}
+
+      <div className="social-footer">
+
+        <a
+          href="https://www.instagram.com/endless_transformation_academy/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-btn"
+        >
+
+          Follow ETA On Instagram
+
+          <ArrowUpRight size={18} />
+
+        </a>
+
+      </div>
+
     </section>
   );
-};
-
-export default SocialWall;
+}
