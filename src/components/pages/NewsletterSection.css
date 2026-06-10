@@ -201,6 +201,23 @@
   }
 
   .eta-newsletter__grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    scrollbar-width: none;
+  }
+
+  .eta-newsletter__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .eta-newsletter__card {
+    flex: 0 0 290px;
+    scroll-snap-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   }
 }

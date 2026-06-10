@@ -1,0 +1,11 @@
+# robots.txt — Endless Transformation Academy
+# https://endlesstransformationacademy.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Block any admin or private routes (add more as needed)
+Disallow: /admin/
+
+# Sitemap location (update domain when live)
+Sitemap: https://endlesstransformationacademy.com/sitemap.xml

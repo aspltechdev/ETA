@@ -151,6 +151,10 @@
   align-items: center;
 
   gap: 80px;
+
+  /* leave room so buttons don't hide behind the trust bar */
+  padding-top: 100px;
+  padding-bottom: 80px;
 }
 
 /* ========================= */
@@ -656,6 +660,10 @@
     box-sizing: border-box;
     justify-content: center;
     margin-top: 8px;
+  }
+
+  .scroll-indicator {
+    display: none;
   }
 }
 

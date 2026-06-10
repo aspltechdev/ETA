@@ -732,7 +732,14 @@ const MissionVisionSection = () => {
               </div>
             </div>
 
-            <button className="content-cta">
+            <button
+              className="content-cta"
+              onClick={() =>
+                document
+                  .getElementById("methodology")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               <span>Explore our methodology</span>
               <ArrowUpRight size={16} />
             </button>
@@ -839,7 +846,14 @@ const MissionVisionSection = () => {
               </div>
             </div>
 
-            <button className="content-cta vision-cta">
+            <button
+              className="content-cta vision-cta"
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               <span>Join our vision</span>
               <ArrowUpRight size={16} />
             </button>

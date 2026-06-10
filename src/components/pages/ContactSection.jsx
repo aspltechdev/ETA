@@ -120,7 +120,7 @@ const ContactSection = () => {
               <div>
                 <h4>Phone</h4>
                 <span>
-                  +91 98765 43210
+                  +91 9176465416
                 </span>
               </div>
 
@@ -133,7 +133,7 @@ const ContactSection = () => {
               <div>
                 <h4>Email</h4>
                 <span>
-                  info@endlessacademy.com
+                  endlesstransformationeta@gmail.com
                 </span>
               </div>
 
@@ -146,7 +146,7 @@ const ContactSection = () => {
               <div>
                 <h4>Location</h4>
                 <span>
-                  Puducherry, India
+                  Visaka P block, 6th Avenue, Annanagar, Chennai - 600040
                 </span>
               </div>
 

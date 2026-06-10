@@ -8,6 +8,7 @@ import {
   Users,
   Trophy,
   Globe,
+  Phone,
 } from "lucide-react";
 
 import "./HeroSection.css";
@@ -166,14 +167,28 @@ export default function HeroSection() {
 
           <div className="hero-buttons">
 
-            <button className="hero-btn primary">
+            <button
+              className="hero-btn primary"
+              onClick={() =>
+                document
+                  .getElementById("programs")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               Explore Programs
               <ArrowRight size={18} />
             </button>
 
-            <button className="hero-btn secondary">
-              <PlayCircle size={18} />
-              Watch Journey
+            <button
+              className="hero-btn secondary"
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              <Phone size={18} />
+              Contact Us
             </button>
 
           </div>

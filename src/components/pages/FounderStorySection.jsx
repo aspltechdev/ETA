@@ -192,8 +192,14 @@ const FounderStorySection = () => {
             institutions and communities.
           </p>
 
-          <button>
-            Read Our Story
+          <button
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Start Your Journey
             <ArrowRight size={18} />
           </button>
 

@@ -204,11 +204,7 @@
 
 import { useState } from "react";
 import "./SocialWall.css";
-
 import { InstagramEmbed } from "react-social-media-embed";
-
-import { ArrowUpRight } from "lucide-react";
-
 import { FaInstagram, FaLinkedin, FaYoutube, FaFacebook } from "react-icons/fa6";
 
 const instagramPosts = [
@@ -453,65 +449,7 @@ export default function SocialWall() {
 
       </div>
 
-      {/* CTA */}
 
-      <div className="social-footer">
-
-        {activeTab === "instagram" ? (
-          <a
-            href="https://www.instagram.com/endlesstransformationacademy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-btn instagram-btn"
-          >
-
-            Follow ETA On Instagram
-
-            <ArrowUpRight size={18} />
-
-          </a>
-        ) : activeTab === "linkedin" ? (
-          <a
-            href="https://www.linkedin.com/company/endless-transformation-academy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-btn linkedin-btn"
-          >
-
-            Follow ETA On LinkedIn
-
-            <ArrowUpRight size={18} />
-
-          </a>
-        ) : activeTab === "youtube" ? (
-          <a
-            href="https://www.youtube.com/@endlesstransformationacademy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-btn youtube-btn"
-          >
-
-            Follow ETA On YouTube
-
-            <ArrowUpRight size={18} />
-
-          </a>
-        ) : (
-          <a
-            href="https://www.facebook.com/endlesstransformationacademy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-btn facebook-btn"
-          >
-
-            Follow ETA On Facebook
-
-            <ArrowUpRight size={18} />
-
-          </a>
-        )}
-
-      </div>
 
     </section>
   );

@@ -341,8 +341,7 @@ const Header = () => {
               className="eta-mobile-menu__cta eta-mobile-menu__cta--primary"
               onClick={() => setIsMobileOpen(false)}
             >
-              <Sparkles size={18} />
-              Book Consultation
+              Contact Us
               <ArrowRight size={18} />
             </a>
           </div>

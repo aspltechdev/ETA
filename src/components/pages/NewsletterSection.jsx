@@ -4,9 +4,9 @@ import {
   Calendar,
 } from "lucide-react";
 
-import newsletter1 from "../../assets/w1.jpg";
-import newsletter2 from "../../assets/w1.jpg";
-import newsletter3 from "../../assets/w1.jpg";
+import newsletter1 from "../../assets/newsletter1.jpg";
+import newsletter2 from "../../assets/newsletter2.jpg";
+import newsletter3 from "../../assets/newsletter3.jpg";
 
 const newsletters = [
   {

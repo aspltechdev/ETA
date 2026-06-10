@@ -1,6 +1,6 @@
 
 import "./Footer.css";
-import logo from "../../assets/logo.jpeg";
+import AnimatedLogo from "./AnimatedLogo";
 
 import {
   Mail,
@@ -27,17 +27,7 @@ const Footer = () => {
         <div className="footer-top">
           {/* About */}
           <div className="footer-column footer-about">
-            <div className="footer-logo">
-              <img
-                src={logo}
-                alt="ETA Logo"
-              />
-
-              <div>
-                <h3>Endless</h3>
-                <span>Transformation Academy</span>
-              </div>
-            </div>
+            <AnimatedLogo variant="full" size={54} lightText={false} />
 
             <p>
               Transforming people through communication,
@@ -119,17 +109,17 @@ const Footer = () => {
             <div className="footer-contact">
               <span>
                 <Phone size={16} />
-                +91 98765 43210
+                +91 9176465416
               </span>
 
               <span>
                 <Mail size={16} />
-                info@endlessacademy.com
+                endlesstransformationeta@gmail.com
               </span>
 
               <span>
                 <MapPin size={16} />
-                Puducherry, India
+                Visaka P block, 6th Avenue, Annanagar, Chennai - 600040
               </span>
             </div>
           </div>
@@ -140,6 +130,9 @@ const Footer = () => {
           <p>
             © 2026 Endless Transformation Academy.
             All Rights Reserved.
+          </p>
+          <p>
+            Crafted by ASPL
           </p>
 
           <div>
