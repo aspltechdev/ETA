@@ -1,7 +1,7 @@
 import "./ForeignLanguageAcademy.css";
 import french from '../../assets/french.png';
 import german from '../../assets/ger.png';
-import japan from '../../assets/Japan.png';
+import japan from '../../assets/japan.png';
 import spain from '../../assets/spain.png';
 import kor from '../../assets/kor.png';
 import chin from '../../assets/chin.png';
