@@ -11,7 +11,7 @@ import whyBg from "../../assets/w1.jpg";
 import confidencImg from "../../assets/confidence.jpg";
 import partImg from "../../assets/partner.jpg";
 import trainingImg from "../../assets/training.jpg";
-import globalImg from "../../assets/about/globalLanguages.webp";
+import globalImg from "../../assets/about/globallanguages.webp";
 
 const WhyChooseETA = () => {
   const sectionRef = useRef(null);
