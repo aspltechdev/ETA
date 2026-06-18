@@ -175,92 +175,92 @@ const ContactSection = () => {
               Send An Inquiry
             </h3>
 
-            <form
-              action="https://api.web3forms.com/submit"
-              method="POST"
-            >
+          <form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+>
 
-              {/* Web3Forms Access Key */}
-              <input
-                type="hidden"
-                name="access_key"
-                value="cfa4bada-b5c9-4ff9-a05d-5a0c6de2e1df"
-              />
+  {/* Web3Forms Access Key */}
+  <input
+    type="hidden"
+    name="access_key"
+    value="cfa4bada-b5c9-4ff9-a05d-5a0c6de2e1df"
+  />
 
-              {/* Optional Subject */}
-              <input
-                type="hidden"
-                name="subject"
-                value="New Inquiry from ETA Website"
-              />
+  {/* Optional Subject */}
+  <input
+    type="hidden"
+    name="subject"
+    value="New Inquiry from ETA Website"
+  />
 
-              {/* Disable Captcha (optional) */}
-              <input
-                type="hidden"
-                name="from_name"
-                value="ETA Website"
-              />
+  {/* Disable Captcha (optional) */}
+  <input
+    type="hidden"
+    name="from_name"
+    value="ETA Website"
+  />
 
-              <input
-                type="text"
-                name="name"
-                placeholder="Full Name"
-                required
-              />
+  <input
+    type="text"
+    name="name"
+    placeholder="Full Name"
+    required
+  />
 
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                required
-              />
+  <input
+    type="email"
+    name="email"
+    placeholder="Email Address"
+    required
+  />
 
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                required
-              />
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Phone Number"
+    required
+  />
 
-              <select
-                name="program"
-                required
-                defaultValue=""
-              >
-                <option value="" disabled>
-                  Select Program
-                </option>
+  <select
+    name="program"
+    required
+    defaultValue=""
+  >
+    <option value="" disabled>
+      Select Program
+    </option>
 
-                <option value="Language Academy">
-                  Language Academy
-                </option>
+    <option value="Language Academy">
+      Language Academy
+    </option>
 
-                <option value="School Solutions">
-                  School Solutions
-                </option>
+    <option value="School Solutions">
+      School Solutions
+    </option>
 
-                <option value="Leadership Program">
-                  Leadership Program
-                </option>
+    <option value="Leadership Program">
+      Leadership Program
+    </option>
 
-                <option value="Communication Program">
-                  Communication Program
-                </option>
-              </select>
+    <option value="Communication Program">
+      Communication Program
+    </option>
+  </select>
 
-              <textarea
-                name="message"
-                rows="5"
-                placeholder="Tell us about your requirement..."
-                required
-              />
+  <textarea
+    name="message"
+    rows="5"
+    placeholder="Tell us about your requirement..."
+    required
+  />
 
-              <button type="submit">
-                Send Inquiry
-                <Send size={18} />
-              </button>
+  <button type="submit">
+    Send Inquiry
+    <Send size={18} />
+  </button>
 
-            </form>
+</form>
 
           </div>
 

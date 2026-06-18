@@ -175,89 +175,58 @@ const ContactSection = () => {
               Send An Inquiry
             </h3>
 
-            <form
-              action="https://api.web3forms.com/submit"
-              method="POST"
-            >
-
-              {/* Web3Forms Access Key */}
-              <input
-                type="hidden"
-                name="access_key"
-                value="cfa4bada-b5c9-4ff9-a05d-5a0c6de2e1df"
-              />
-
-              {/* Optional Subject */}
-              <input
-                type="hidden"
-                name="subject"
-                value="New Inquiry from ETA Website"
-              />
-
-              {/* Disable Captcha (optional) */}
-              <input
-                type="hidden"
-                name="from_name"
-                value="ETA Website"
-              />
+            <form>
 
               <input
                 type="text"
-                name="name"
                 placeholder="Full Name"
-                required
               />
 
               <input
                 type="email"
-                name="email"
                 placeholder="Email Address"
-                required
               />
 
               <input
-                type="tel"
-                name="phone"
+                type="text"
                 placeholder="Phone Number"
-                required
               />
 
-              <select
-                name="program"
-                required
-                defaultValue=""
-              >
-                <option value="" disabled>
+              <select>
+
+                <option>
                   Select Program
                 </option>
 
-                <option value="Language Academy">
+                <option>
                   Language Academy
                 </option>
 
-                <option value="School Solutions">
+                <option>
                   School Solutions
                 </option>
 
-                <option value="Leadership Program">
+                <option>
                   Leadership Program
                 </option>
 
-                <option value="Communication Program">
+                <option>
                   Communication Program
                 </option>
+
               </select>
 
               <textarea
-                name="message"
                 rows="5"
                 placeholder="Tell us about your requirement..."
-                required
               />
 
               <button type="submit">
+
                 Send Inquiry
+
                 <Send size={18} />
+
               </button>
 
             </form>

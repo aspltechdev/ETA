@@ -67,7 +67,9 @@
 // export default ContactSection;
 
 
+// 
 import "./ContactSection.css";
+import { useState } from "react";
 
 import {
   Phone,
@@ -78,12 +80,43 @@ import {
 } from "lucide-react";
 
 const ContactSection = () => {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    setResult("Sending...");
+
+    const formData = new FormData(event.target);
+
+    formData.append(
+      "access_key",
+      "YOUR_WEB3FORMS_ACCESS_KEY"
+    );
+
+    const response = await fetch(
+      "https://api.web3forms.com/submit",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Inquiry sent successfully!");
+      event.target.reset();
+    } else {
+      setResult("Failed to send inquiry.");
+    }
+  };
+
   return (
     <section
       className="contact-section"
       id="contact"
     >
-
       <div className="contact-glow"></div>
 
       <div className="container">
@@ -109,65 +142,50 @@ const ContactSection = () => {
 
         <div className="contact-wrapper">
 
-          {/* Left */}
-
           <div className="contact-info">
 
             <div className="info-card">
-
               <Phone size={22} />
-
               <div>
                 <h4>Phone</h4>
                 <span>
                   +91 9176465416
                 </span>
               </div>
-
             </div>
 
             <div className="info-card">
-
               <Mail size={22} />
-
               <div>
                 <h4>Email</h4>
                 <span>
                   endlesstransformationeta@gmail.com
                 </span>
               </div>
-
             </div>
 
             <div className="info-card">
-
               <MapPin size={22} />
-
               <div>
                 <h4>Location</h4>
                 <span>
-                  Visaka P block, 6th Avenue, Annanagar, Chennai - 600040
+                  Visaka P block, 6th Avenue,
+                  Annanagar, Chennai - 600040
                 </span>
               </div>
-
             </div>
 
             <div className="info-card">
-
               <Clock size={22} />
-
               <div>
                 <h4>Working Hours</h4>
                 <span>
                   Mon - Sat | 9AM - 7PM
                 </span>
               </div>
-
             </div>
 
           </div>
-
-          {/* Right */}
 
           <div className="contact-form-card">
 
@@ -175,31 +193,7 @@ const ContactSection = () => {
               Send An Inquiry
             </h3>
 
-            <form
-              action="https://api.web3forms.com/submit"
-              method="POST"
-            >
-
-              {/* Web3Forms Access Key */}
-              <input
-                type="hidden"
-                name="access_key"
-                value="cfa4bada-b5c9-4ff9-a05d-5a0c6de2e1df"
-              />
-
-              {/* Optional Subject */}
-              <input
-                type="hidden"
-                name="subject"
-                value="New Inquiry from ETA Website"
-              />
-
-              {/* Disable Captcha (optional) */}
-              <input
-                type="hidden"
-                name="from_name"
-                value="ETA Website"
-              />
+            <form onSubmit={onSubmit}>
 
               <input
                 type="text"
@@ -216,36 +210,35 @@ const ContactSection = () => {
               />
 
               <input
-                type="tel"
+                type="text"
                 name="phone"
                 placeholder="Phone Number"
-                required
               />
 
               <select
                 name="program"
                 required
-                defaultValue=""
               >
-                <option value="" disabled>
+                <option value="">
                   Select Program
                 </option>
 
-                <option value="Language Academy">
+                <option>
                   Language Academy
                 </option>
 
-                <option value="School Solutions">
+                <option>
                   School Solutions
                 </option>
 
-                <option value="Leadership Program">
+                <option>
                   Leadership Program
                 </option>
 
-                <option value="Communication Program">
+                <option>
                   Communication Program
                 </option>
+
               </select>
 
               <textarea
@@ -259,6 +252,12 @@ const ContactSection = () => {
                 Send Inquiry
                 <Send size={18} />
               </button>
+
+              {result && (
+                <p className="form-result">
+                  {result}
+                </p>
+              )}
 
             </form>
 
