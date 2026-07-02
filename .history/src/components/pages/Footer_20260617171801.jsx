@@ -132,7 +132,7 @@ const Footer = () => {
             All Rights Reserved.
           </p>
           <p>
-            Crafted by Aspl Tech Solutions Pvt Ltd
+            Crafted by ASPL
           </p>
 
           <div>

@@ -221,8 +221,6 @@ const linkedinPosts = [
   "https://www.linkedin.com/embed/feed/update/urn:li:activity:7450024963031597057",
   "https://www.linkedin.com/embed/feed/update/urn:li:activity:7449720926847377409",
   "https://www.linkedin.com/embed/feed/update/urn:li:activity:7460358578814607360",
-  "https://www.linkedin.com/embed/feed/update/urn:li:share:7474438174887301120",
-  "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7468896514153566208",
 ];
 
 const youtubeVideos = [
