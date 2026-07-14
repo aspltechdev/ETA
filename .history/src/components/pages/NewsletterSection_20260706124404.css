@@ -537,28 +537,3 @@
   font-size: 14px;
   line-height: 1.5;
 }
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-  width: 100%;
-  box-sizing: border-box;
-}
-.eta-program__header {
-  max-width: 800px;
-  margin: 80px auto 0;
-  text-align: center;
-}
-
-.eta-program__header h2 {
-  margin-top: 20px;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1.1;
-  color: #111827;
-}
-
-.eta-program__header p {
-  margin-top: 18px;
-  color: #6b7280;
-  line-height: 1.8;
-}

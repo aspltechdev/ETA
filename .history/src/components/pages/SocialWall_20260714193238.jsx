@@ -223,7 +223,7 @@ const linkedinPosts = [
   "https://www.linkedin.com/embed/feed/update/urn:li:activity:7460358578814607360",
   "https://www.linkedin.com/embed/feed/update/urn:li:share:7474438174887301120",
   "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7468896514153566208",
-  "https://www.linkedin.com/embed/feed/update/urn:li:share:7480849653106778112"
+  "https://www.linkedin.com/posts/earlychildhoodeducation-teachertraining-upskilling-share-7480849653106778112--S2c?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAFq0MrUBiwduGAUT9LV1uFIPwxXYP84JQOs&utm_campaign=whatsapp"
 ];
 
 const youtubeVideos = [

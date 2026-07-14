@@ -223,7 +223,7 @@
 }
 
 /* ===================== */
-/* Program Calendar */
+/* Program Calendar (added) */
 /* ===================== */
 
 .eta-program__header {
@@ -242,7 +242,6 @@
 }
 
 .eta-program__card {
-  position: relative;
   background: white;
 
   border-radius: 24px;
@@ -250,51 +249,12 @@
 
   border: 1px solid rgba(0, 0, 0, .05);
 
-  overflow: hidden;
-  isolation: isolate;
-
   transition: .4s ease;
 }
 
 .eta-program__card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
-}
-
-.eta-program__card-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-
-  background-size: cover;
-  background-position: center;
-
-  opacity: 0.14;
-  transform: scale(1.05);
-
-  transition: .5s ease;
-}
-
-.eta-program__card:hover .eta-program__card-bg {
-  opacity: 0.22;
-  transform: scale(1.1);
-}
-
-.eta-program__card-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.85) 0%,
-    rgba(255, 255, 255, 0.96) 100%
-  );
-}
-
-.eta-program__card-content {
-  position: relative;
-  z-index: 2;
 }
 
 .eta-program__card-top {
@@ -401,164 +361,4 @@
   .eta-program__grid {
     grid-template-columns: 1fr;
   }
-}
-.eta-program__grid {
-  margin-top: 60px;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 28px;
-}
-
-.eta-program__card {
-  position: relative;
-  background: white;
-
-  border-radius: 24px;
-  padding: 36px 28px;
-
-  border: 1px solid rgba(0, 0, 0, .05);
-
-  overflow: hidden;
-  isolation: isolate;
-
-  min-height: 480px;
-
-  transition: .4s ease;
-}
-
-.eta-program__card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .1);
-}
-
-.eta-program__card-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-
-  background-size: cover;
-  background-position: center;
-
-  opacity: 0.45;
-  transform: scale(1.05);
-
-  transition: .5s ease;
-}
-
-.eta-program__card:hover .eta-program__card-bg {
-  opacity: 0.55;
-  transform: scale(1.1);
-}
-
-.eta-program__card-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.55) 0%,
-    rgba(255, 255, 255, 0.92) 55%,
-    rgba(255, 255, 255, 0.97) 100%
-  );
-}
-
-.eta-program__card-content {
-  position: relative;
-  z-index: 2;
-}
-
-.eta-program__card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.eta-program__icon {
-  width: 52px;
-  height: 52px;
-
-  border-radius: 14px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #fff;
-}
-
-.eta-program__period {
-  padding: 6px 12px;
-  border-radius: 999px;
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .5px;
-
-  background: rgba(255, 255, 255, .9);
-  color: #111827;
-
-  box-shadow: 0 2px 8px rgba(0,0,0,.06);
-}
-
-.eta-program__card h3 {
-  margin-top: 28px;
-
-  font-size: 1.5rem;
-  color: #111827;
-}
-
-.eta-program__subtitle {
-  display: block;
-  margin-top: 6px;
-  margin-bottom: 22px;
-
-  color: #6b7280;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.eta-program__list {
-  list-style: none;
-
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.eta-program__list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-
-  color: #374151;
-  font-size: 14px;
-  line-height: 1.5;
-}
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-  width: 100%;
-  box-sizing: border-box;
-}
-.eta-program__header {
-  max-width: 800px;
-  margin: 80px auto 0;
-  text-align: center;
-}
-
-.eta-program__header h2 {
-  margin-top: 20px;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1.1;
-  color: #111827;
-}
-
-.eta-program__header p {
-  margin-top: 18px;
-  color: #6b7280;
-  line-height: 1.8;
 }

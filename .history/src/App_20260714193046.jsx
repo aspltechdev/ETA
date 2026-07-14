@@ -53,7 +53,7 @@ function App() {
 
       {/* Floating WhatsApp */}
       <a
-        href="https://wa.me/+919840077793"
+        href="https://wa.me/+91 9840077793"
         target="_blank"
         rel="noopener noreferrer"
         className="floating-whatsapp"

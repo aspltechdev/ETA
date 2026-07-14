@@ -240,13 +240,9 @@ const NewsletterSection = () => {
 
               <div className="eta-program__card-content">
 
-                <div className="eta-program__card-top">
-
-                  <span className="eta-program__period">
-                    {item.period}
-                  </span>
-
-                </div>
+                <span className="eta-program__period">
+                  {item.period}
+                </span>
 
                 <h3>{item.title}</h3>
                 <span className="eta-program__subtitle">

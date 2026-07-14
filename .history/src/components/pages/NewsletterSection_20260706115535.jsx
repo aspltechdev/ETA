@@ -2,6 +2,10 @@ import "./NewsletterSection.css";
 import {
   ArrowRight,
   Calendar,
+  Users,
+  TrendingUp,
+  Landmark,
+  Handshake,
   CheckCircle2,
 } from "lucide-react";
 
@@ -35,10 +39,10 @@ const newsletters = [
 const programs = [
   {
     period: "JUN – AUG",
-    title: "ONBOARDING",
+    title: "Onboarding",
     subtitle: "Integration",
+    icon: Users,
     variant: "blue",
-    bgImage: newsletter1,
     points: [
       "Communication for Safety",
       "LOTO Awareness",
@@ -48,10 +52,10 @@ const programs = [
   },
   {
     period: "SEP – NOV",
-    title: "PERFORMANCE",
+    title: "Performance",
     subtitle: "Optimization",
+    icon: TrendingUp,
     variant: "teal",
-    bgImage: newsletter2,
     points: [
       "Human-AI Collaboration",
       "Managing Human-AI Interfaces",
@@ -61,10 +65,10 @@ const programs = [
   },
   {
     period: "DEC – FEB",
-    title: "LEADERSHIP",
+    title: "Leadership",
     subtitle: "Governance",
+    icon: Landmark,
     variant: "purple",
-    bgImage: newsletter3,
     points: [
       "Leadership in Data Privacy",
       "Crisis Communication for Product Recalls",
@@ -73,10 +77,10 @@ const programs = [
   },
   {
     period: "MAR – MAY",
-    title: "TRANSITION",
+    title: "Transition",
     subtitle: "Sustainability",
+    icon: Handshake,
     variant: "orange",
-    bgImage: newsletter1,
     points: [
       "Outplacement Communication",
       "Heat Safety Behavioral Protocols (OSHA 2026)",
@@ -225,22 +229,20 @@ const NewsletterSection = () => {
 
         <div className="eta-program__grid">
 
-          {programs.map((item, index) => (
-            <div
-              className={`eta-program__card eta-program__card--${item.variant}`}
-              key={index}
-            >
+          {programs.map((item, index) => {
+            const Icon = item.icon;
 
+            return (
               <div
-                className="eta-program__card-bg"
-                style={{ backgroundImage: `url(${item.bgImage})` }}
-              />
-
-              <div className="eta-program__card-overlay" />
-
-              <div className="eta-program__card-content">
+                className={`eta-program__card eta-program__card--${item.variant}`}
+                key={index}
+              >
 
                 <div className="eta-program__card-top">
+
+                  <div className="eta-program__icon">
+                    <Icon size={26} />
+                  </div>
 
                   <span className="eta-program__period">
                     {item.period}
@@ -256,16 +258,15 @@ const NewsletterSection = () => {
                 <ul className="eta-program__list">
                   {item.points.map((point, i) => (
                     <li key={i}>
-                      <CheckCircle2 size={14} />
+                      <CheckCircle2 size={16} />
                       <span>{point}</span>
                     </li>
                   ))}
                 </ul>
 
               </div>
-
-            </div>
-          ))}
+            );
+          })}
 
         </div>
 

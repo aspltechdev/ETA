@@ -2,12 +2,21 @@ import "./NewsletterSection.css";
 import {
   ArrowRight,
   Calendar,
+  Users,
+  TrendingUp,
+  Landmark,
+  Handshake,
   CheckCircle2,
 } from "lucide-react";
 
 import newsletter1 from "../../assets/newsletter1.jpg";
 import newsletter2 from "../../assets/newsletter2.jpg";
 import newsletter3 from "../../assets/newsletter3.jpg";
+
+import onboardingBg from "../../assets/onboarding-bg.jpg";
+import performanceBg from "../../assets/performance-bg.jpg";
+import leadershipBg from "../../assets/leadership-bg.jpg";
+import transitionBg from "../../assets/transition-bg.jpg";
 
 const newsletters = [
   {
@@ -35,10 +44,11 @@ const newsletters = [
 const programs = [
   {
     period: "JUN – AUG",
-    title: "ONBOARDING",
+    title: "Onboarding",
     subtitle: "Integration",
+    icon: Users,
     variant: "blue",
-    bgImage: newsletter1,
+    bgImage: onboardingBg,
     points: [
       "Communication for Safety",
       "LOTO Awareness",
@@ -48,10 +58,11 @@ const programs = [
   },
   {
     period: "SEP – NOV",
-    title: "PERFORMANCE",
+    title: "Performance",
     subtitle: "Optimization",
+    icon: TrendingUp,
     variant: "teal",
-    bgImage: newsletter2,
+    bgImage: performanceBg,
     points: [
       "Human-AI Collaboration",
       "Managing Human-AI Interfaces",
@@ -61,10 +72,11 @@ const programs = [
   },
   {
     period: "DEC – FEB",
-    title: "LEADERSHIP",
+    title: "Leadership",
     subtitle: "Governance",
+    icon: Landmark,
     variant: "purple",
-    bgImage: newsletter3,
+    bgImage: leadershipBg,
     points: [
       "Leadership in Data Privacy",
       "Crisis Communication for Product Recalls",
@@ -73,10 +85,11 @@ const programs = [
   },
   {
     period: "MAR – MAY",
-    title: "TRANSITION",
+    title: "Transition",
     subtitle: "Sustainability",
+    icon: Handshake,
     variant: "orange",
-    bgImage: newsletter1,
+    bgImage: transitionBg,
     points: [
       "Outplacement Communication",
       "Heat Safety Behavioral Protocols (OSHA 2026)",
@@ -225,47 +238,55 @@ const NewsletterSection = () => {
 
         <div className="eta-program__grid">
 
-          {programs.map((item, index) => (
-            <div
-              className={`eta-program__card eta-program__card--${item.variant}`}
-              key={index}
-            >
+          {programs.map((item, index) => {
+            const Icon = item.icon;
 
+            return (
               <div
-                className="eta-program__card-bg"
-                style={{ backgroundImage: `url(${item.bgImage})` }}
-              />
+                className={`eta-program__card eta-program__card--${item.variant}`}
+                key={index}
+              >
 
-              <div className="eta-program__card-overlay" />
+                <div
+                  className="eta-program__card-bg"
+                  style={{ backgroundImage: `url(${item.bgImage})` }}
+                />
 
-              <div className="eta-program__card-content">
+                <div className="eta-program__card-overlay" />
 
-                <div className="eta-program__card-top">
+                <div className="eta-program__card-content">
 
-                  <span className="eta-program__period">
-                    {item.period}
+                  <div className="eta-program__card-top">
+
+                    <div className="eta-program__icon">
+                      <Icon size={26} />
+                    </div>
+
+                    <span className="eta-program__period">
+                      {item.period}
+                    </span>
+
+                  </div>
+
+                  <h3>{item.title}</h3>
+                  <span className="eta-program__subtitle">
+                    {item.subtitle}
                   </span>
+
+                  <ul className="eta-program__list">
+                    {item.points.map((point, i) => (
+                      <li key={i}>
+                        <CheckCircle2 size={16} />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
 
                 </div>
 
-                <h3>{item.title}</h3>
-                <span className="eta-program__subtitle">
-                  {item.subtitle}
-                </span>
-
-                <ul className="eta-program__list">
-                  {item.points.map((point, i) => (
-                    <li key={i}>
-                      <CheckCircle2 size={14} />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-
               </div>
-
-            </div>
-          ))}
+            );
+          })}
 
         </div>
 
