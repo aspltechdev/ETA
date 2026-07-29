@@ -9,7 +9,7 @@ import {
 import newsletter1 from "../../assets/newsletter1.jpg";
 import newsletter2 from "../../assets/newsletter2.jpg";
 import newsletter3 from "../../assets/newsletter3.jpg";
-import certificationHero from "../../assets/poster.jpeg";
+import certificationHero from "../../assets/.jpg";
 
 const REGISTER_URL = "https://forms.gle/f18AAEgNiRmqmqTf9";
 
@@ -92,7 +92,6 @@ const programs = [
 const certificationBenefits = [
   "Know your English proficiency level (CEFR aligned: A1–C2)",
   "Receive a globally recognised certification from UpSkill (UK)",
-  
   "Add your certification to your CV and LinkedIn profile",
   "Showcase your communication skills to recruiters with confidence",
   "Stand out from other applicants",
@@ -303,61 +302,68 @@ const NewsletterSection = () => {
 
         {/* Certification Promo */}
 
-        <div className="eta-cert__header">
+        <div className="eta-cert__intro">
 
-          <span className="eta-newsletter__tag">
-            Endless Transformation Academy × UpSkill (UK)
-          </span>
-
-          <h2>
-            Get Certified. Get Noticed. Get Called.
-          </h2>
-
-          <p>
-           Still applying for jobs but not getting interview calls? It may not be your degree—it’s your skills. Recruiters value communication, teamwork, and workplace readiness. Proving your English proficiency can help you stand out.
-          </p>
-
-        </div>
-
-        <div className="eta-cert__body">
-
-          <div className="eta-cert__image">
+          <div className="eta-cert__intro-image">
             <img
               src={certificationHero}
               alt="Students holding their English proficiency certificates"
             />
           </div>
 
-          <div className="eta-cert__panel">
+          <div className="eta-cert__header">
 
-            <div className="eta-cert__tagline">
-              <span>Your degree gets you shortlisted.</span>
-              <span className="eta-cert__tagline-highlight">
-                Your skill gets you hired.
-              </span>
-            </div>
+            <span className="eta-newsletter__tag">
+              Endless Transformation Academy × UpSkill (UK)
+            </span>
 
-            <div className="eta-cert__levels-row">
-              {certificationLevels.map((level, index) => (
-                <div
-                  className={`eta-cert__level-badge eta-cert__level-badge--${level.variant}`}
-                  key={index}
-                >
-                  <div className="eta-cert__level-badge-icon">
-                    <Award size={20} />
-                  </div>
+            <h2>
+              Get Certified. Get Noticed. Get Called.
+            </h2>
 
-                  <div>
-                    <div className="eta-cert__level-badge-code">
-                      {level.code}
-                    </div>
-                    <div className="eta-cert__level-badge-name">
-                      {level.name}
-                    </div>
-                  </div>
+            <p>
+              Still applying for jobs but not getting interview calls? It may not
+              be your degree — it's your skills. Prove your English proficiency
+              with a globally recognised certification and show recruiters you
+              can communicate with confidence.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div className="eta-cert__body">
+
+          <div className="eta-cert__levels">
+
+            {certificationLevels.map((level, index) => (
+              <div
+                className={`eta-cert__level eta-cert__level--${level.variant}`}
+                key={index}
+              >
+
+                <div className="eta-cert__level-icon">
+                  <Award size={24} />
                 </div>
-              ))}
-            </div>
+
+                <div className="eta-cert__level-code">
+                  {level.code}
+                </div>
+
+                <div className="eta-cert__level-name">
+                  {level.name}
+                </div>
+
+                <p className="eta-cert__level-desc">
+                  {level.desc}
+                </p>
+
+              </div>
+            ))}
+
+          </div>
+
+          <div className="eta-cert__panel">
 
             <ul className="eta-cert__benefits">
               {certificationBenefits.map((benefit, index) => (
@@ -389,12 +395,6 @@ const NewsletterSection = () => {
               </button>
 
             </div>
-
-            <p className="eta-cert__note">
-              Whether you're aiming for B2 (Upper Intermediate) or C1 (Advanced),
-              this certification helps employers understand your communication
-              capability instantly.
-            </p>
 
           </div>
 

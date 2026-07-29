@@ -314,7 +314,12 @@ const NewsletterSection = () => {
           </h2>
 
           <p>
-           Still applying for jobs but not getting interview calls? It may not be your degree—it’s your skills. Recruiters value communication, teamwork, and workplace readiness. Proving your English proficiency can help you stand out.
+            Still applying for jobs but not getting interview calls? It may not
+            be your degree — it's your skills. Today, recruiters look beyond
+            academic qualifications. They want candidates who can communicate
+            confidently, collaborate effectively, and perform in the workplace.
+            That's why proving your English proficiency can make a real
+            difference.
           </p>
 
         </div>

@@ -592,6 +592,9 @@
 /* Tagline callout band */
 
 .eta-cert__tagline {
+  max-width: 700px;
+  margin: 32px auto 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -599,8 +602,8 @@
 
   text-align: center;
 
-  padding: 20px 24px;
-  border-radius: 18px;
+  padding: 20px 32px;
+  border-radius: 999px;
 
   background: linear-gradient(90deg, #0B0F9E, #0d9488);
 }
@@ -727,15 +730,13 @@
 
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .eta-cert__benefits li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-
-  max-width: 560px;
 
   color: #374151;
   font-size: 15px;

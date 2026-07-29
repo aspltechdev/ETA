@@ -727,15 +727,13 @@
 
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .eta-cert__benefits li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-
-  max-width: 560px;
 
   color: #374151;
   font-size: 15px;
@@ -865,4 +863,11 @@
   .eta-cert__tagline-highlight {
     font-size: 1.1rem;
   }
+}
+.eta-cert__benefits {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }

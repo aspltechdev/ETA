@@ -92,7 +92,6 @@ const programs = [
 const certificationBenefits = [
   "Know your English proficiency level (CEFR aligned: A1–C2)",
   "Receive a globally recognised certification from UpSkill (UK)",
-  
   "Add your certification to your CV and LinkedIn profile",
   "Showcase your communication skills to recruiters with confidence",
   "Stand out from other applicants",
@@ -314,7 +313,12 @@ const NewsletterSection = () => {
           </h2>
 
           <p>
-           Still applying for jobs but not getting interview calls? It may not be your degree—it’s your skills. Recruiters value communication, teamwork, and workplace readiness. Proving your English proficiency can help you stand out.
+            Still applying for jobs but not getting interview calls? It may not
+            be your degree — it's your skills. Today, recruiters look beyond
+            academic qualifications. They want candidates who can communicate
+            confidently, collaborate effectively, and perform in the workplace.
+            That's why proving your English proficiency can make a real
+            difference.
           </p>
 
         </div>

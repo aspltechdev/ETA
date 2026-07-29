@@ -567,16 +567,40 @@
 /* Certification Promo   */
 /* ===================== */
 
+.eta-cert__intro {
+  margin-top: 100px;
+
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  align-items: center;
+
+  gap: 48px;
+}
+
+.eta-cert__intro-image {
+  border-radius: 24px;
+  overflow: hidden;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .1);
+}
+
+.eta-cert__intro-image img {
+  width: 100%;
+  height: 280px;
+
+  object-fit: cover;
+  display: block;
+}
+
 .eta-cert__header {
-  max-width: 800px;
-  margin: 100px auto 0;
-  text-align: center;
+  max-width: 620px;
+  text-align: left;
 }
 
 .eta-cert__header h2 {
   margin-top: 20px;
 
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
 
   color: #111827;
@@ -589,34 +613,6 @@
   line-height: 1.8;
 }
 
-/* Tagline callout band */
-
-.eta-cert__tagline {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-
-  text-align: center;
-
-  padding: 20px 24px;
-  border-radius: 18px;
-
-  background: linear-gradient(90deg, #0B0F9E, #0d9488);
-}
-
-.eta-cert__tagline span {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.eta-cert__tagline-highlight {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #ffffff;
-}
-
 .eta-cert__body {
   margin-top: 60px;
 
@@ -624,60 +620,38 @@
   grid-template-columns: 1fr 1.4fr;
 
   gap: 28px;
-  align-items: stretch;
 }
 
-/* Image column */
+/* Level cards */
 
-.eta-cert__image {
+.eta-cert__levels {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.eta-cert__level {
+  position: relative;
+  background: white;
+
   border-radius: 24px;
-  overflow: hidden;
+  padding: 32px 28px;
 
-  background: #ffffff;
   border: 1px solid rgba(0, 0, 0, .05);
 
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .1);
-
-  display: flex;
+  transition: .4s ease;
 }
 
-.eta-cert__image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-  display: block;
+.eta-cert__level:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
 }
 
-/* Compact level badges inside the panel */
+.eta-cert__level-icon {
+  width: 52px;
+  height: 52px;
 
-.eta-cert__levels-row {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.eta-cert__level-badge {
-  flex: 1;
-  min-width: 200px;
-
-  display: flex;
-  align-items: center;
-  gap: 14px;
-
-  padding: 16px 18px;
-  border-radius: 16px;
-
-  background: #f8faff;
-  border: 1px solid rgba(0, 0, 0, .05);
-}
-
-.eta-cert__level-badge-icon {
-  width: 40px;
-  height: 40px;
-  flex: 0 0 auto;
-
-  border-radius: 12px;
+  border-radius: 14px;
 
   display: flex;
   align-items: center;
@@ -686,24 +660,39 @@
   color: #fff;
 }
 
-.eta-cert__level-badge--blue .eta-cert__level-badge-icon {
-  background: #0B0F9E;
-}
+.eta-cert__level-code {
+  margin-top: 20px;
 
-.eta-cert__level-badge--teal .eta-cert__level-badge-icon {
-  background: #0d9488;
-}
-
-.eta-cert__level-badge-code {
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-weight: 800;
+
   color: #111827;
 }
 
-.eta-cert__level-badge-name {
-  font-size: 13px;
-  font-weight: 600;
+.eta-cert__level-name {
+  display: block;
+  margin-top: 2px;
+
+  font-size: 14px;
+  font-weight: 700;
+
   color: #6b7280;
+}
+
+.eta-cert__level-desc {
+  margin-top: 14px;
+
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.eta-cert__level--blue .eta-cert__level-icon {
+  background: #0B0F9E;
+}
+
+.eta-cert__level--teal .eta-cert__level-icon {
+  background: #0d9488;
 }
 
 /* Panel */
@@ -718,7 +707,6 @@
 
   display: flex;
   flex-direction: column;
-  gap: 32px;
   justify-content: space-between;
 }
 
@@ -727,15 +715,13 @@
 
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .eta-cert__benefits li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-
-  max-width: 560px;
 
   color: #374151;
   font-size: 15px;
@@ -815,23 +801,22 @@
   outline-offset: 3px;
 }
 
-/* Note under CTA row */
-
-.eta-cert__note {
-  font-size: 13px;
-  color: #6b7280;
-  line-height: 1.6;
-  text-align: center;
-}
-
 @media (max-width: 1024px) {
 
   .eta-cert__body {
     grid-template-columns: 1fr;
   }
 
-  .eta-cert__image img {
-    height: 320px;
+  .eta-cert__intro {
+    grid-template-columns: 260px 1fr;
+  }
+
+  .eta-cert__levels {
+    flex-direction: row;
+  }
+
+  .eta-cert__levels .eta-cert__level {
+    flex: 1;
   }
 }
 
@@ -841,7 +826,26 @@
     margin-top: 80px;
   }
 
-  .eta-cert__levels-row {
+  .eta-cert__intro {
+    grid-template-columns: 1fr;
+    margin-top: 80px;
+    gap: 24px;
+  }
+
+  .eta-cert__intro-image img {
+    height: 220px;
+  }
+
+  .eta-cert__header {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .eta-cert__hero img {
+    height: 240px;
+  }
+
+  .eta-cert__levels {
     flex-direction: column;
   }
 
@@ -856,13 +860,5 @@
 
   .eta-cert__cta {
     justify-content: center;
-  }
-
-  .eta-cert__tagline {
-    padding: 18px 20px;
-  }
-
-  .eta-cert__tagline-highlight {
-    font-size: 1.1rem;
   }
 }
