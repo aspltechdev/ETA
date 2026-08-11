@@ -109,13 +109,14 @@ const Footer = () => {
             <div className="footer-contact">
               <span>
                 <Phone size={16} />
-                +91 9176465416
+                +91 98400 77793
               </span>
 
               <span>
                 <Mail size={16} />
                 endlesstransformationeta@gmail.com
               </span>
+              <span>ceo@endlessindia.com</span>
 
               <span>
                 <MapPin size={16} />
@@ -132,7 +133,7 @@ const Footer = () => {
             All Rights Reserved.
           </p>
           <p>
-            Crafted by ASPL
+            Crafted by Aspl Tech Solutions Pvt Ltd
           </p>
 
           <div>

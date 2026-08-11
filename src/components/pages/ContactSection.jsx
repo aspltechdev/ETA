@@ -130,12 +130,17 @@ const ContactSection = () => {
 
               <Mail size={22} />
 
-              <div>
-                <h4>Email</h4>
-                <span>
-                  endlesstransformationeta@gmail.com
-                </span>
-              </div>
+             <div>
+  <h4>Email</h4>
+
+  <span style={{ display: "block", marginBottom: "6px" }}>
+    endlesstransformationeta@gmail.com
+  </span>
+
+  <span style={{ display: "block" }}>
+    ceo@endlessindia.com
+  </span>
+</div>
 
             </div>
 

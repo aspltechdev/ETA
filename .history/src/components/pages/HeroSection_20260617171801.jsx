@@ -301,7 +301,7 @@ export default function HeroSection() {
               </strong>
 
               <span>
-                Founder & CEO
+                Founder & Director
               </span>
             </div>
 

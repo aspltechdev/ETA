@@ -95,12 +95,11 @@ const Footer = () => {
           <div className="footer-column">
             <h4>Languages</h4>
 
-           <a href="#languages">French</a>
-<a href="#languages">German</a>
-<a href="#languages">Spanish</a>
-<a href="#languages">Japanese</a>
-<a href="#languages">Korean</a>
-<a href="#languages">Chinese</a>
+            <a href="#languages">French</a>
+            <a href="#languages">German</a>
+            <a href="#languages">Spanish</a>
+            <a href="#languages">Japanese</a>
+            <a href="#languages">Korean</a>
           </div>
 
           {/* Contact */}
@@ -113,25 +112,14 @@ const Footer = () => {
                 +91 98400 77793
               </span>
 
-             <span
-  style={{
-    display: "flex",
-    alignItems: "flex-start",
-    gap: "10px",
-  }}
->
-  <Mail size={16} style={{ flexShrink: 0, marginTop: "4px" }} />
-
-  <span
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      gap: "8px",
-    }}
+              <span style={{ display: "block", marginBottom: "6px" }}>
   >
-    <span>endlesstransformationeta@gmail.com</span>
-    <span>ceo@endlessindia.com</span>
-  </span>
+  endlesstransformationeta@gmail.com
+</span>
+
+<span>
+  
+  ceo@endlessindia.com
 </span>
 
               <span>

@@ -95,12 +95,11 @@ const Footer = () => {
           <div className="footer-column">
             <h4>Languages</h4>
 
-           <a href="#languages">French</a>
-<a href="#languages">German</a>
-<a href="#languages">Spanish</a>
-<a href="#languages">Japanese</a>
-<a href="#languages">Korean</a>
-<a href="#languages">Chinese</a>
+            <a href="#languages">French</a>
+            <a href="#languages">German</a>
+            <a href="#languages">Spanish</a>
+            <a href="#languages">Japanese</a>
+            <a href="#languages">Korean</a>
           </div>
 
           {/* Contact */}

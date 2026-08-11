@@ -95,12 +95,11 @@ const Footer = () => {
           <div className="footer-column">
             <h4>Languages</h4>
 
-           <a href="#languages">French</a>
-<a href="#languages">German</a>
-<a href="#languages">Spanish</a>
-<a href="#languages">Japanese</a>
-<a href="#languages">Korean</a>
-<a href="#languages">Chinese</a>
+            <a href="#languages">French</a>
+            <a href="#languages">German</a>
+            <a href="#languages">Spanish</a>
+            <a href="#languages">Japanese</a>
+            <a href="#languages">Korean</a>
           </div>
 
           {/* Contact */}
@@ -113,28 +112,33 @@ const Footer = () => {
                 +91 98400 77793
               </span>
 
-             <span
+              <span
   style={{
-    display: "flex",
-    alignItems: "flex-start",
-    gap: "10px",
+    display: "block",
+    marginBottom: "10px",
+    lineHeight: "1.5",
   }}
 >
-  <Mail size={16} style={{ flexShrink: 0, marginTop: "4px" }} />
-
-  <span
+  <Mail
+    size={16}
     style={{
-      display: "flex",
-      flexDirection: "column",
-      gap: "8px",
+      marginRight: "8px",
+      verticalAlign: "middle",
     }}
-  >
-    <span>endlesstransformationeta@gmail.com</span>
-    <span>ceo@endlessindia.com</span>
-  </span>
+  />
+  endlesstransformationeta@gmail.com
 </span>
 
-              <span>
+<span
+  style={{
+    display: "block",
+    marginBottom: "10px",
+    paddingLeft: "24px",
+    lineHeight: "1.5",
+  }}
+>
+  ceo@endlessindia.com
+</span>
                 <MapPin size={16} />
                 Visaka P block, 6th Avenue, Annanagar, Chennai - 600040
               </span>

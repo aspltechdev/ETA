@@ -32,7 +32,7 @@ const FounderStorySection = () => {
               />
 
               <div className="founder-badge">
-                Founder & CEO
+                Founder & Director
               </div>
 
             </div>
